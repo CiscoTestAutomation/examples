@@ -1,0 +1,37 @@
+#*******************************************************************************
+#* EXTENSION DATAFILE
+#*
+#*  The content of this file is no different than that of base_datafile.yaml,
+#*  except that it "extends" it: the base_datafile.yaml values for the basis
+#*  for this datafile to build on top of.
+#*
+#*  Keep in mind that datafile extensions are done using recursive dictionary
+#*  updates.
+#*
+#*  To run the script with this datafile: 
+#*     bash$ python base_example.py -datafile=data/base_datafile.yaml
+#*******************************************************************************
+
+#****************************************
+#* Extend More Datafiles
+#*
+#*  each datafile may extend one or more datafiles.
+#*  the value to 'extends' may be a single file or a list of files.
+extends: base_datafile.yaml
+
+parameters:
+    parameter_A: datafile extended A
+
+testcases:
+
+    ExampleTestcase:
+        uid: 'ExampleTestcaseDatafileID_Extended!'
+        groups: [group_A, group_B, group_C, group_D, group_E]
+
+        parameters:
+            local_B: datafile extended B
+
+        data_A: attribute extended A
+
+    LoopedTestcase:
+        groups: [ha, sanity]

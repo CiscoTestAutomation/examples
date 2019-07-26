@@ -1,0 +1,65 @@
+testbed:
+    name: tbd1 
+    servers:
+          tftp:
+            server: "ott2lab-tftp1"
+            address: "223.255.254.254"
+            path: ""
+            username: "rcpuser"
+            password: "123rcp!"
+          ntp:
+            server: 102.0.0.102
+devices:
+    ott-tb1-n7k3:
+        type: 'router'
+        tacacs:
+          login_prompt: "login:"
+          password_prompt: "Password:"
+          username: "admin"
+        passwords:
+          tacacs: CSCO12345^
+          enable: CSCO12345^
+          line: CSCO12345^
+        connections:
+          a:
+            protocol: telnet
+            ip: "10.85.87.25"
+            port: 2003
+          b:
+            protocol: telnet
+            ip: "10.85.87.25"
+            port: 2004
+          alt:
+            protocol : telnet
+            ip : "5.25.25.3"
+        clean:
+          pre_clean: |
+               switchname %{self}
+               license grace-period
+               feature telnet
+               interface mgmt0
+                       ip addr %{self.connections.alt.ip}/24
+               no shut
+               vrf context management
+                 ip route 101.0.0.0/24 5.19.27.251
+                 ip route 102.0.0.0/24 5.19.27.251
+          post_clean: |
+                    switchname %{self}
+                    license grace-period
+                    feature telnet
+                    interface mgmt0
+                            ip addr %{self.connections.alt.ip}/24
+                    no shut
+                    vrf context management
+                      ip route 101.0.0.0/24 5.19.27.251
+                      ip route 102.0.0.0/24 5.19.27.251
+
+topology:
+  ott-tb1-n7k3:
+    interfaces:
+      Ethernet3/1:
+        link: link-1
+        type: ethernet
+      loopback0:
+        link: link-2
+        type: loopback

@@ -1,0 +1,69 @@
+#*******************************************************************************
+#* BASE DATAFILE
+#*
+#*   Datafiles allows users an additional flexibity to provide their testscript
+#*   with data, feature enablement & etc. The concept is simple: take your 
+#*   script module and its classes, and recursively update the values found in
+#*   the provided datfile into those objects.
+#*
+#*   - Only a single datafile can be provided to a script
+#*   - New/existing values will be overwritten, expect parameters: they are
+#*     updated using dict.update()
+#*
+#*  This is a good place to set/alter your script data points, testcase uid,
+#*  grouping, processors & etc.
+#*
+#*  To run the script with this datafile: 
+#*     bash$ python base_example.py -datafile=data/base_datafile.yaml
+#*******************************************************************************
+
+#****************************************
+#* Testscript Parameters
+#*
+#*   key/values used to update the script's parameters
+parameters:
+    parameter_A: datafile value A
+    parameter_B: datafile value B
+
+#****************************************
+#* Testcases Block
+#*
+#*   each key corresponds to a testcase class definition
+testcases:
+
+    #****************************************
+    #* ExampleTestcase Class
+    ExampleTestcase:
+
+        #****************************************
+        #* modify testcase uid
+        uid: 'ExampleTestcaseDatafileID'
+
+        #****************************************
+        #* modify testcase description
+        description: |
+            block of text describing what this testcase does
+
+        #****************************************
+        #* alter testcase grouping
+        groups: [group_A, group_B, group_C, group_D]
+        
+        #****************************************
+        #* modify this testcase's parameters
+        parameters:
+            local_A: datafile value A
+            local_B: datafile value B
+
+        #****************************************
+        #* all other class attributes/values
+        data_A: attribute data A
+        data_B: attribute data B
+
+    #****************************************
+    #* LoopedTestcase Class
+    LoopedTestcase:
+        groups: []
+    #****************************************
+    #* TestcaseWithSteps Class
+    TestcaseWithSteps:
+        uid: TestcaseWithStepsDatafileID

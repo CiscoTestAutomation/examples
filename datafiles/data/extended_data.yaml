@@ -1,0 +1,13 @@
+extends: simple_data.yaml
+
+processors:
+    pre: [lib.processors.log_enter]
+    post: [lib.processors.log_exit]
+
+module_var_b: overwrite from extended file
+
+
+testcases:
+    MyTestcase:
+        parameters:
+            tc_param_a: Over Nine Thousand!

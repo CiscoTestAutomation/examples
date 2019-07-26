@@ -1,0 +1,23 @@
+module_var_a: some string value
+module_var_b: 99999
+
+parameters:
+    script_param_a: 3.1415926
+    script_param_b: 2016-01-01
+
+common_setup:
+    parameters:
+        cc_param_a: 3
+        cc_param_b: 4
+
+testcases:
+    MyTestcase:
+        uid: customized_id_from_datafile
+        groups: [demo, datafile, awesomeness]
+
+        parameters:
+            tc_param_a: 300
+            tc_param_b: 400
+
+        class_var_a: [1,2,3,4,5]
+        class_var_b: datafile feature is just that awesome
