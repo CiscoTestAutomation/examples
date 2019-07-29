@@ -1,0 +1,2 @@
+[2019-02-21 13:13:22,883] +++ nx-osv-1 logfile ./connection_nx-osv-1.txt +++
+[2019-02-21 13:13:22,883] +++ Unicon plugin nxos +++

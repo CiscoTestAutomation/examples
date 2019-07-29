@@ -1,0 +1,48 @@
+testbed:
+    name: 'virl'
+
+devices:
+    nx-osv-1:
+        type: "NX-OSv 9000"
+        os: "nxos"
+        alias: uut
+        tacacs:
+            login_prompt: 'login:'
+            password_prompt: 'Password:'
+            username: admin
+        passwords:
+            tacacs: admin
+            enable: admin
+            line: admin
+        connections:
+            defaults:
+                class: 'unicon.Unicon'
+            a:
+                protocol: telnet
+                ip: 172.25.192.90
+                port: 17023
+        custom:
+            abstraction:
+                order: [os]
+    csr1000v-1:
+        type: asr1k
+        os: "iosxe"
+        alias: helper
+        tacacs:
+            login_prompt: 'login:'
+            password_prompt: 'Password:'
+            username: cisco
+        passwords:
+            tacacs: cisco
+            enable: cisco
+            line: cisco
+        connections:
+            defaults:
+                class: 'unicon.Unicon'
+            a:
+                protocol: telnet
+                ip: 172.25.192.90
+                port: 17021
+        custom:
+            abstraction:
+                order: [os]

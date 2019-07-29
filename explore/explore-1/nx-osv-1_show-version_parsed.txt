@@ -1,0 +1,31 @@
+{
+  "_meta_class": "ShowVersion",
+  "_meta_module": "show_platform",
+  "_meta_os": "nxos",
+  "platform": {
+    "hardware": {
+      "bootflash": "3184776 kB",
+      "chassis": "NX-OSv Supervisor Module",
+      "device_name": "nx-osv-1",
+      "model": "NX-OSv",
+      "processor_board_id": "TM00010000B",
+      "slots": "None"
+    },
+    "kernel_uptime": {
+      "days": 6,
+      "hours": 1,
+      "minutes": 12,
+      "seconds": 30
+    },
+    "name": "Nexus",
+    "os": "NX-OS",
+    "software": {
+      "kickstart_compile_time": "1/11/2016 16:00:00 [02/11/2016 10:30:12]",
+      "kickstart_image_file": "bootflash:///titanium-d1-kickstart.7.3.0.D1.1.bin",
+      "kickstart_version": "7.3(0)D1(1)",
+      "system_compile_time": "1/11/2016 16:00:00 [02/11/2016 13:08:11]",
+      "system_image_file": "bootflash:///titanium-d1.7.3.0.D1.1.bin",
+      "system_version": "7.3(0)D1(1)"
+    }
+  }
+}

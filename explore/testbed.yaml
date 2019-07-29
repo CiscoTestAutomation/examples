@@ -1,0 +1,41 @@
+testbed: 
+  name: 'new_tb'
+devices:
+  nx-osv-1:
+      type: 'Nexus'
+      os: 'nxos'
+      alias: 'uut'
+      tacacs:
+          login_prompt: "login:"
+          password_prompt: "Password:"
+          username: "admin"
+      passwords:
+          tacacs: Cisc0123
+          enable: admin
+          line: admin
+      connections:
+          defaults:
+            class: 'unicon.Unicon'
+          a:
+              protocol: telnet
+              ip: "172.25.192.90"
+              port: 17028
+  csr1000v-1:
+      type: asr1k
+      os: "iosxe"
+      alias: 'helper'
+      tacacs:
+          login_prompt: 'login:'
+          password_prompt: 'Password:'
+          username: cisco
+      passwords:
+          tacacs: cisco
+          enable: cisco
+          line: cisco
+      connections:
+          defaults:
+            class: 'unicon.Unicon'
+          a:
+              protocol: telnet
+              ip: "172.25.192.90"
+              port: 17002

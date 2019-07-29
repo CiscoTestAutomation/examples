@@ -1,0 +1,40 @@
+nx-osv-1#
++++ nx-osv-1: execute command 'show version' +++
+show version
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-2016, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained herein are owned by
+other third parties and are used and distributed under license.
+Some parts of this software are covered under the GNU Public
+License. A copy of the license is available at
+http://www.gnu.org/licenses/gpl.html.
+
+NX-OSv is a demo version of the Nexus Operating System
+
+Software
+  loader:    version N/A
+  kickstart: version 7.3(0)D1(1)
+  system:    version 7.3(0)D1(1)
+  kickstart image file is: bootflash:///titanium-d1-kickstart.7.3.0.D1.1.bin
+  kickstart compile time:  1/11/2016 16:00:00 [02/11/2016 10:30:12]
+  system image file is:    bootflash:///titanium-d1.7.3.0.D1.1.bin
+  system compile time:     1/11/2016 16:00:00 [02/11/2016 13:08:11]
+
+
+Hardware
+  cisco NX-OSv Chassis ("NX-OSv Supervisor Module")
+  QEMU Virtual CPU version 2.5 with 3064740 kB of memory.
+  Processor Board ID TM00010000B
+
+  Device name: nx-osv-1
+  bootflash:    3184776 kB
+
+Kernel uptime is 6 day(s), 1 hour(s), 12 minute(s), 30 second(s)
+
+
+plugin
+  Core Plugin, Ethernet Plugin
+
+Active Package(s)

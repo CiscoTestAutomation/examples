@@ -1,0 +1,20 @@
+# Datafile Schema
+# ---------------
+
+common_setup:
+    ospf_1: '100'
+    ospf_2: '200'
+    area_id: '0.0.0.0'
+    verify_timer_1: 90
+    verify_timer_2: 90
+    log_adjacency_changes: True
+    nsf: 'cisco'
+    nsr: True
+    auto_cost_ref_bw: 1000
+    vrf_name: 'test'
+
+testcases:
+    Modify:
+        ospf_2: '200'
+        auto_cost_ref_bw: 10
+

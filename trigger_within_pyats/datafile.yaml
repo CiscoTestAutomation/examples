@@ -1,0 +1,59 @@
+#####################################################
+# Datafile driving pyATS Testcases                  #
+# and driving the Genie Triggers and Verifications  #
+#####################################################
+
+testcases:
+  # Trigger name, has to match the one in the testscript
+  TriggerSleep:
+    # Giving it a group (Optional)
+    groups: ['sleep']
+    # Those are the parameters needed for the trigger.
+    # To know which one are needed
+    # Take a look in the Trigger_datafile provided with
+    # Genie.
+    parameters:
+      sleep_time: 5
+      message_time: 3
+
+  # Verification name, has to match the one in the testscript
+  Verify_BgpVrfAllAll_1:
+    # As we are using Template for verification we only need to mention
+    # which parser or Ops object we want to use via parameters
+    parameters:
+      source:
+        class: genie.harness.base.Template
+      cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpProcessVrfAll
+
+  # Verification name, has to match the one in the testscript
+  Verify_BgpVrfAllAll_2:
+    # As we are using Template for verification we only need to mention
+    # which parser or Ops object we want to use via parameters
+    parameters:
+      source:
+        class: genie.harness.base.Template
+      cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpProcessVrfAll
+
+  # Verification name, has to match the one in the testscript
+  Verify_BgpVrfAllAll_3:
+    # As we are using Template for verification we only need to mention
+    # which parser or Ops object we want to use via parameters
+    parameters:
+      source:
+        class: genie.harness.base.Template
+      cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpProcessVrfAll
+
+  TriggerShutNoShutBgp:
+    parameters:
+       timeout:
+         max_time: 180
+         interval: 10
+       tgn_timeout: 300
+       tgn_delay: 10
+       tgn_max_outage: 120
