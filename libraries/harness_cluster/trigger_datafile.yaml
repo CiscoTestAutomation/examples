@@ -1,0 +1,12 @@
+extends: '%ENV{VIRTUAL_ENV}/genie_yamls/nxos/trigger_datafile_nxos.yaml'
+
+TriggerCluster:
+    sub_verifications: ['Verify_BgpVrfAllAll']
+    sub_triggers: [ 'TriggerSleep', 'TriggerShutNoShutBgp']
+    sub_order: ['TriggerSleep', 'Verify_BgpVrfAllAll', 'TriggerSleep', 'TriggerShutNoShutBgp', 'Verify_BgpVrfAllAll']
+    devices: ['uut']
+
+TriggerCluster2:
+    sub_verifications: ['Verify_BgpVrfAllAll']
+    sub_triggers: [ 'TriggerSleep', 'TriggerShutNoShutBgp']
+    devices: ['uut']

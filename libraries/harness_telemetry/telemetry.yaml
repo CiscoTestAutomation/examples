@@ -1,0 +1,11 @@
+plugins:
+    crashdumps:
+        interval: 30
+        enabled: True
+        module: genie.libs.telemetry.plugins.crashdumps
+        devices: ['csr1000v-1']
+    tracebackcheck:
+        interval: 30
+        enabled: True
+        module: genie.libs.telemetry.plugins.tracebackcheck
+        devices: ['csr1000v-1']

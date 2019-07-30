@@ -1,0 +1,1986 @@
+
+2018-04-09T14:33:24: %UNICON-INFO: +++ initializing context +++
+
+2018-04-09T14:33:24: %UNICON-INFO: +++ initializing state_machine +++
+
+2018-04-09T14:33:24: %UNICON-INFO: +++ initializing services +++
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  disable   :  <unicon.plugins.generic.service_implementation.Disable object at 0xf6dd42ac>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  sendline   :  <unicon.plugins.generic.service_implementation.Sendline object at 0xf6dd42ec>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  expect   :  <unicon.plugins.generic.service_implementation.Expect object at 0xf6dd436c>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  shellexec   :  <unicon.plugins.nxos.service_implementation.ShellExec object at 0xf6dd43ec>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  ping6   :  <unicon.plugins.nxos.service_implementation.Ping6 object at 0xf6dd446c>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  execute   :  <unicon.plugins.generic.service_implementation.Execute object at 0xf6dd454c>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  expect_log   :  <unicon.plugins.generic.service_implementation.ExpectLogging object at 0xf6dd45cc>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  switchto   :  <unicon.plugins.nxos.service_implementation.SwitchVdc object at 0xf6dd464c>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  attach_console   :  <unicon.plugins.nxos.service_implementation.AttachModuleConsole object at 0xf6dd46cc>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  configure   :  <unicon.plugins.generic.service_implementation.Configure object at 0xf6dd474c>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  create_vdc   :  <unicon.plugins.nxos.service_implementation.CreateVdc object at 0xf6dd47cc>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  send   :  <unicon.plugins.generic.service_implementation.Send object at 0xf6dd484c>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  log_user   :  <unicon.plugins.generic.service_implementation.LogUser object at 0xf6dd48cc>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  list_vdc   :  <unicon.plugins.nxos.service_implementation.ListVdc object at 0xf6dd494c>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  copy   :  <unicon.plugins.generic.service_implementation.Copy object at 0xf6dd49cc>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  ping   :  <unicon.plugins.generic.service_implementation.Ping object at 0xf6dd4a8c>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  reload   :  <unicon.plugins.nxos.service_implementation.Reload object at 0xf6dd4b8c>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  bash_console   :  <unicon.plugins.nxos.service_implementation.BashService object at 0xf6dd4c2c>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  enable   :  <unicon.plugins.generic.service_implementation.Enable object at 0xf6dd4cec>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  switchback   :  <unicon.plugins.nxos.service_implementation.SwitchbackVdc object at 0xf6dd4d6c>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  config   :  <unicon.plugins.generic.service_implementation.Config object at 0xf6dd4dec>
+
+2018-04-09T14:33:24: %UNICON-INFO: adding service  delete_vdc   :  <unicon.plugins.nxos.service_implementation.DeleteVdc object at 0xf6dd4e6c>
+
+2018-04-09T14:33:24: %UNICON-INFO: connection to nx-osv-1
+
+2018-04-09T14:33:24: %UNICON-INFO: +++ connection to spawn_command: telnet 172.25.192.90 17018, id: 4141728428 +++
+
+2018-04-09T14:33:24: %UNICON-INFO: telnet 172.25.192.90 17018
+Trying 172.25.192.90...
+Connected to 172.25.192.90.
+Escape character is '^]'.
+
+nx-osv-1# 
+2018-04-09T14:33:24: %UNICON-INFO: +++ initializing handle +++
+
+2018-04-09T14:33:24: %UNICON-INFO: +++ execute  +++
+term length 0
+nx-osv-1# 
+2018-04-09T14:33:24: %UNICON-INFO: +++ execute  +++
+term width 511
+nx-osv-1# 
+2018-04-09T14:33:24: %UNICON-INFO: +++ execute  +++
+terminal session-timeout 0
+nx-osv-1# 
+2018-04-09T14:33:24: %UNICON-INFO: +++ config  +++
+config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+nx-osv-1(config)# no logging console
+nx-osv-1(config)# line console
+nx-osv-1(config-console)# exec-timeout 0
+nx-osv-1(config-console)# terminal width 511
+nx-osv-1(config-console)# end
+nx-osv-1# 
+2018-04-09T14:33:25: %UNICON-INFO: Attaching  all Subcommands
+
+2018-04-09T14:33:25: %UNICON-INFO: +++ initializing context +++
+
+2018-04-09T14:33:25: %UNICON-INFO: +++ initializing state_machine +++
+
+2018-04-09T14:33:25: %UNICON-INFO: +++ initializing services +++
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  disable   :  <unicon.plugins.generic.service_implementation.Disable object at 0xf6de758c>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  sendline   :  <unicon.plugins.generic.service_implementation.Sendline object at 0xf6de75ec>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  expect   :  <unicon.plugins.generic.service_implementation.Expect object at 0xf6de768c>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  execute   :  <unicon.plugins.iosxe.service_implementation.Execute object at 0xf6de76cc>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  expect_log   :  <unicon.plugins.generic.service_implementation.ExpectLogging object at 0xf6de770c>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  ping   :  <unicon.plugins.generic.service_implementation.Ping object at 0xf6de774c>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  reload   :  <unicon.plugins.generic.service_implementation.Reload object at 0xf6de77ac>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  copy   :  <unicon.plugins.generic.service_implementation.Copy object at 0xf6de782c>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  enable   :  <unicon.plugins.generic.service_implementation.Enable object at 0xf6de78ac>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  configure   :  <unicon.plugins.iosxe.service_implementation.Configure object at 0xf6de790c>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  config   :  <unicon.plugins.iosxe.service_implementation.Config object at 0xf6de798c>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  send   :  <unicon.plugins.generic.service_implementation.Send object at 0xf6de7a0c>
+
+2018-04-09T14:33:25: %UNICON-INFO: adding service  log_user   :  <unicon.plugins.generic.service_implementation.LogUser object at 0xf6de7a8c>
+
+2018-04-09T14:33:25: %UNICON-INFO: connection to csr1000v-1
+
+2018-04-09T14:33:25: %UNICON-INFO: +++ connection to spawn_command: telnet 172.25.192.90 17020, id: 4141776844 +++
+
+2018-04-09T14:33:25: %UNICON-INFO: telnet 172.25.192.90 17020
+Trying 172.25.192.90...
+Connected to 172.25.192.90.
+Escape character is '^]'.
+
+csr1000v-1#
+2018-04-09T14:33:25: %UNICON-INFO: +++ initializing handle +++
+
+2018-04-09T14:33:25: %UNICON-INFO: +++ execute  +++
+term length 0
+csr1000v-1#
+2018-04-09T14:33:25: %UNICON-INFO: +++ execute  +++
+term width 0
+csr1000v-1#
+2018-04-09T14:33:25: %UNICON-INFO: +++ execute  +++
+show version
+Cisco IOS XE Software, Version 16.06.01
+Cisco IOS Software [Everest], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 16.6.1, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2017 by Cisco Systems, Inc.
+Compiled Sat 22-Jul-17 05:51 by mcpre
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2017 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: IOS-XE ROMMON
+
+csr1000v-1 uptime is 3 days, 23 hours, 37 minutes
+Uptime for this control processor is 3 days, 23 hours, 39 minutes
+System returned to ROM by reload
+System image file is "bootflash:packages.conf"
+Last reload reason: Unknown reason
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+License Level: ax
+License Type: Default. No valid license found.
+Next reload license Level: ax
+
+cisco CSR1000V (VXE) processor (revision VXE) with 1225511K/3075K bytes of memory.
+Processor board ID 9D9Z5P3MOQO
+3 Gigabit Ethernet interfaces
+32768K bytes of non-volatile configuration memory.
+3018776K bytes of physical memory.
+16162815K bytes of virtual hard disk at bootflash:.
+0K bytes of WebUI ODM Files at webui:.
+
+Configuration register is 0x2102
+
+csr1000v-1#
+2018-04-09T14:33:25: %UNICON-INFO: +++ config  +++
+config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+csr1000v-1(config)#no logging console
+csr1000v-1(config)#line console 0
+csr1000v-1(config-line)#exec-timeout 0
+csr1000v-1(config-line)#end
+csr1000v-1#
+2018-04-09T14:33:26: %UNICON-INFO: Attaching  all Subcommands
+
+2018-04-09T14:33:35: %UNICON-INFO: +++ execute  +++
+show ip ospf database summary detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+nx-osv-1# 
+2018-04-09T14:33:35: %UNICON-INFO: +++ execute  +++
+show ip ospf virtual-links vrf all
+nx-osv-1# 
+2018-04-09T14:33:35: %UNICON-INFO: +++ execute  +++
+show ip ospf interface vrf all
+ Ethernet2/1 is up, line protocol is up
+    IP address 10.0.1.2/24
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State BDR, Network type BROADCAST, cost 40
+    Index 2, Transmit delay 1 sec, Router Priority 1
+    Designated Router ID: 10.1.1.1, address: 10.0.1.1
+    Backup Designated Router ID: 10.2.2.2, address: 10.0.1.2
+    1 Neighbors, flooding to 1, adjacent with 1
+    Timer intervals: Hello 10, Dead 40, Wait 40, Retransmit 5
+      Hello timer due in 00:00:04
+    No authentication
+    Number of opaque link LSAs: 0, checksum sum 0
+ Ethernet2/2 is up, line protocol is up
+    IP address 10.0.2.2/24
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State BDR, Network type BROADCAST, cost 40
+    Index 3, Transmit delay 1 sec, Router Priority 1
+    Designated Router ID: 10.1.1.1, address: 10.0.2.1
+    Backup Designated Router ID: 10.2.2.2, address: 10.0.2.2
+    1 Neighbors, flooding to 1, adjacent with 1
+    Timer intervals: Hello 10, Dead 40, Wait 40, Retransmit 5
+      Hello timer due in 00:00:02
+    No authentication
+    Number of opaque link LSAs: 0, checksum sum 0
+ loopback0 is up, line protocol is up
+    IP address 10.2.2.2/32
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State LOOPBACK, Network type LOOPBACK, cost 1
+    Index 1
+
+nx-osv-1# 
+2018-04-09T14:33:35: %UNICON-INFO: +++ execute  +++
+show ip ospf database network detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+                Network Link States (Area 0.0.0.0)
+
+   LS age: 1308
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Network Links
+   Link State ID: 10.0.1.1 (Designated Router address)
+   Advertising Router: 10.1.1.1
+   LS Seq Number: 0x80000009
+   Checksum: 0xa655
+   Length: 32
+   Network Mask: /24
+         Attached Router: 10.1.1.1
+         Attached Router: 10.2.2.2
+
+   LS age: 43
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Network Links
+   Link State ID: 10.0.2.1 (Designated Router address)
+   Advertising Router: 10.1.1.1
+   LS Seq Number: 0x80000006
+   Checksum: 0xa15c
+   Length: 32
+   Network Mask: /24
+         Attached Router: 10.1.1.1
+         Attached Router: 10.2.2.2
+
+
+nx-osv-1# 
+2018-04-09T14:33:36: %UNICON-INFO: +++ execute  +++
+show ip ospf database external detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+nx-osv-1# 
+2018-04-09T14:33:36: %UNICON-INFO: +++ execute  +++
+show ip ospf vrf all
+
+ Routing Process 1 with ID 10.2.2.2 VRF default
+ Routing Process Instance Number 1
+ Stateful High Availability enabled
+ Graceful-restart is configured
+   Grace period: 60 state: Inactive 
+   Last graceful restart exit status: None
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Administrative distance 110
+ Reference Bandwidth is 40000 Mbps
+ SPF throttling delay time of 200.000 msecs,
+   SPF throttling hold time of 1000.000 msecs, 
+   SPF throttling maximum wait time of 5000.000 msecs
+ LSA throttling start time of 0.000 msecs,
+   LSA throttling hold interval of 5000.000 msecs, 
+   LSA throttling maximum wait time of 5000.000 msecs
+ Minimum LSA arrival 1000.000 msec
+ LSA group pacing timer 10 secs
+ Maximum paths to destination 8
+ Number of external LSAs 0, checksum sum 0
+ Number of opaque AS LSAs 0, checksum sum 0
+ Number of areas is 1, 1 normal, 0 stub, 0 nssa
+ Number of active areas is 1, 1 normal, 0 stub, 0 nssa
+ Install discard route for summarized external routes.
+ Install discard route for summarized internal routes.
+   Area BACKBONE(0.0.0.0) 
+        Area has existed for 3d23h
+        Interfaces in this area: 3 Active interfaces: 3
+        Passive interfaces: 0  Loopback interfaces: 1
+        No authentication available
+        SPF calculation has run 98 times
+         Last SPF ran for 0.000225s
+        Area ranges are
+        Number of LSAs: 4, checksum sum 0x2e45f
+nx-osv-1# 
+2018-04-09T14:33:36: %UNICON-INFO: +++ execute  +++
+show feature
+Feature Name         Instance State 
+-------------------- -------- -----
+bfd                  1        disabled
+bfd_app              1        disabled
+bgp                  1        enabled
+bulkstat             1        disabled
+cable-management     1        disabled
+cts                  1        disabled
+dhcp                 1        disabled
+dot1x                1        disabled
+eigrp                1        disabled
+eigrp                2        disabled
+eigrp                3        disabled
+eigrp                4        disabled
+eigrp                5        disabled
+eigrp                6        disabled
+eigrp                7        disabled
+eigrp                8        disabled
+eigrp                9        disabled
+eigrp                10       disabled
+eigrp                11       disabled
+eigrp                12       disabled
+eigrp                13       disabled
+eigrp                14       disabled
+eigrp                15       disabled
+eigrp                16       disabled
+elo                  1        disabled
+eth_port_sec         1        disabled
+evb                  1        disabled
+evc                  1        disabled
+evmed                1        disabled
+fabric-access        1        disabled
+fabric_mcast         1        disabled
+glbp                 1        disabled
+hmm                  1        disabled
+hsrp_engine          1        disabled
+imp                  1        disabled
+interface-vlan       1        disabled
+isis                 1        disabled
+isis                 2        disabled
+isis                 3        disabled
+isis                 4        disabled
+isis                 5        disabled
+isis                 6        disabled
+isis                 7        disabled
+isis                 8        disabled
+isis                 9        disabled
+isis                 10       disabled
+isis                 11       disabled
+isis                 12       disabled
+isis                 13       disabled
+isis                 14       disabled
+isis                 15       disabled
+isis                 16       disabled
+itd                  1        disabled
+l2vpn                1        disabled
+l3vpn                1        disabled
+ldap                 1        disabled
+ldp                  1        disabled
+lisp                 1        disabled
+lldp                 1        disabled
+mpls_te              1        disabled
+msdp                 1        disabled
+msrp                 1        disabled
+mvpn                 1        disabled
+mvrp                 1        disabled
+netflow              1        disabled
+ngoam                1        disabled
+nve                  1        disabled
+nxapi                1        disabled
+onep                 1        disabled
+ospf                 1        enabled
+ospf                 2        enabled (not-running)
+ospf                 3        enabled (not-running)
+ospf                 4        enabled (not-running)
+ospf                 5        enabled (not-running)
+ospf                 6        enabled (not-running)
+ospf                 7        enabled (not-running)
+ospf                 8        enabled (not-running)
+ospf                 9        enabled (not-running)
+ospf                 10       enabled (not-running)
+ospf                 11       enabled (not-running)
+ospf                 12       enabled (not-running)
+ospf                 13       enabled (not-running)
+ospf                 14       enabled (not-running)
+ospf                 15       enabled (not-running)
+ospf                 16       enabled (not-running)
+ospfv3               1        disabled
+ospfv3               2        disabled
+ospfv3               3        disabled
+ospfv3               4        disabled
+ospfv3               5        disabled
+ospfv3               6        disabled
+ospfv3               7        disabled
+ospfv3               8        disabled
+ospfv3               9        disabled
+ospfv3               10       disabled
+ospfv3               11       disabled
+ospfv3               12       disabled
+ospfv3               13       disabled
+ospfv3               14       disabled
+ospfv3               15       disabled
+ospfv3               16       disabled
+otv                  1        disabled
+pbr                  1        disabled
+pim                  1        disabled
+pim6                 1        disabled
+pong                 1        disabled
+private-vlan         1        disabled
+privilege            1        disabled
+ptp                  1        disabled
+rip                  1        disabled
+rip                  2        disabled
+rip                  3        disabled
+rip                  4        disabled
+rise                 1        disabled
+scheduler            1        disabled
+scpServer            1        disabled
+sftpServer           1        disabled
+sla_responder        1        disabled
+sla_sender           1        disabled
+smart-channel        1        disabled
+sshServer            1        enabled
+tacacs               1        disabled
+telnetServer         1        disabled
+tunnel               1        disabled
+vmtracker            1        disabled
+vni                  1        disabled
+vnseg_vlan           1        disabled
+vpc                  1        disabled
+vrrp                 1        disabled
+vrrpv3               1        disabled
+vtp                  1        disabled
+wccp                 1        disabled
+nx-osv-1# 
+2018-04-09T14:33:36: %UNICON-INFO: +++ execute  +++
+show ip ospf database router detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+                Router Link States (Area 0.0.0.0)
+
+   LS age: 43
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Router Links
+   Link State ID: 10.1.1.1 
+   Advertising Router: 10.1.1.1
+   LS Seq Number: 0x800000fa
+   Checksum: 0xb509
+   Length: 60
+    Number of links: 3
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.1.1.1
+      (Link Data) Network Mask: 255.255.255.255
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.2.1
+      (Link Data) Router Interface address: 10.0.2.1
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.1.1
+      (Link Data) Router Interface address: 10.0.1.1
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+   LS age: 912
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Router Links
+   Link State ID: 10.2.2.2 
+   Advertising Router: 10.2.2.2
+   LS Seq Number: 0x800000f2
+   Checksum: 0xe7a5
+   Length: 60
+    Number of links: 3
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.2.2.2
+      (Link Data) Network Mask: 255.255.255.255
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.1.1
+      (Link Data) Router Interface address: 10.0.1.2
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.2.1
+      (Link Data) Router Interface address: 10.0.2.2
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+
+
+nx-osv-1# 
+2018-04-09T14:33:36: %UNICON-INFO: +++ execute  +++
+show ip ospf database opaque-area detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+nx-osv-1# 
+2018-04-09T14:33:36: %UNICON-INFO: +++ execute  +++
+show ip ospf neighbors detail vrf all
+ Neighbor 10.1.1.1, interface address 10.0.1.1
+    Process ID 1 VRF default, in area 0.0.0.0 via interface Ethernet2/1
+    State is FULL, 5 state changes, last change 04:49:34
+    Neighbor priority is 1
+    DR is 10.0.1.1 BDR is 10.0.1.2
+    Hello options 0x12, dbd options 0x52
+    Last non-hello packet received never
+      Dead timer due in 00:00:34
+ Neighbor 10.1.1.1, interface address 10.0.2.1
+    Process ID 1 VRF default, in area 0.0.0.0 via interface Ethernet2/2
+    State is FULL, 5 state changes, last change 02:46:56
+    Neighbor priority is 1
+    DR is 10.0.2.1 BDR is 10.0.2.2
+    Hello options 0x12, dbd options 0x52
+    Last non-hello packet received never
+      Dead timer due in 00:00:33
+
+nx-osv-1# 
+2018-04-09T14:33:36: %UNICON-INFO: +++ execute  +++
+show ip ospf sham-links vrf all
+                        ^
+% Invalid command at '^' marker.
+nx-osv-1# 
+2018-04-09T14:33:36: %UNICON-INFO: +++ execute  +++
+show ip ospf mpls ldp interface vrf all
+loopback0 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State LOOPBACK, Network type LOOPBACK
+Ethernet2/1 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State BDR, Network type BROADCAST
+Ethernet2/2 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State BDR, Network type BROADCAST
+nx-osv-1# 
+2018-04-09T14:33:36: %UNICON-INFO: +++ execute  +++
+show ip ospf database external
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+csr1000v-1#
+2018-04-09T14:33:36: %UNICON-INFO: +++ execute  +++
+show ip ospf database summary
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show ip ospf database router
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+
+		Router Link States (Area 0)
+
+  LS age: 43
+  Options: (No TOS-capability, DC)
+  LS Type: Router Links
+  Link State ID: 10.1.1.1
+  Advertising Router: 10.1.1.1
+  LS Seq Number: 800000FA
+  Checksum: 0xB509
+  Length: 60
+  Number of Links: 3
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 10.1.1.1
+     (Link Data) Network Mask: 255.255.255.255
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 10.0.2.1
+     (Link Data) Router Interface address: 10.0.2.1
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 10.0.1.1
+     (Link Data) Router Interface address: 10.0.1.1
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+
+  LS age: 913
+  Options: (No TOS-capability, No DC)
+  LS Type: Router Links
+  Link State ID: 10.2.2.2
+  Advertising Router: 10.2.2.2
+  LS Seq Number: 800000F2
+  Checksum: 0xE7A5
+  Length: 60
+  Number of Links: 3
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 10.2.2.2
+     (Link Data) Network Mask: 255.255.255.255
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 10.0.1.1
+     (Link Data) Router Interface address: 10.0.1.2
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 40
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 10.0.2.1
+     (Link Data) Router Interface address: 10.0.2.2
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 40
+
+
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show ip ospf sham-links
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show ip ospf database opaque-area
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show ip ospf virtual-links
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show ip ospf mpls ldp interface
+Loopback0
+  Process ID 1, Area 0
+  LDP is not configured through LDP autoconfig
+  LDP-IGP Synchronization : Not required
+  Holddown timer is disabled
+  Interface is up 
+GigabitEthernet3
+  Process ID 1, Area 0
+  LDP is not configured through LDP autoconfig
+  LDP-IGP Synchronization : Not required
+  Holddown timer is disabled
+  Interface is up 
+GigabitEthernet2
+  Process ID 1, Area 0
+  LDP is not configured through LDP autoconfig
+  LDP-IGP Synchronization : Not required
+  Holddown timer is disabled
+  Interface is up 
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show ip ospf
+ Routing Process "ospf 1" with ID 10.1.1.1
+ Start time: 00:02:08.241, Time elapsed: 3d23h
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Supports Link-local Signaling (LLS)
+ Supports area transit capability
+ Supports NSSA (compatible with RFC 3101)
+ Supports Database Exchange Summary List Optimization (RFC 5243)
+ Event-log enabled, Maximum number of events: 1000, Mode: cyclic
+ Router is not originating router-LSAs with maximum metric
+ Initial SPF schedule delay 50 msecs
+ Minimum hold time between two consecutive SPFs 200 msecs
+ Maximum wait time between two consecutive SPFs 5000 msecs
+ Incremental-SPF disabled
+ Initial LSA throttle delay 50 msecs
+ Minimum hold time for LSA throttle 200 msecs
+ Maximum wait time for LSA throttle 5000 msecs
+ Minimum LSA arrival 100 msecs
+ LSA group pacing timer 240 secs
+ Interface flood pacing timer 33 msecs
+ Retransmission pacing timer 66 msecs
+ EXCHANGE/LOADING adjacency limit: initial 300, process maximum 300
+ Number of external LSA 0. Checksum Sum 0x000000
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+ Number of areas transit capable is 0
+ External flood list length 0
+ IETF NSF helper support enabled
+ Cisco NSF helper support enabled
+ Reference bandwidth unit is 100 mbps
+    Area BACKBONE(0)
+        Number of interfaces in this area is 3 (1 loopback)
+	Area has no authentication
+	SPF algorithm last executed 00:03:58.182 ago
+	SPF algorithm executed 143 times
+	Area ranges are
+	Number of LSA 4. Checksum Sum 0x02E45F
+	Number of opaque link LSA 0. Checksum Sum 0x000000
+	Number of DCbitless LSA 1
+	Number of indication LSA 0
+	Number of DoNotAge LSA 0
+	Flood list length 0
+
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show ip ospf neighbor detail
+ Neighbor 10.2.2.2, interface address 10.0.2.2
+    In the area 0 via interface GigabitEthernet3
+    Neighbor priority is 1, State is FULL, 54 state changes
+    DR is 10.0.2.1 BDR is 10.0.2.2
+    Options is 0x2 in Hello (E-bit)
+    Options is 0x42 in DBD (E-bit, O-bit)
+    Dead timer due in 00:00:32
+    Neighbor is up for 02:46:56
+    Index 1/2/2, retransmission queue length 0, number of retransmission 1
+    First 0x0(0)/0x0(0)/0x0(0) Next 0x0(0)/0x0(0)/0x0(0)
+    Last retransmission scan length is 1, maximum is 1
+    Last retransmission scan time is 0 msec, maximum is 0 msec
+ Neighbor 10.2.2.2, interface address 10.0.1.2
+    In the area 0 via interface GigabitEthernet2
+    Neighbor priority is 1, State is FULL, 18 state changes
+    DR is 10.0.1.1 BDR is 10.0.1.2
+    Options is 0x2 in Hello (E-bit)
+    Options is 0x42 in DBD (E-bit, O-bit)
+    Dead timer due in 00:00:33
+    Neighbor is up for 04:49:34
+    Index 1/1/1, retransmission queue length 0, number of retransmission 1
+    First 0x0(0)/0x0(0)/0x0(0) Next 0x0(0)/0x0(0)/0x0(0)
+    Last retransmission scan length is 1, maximum is 1
+    Last retransmission scan time is 0 msec, maximum is 0 msec
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show ip ospf interface | section GigabitEthernet3
+GigabitEthernet3 is up, line protocol is up 
+  Internet Address 10.0.2.1/24, Interface ID 9, Area 0
+  Attached via Interface Enable
+  Process ID 1, Router ID 10.1.1.1, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Enabled by interface config, including secondary ip addresses
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 10.1.1.1, Interface address 10.0.2.1
+  Backup Designated router (ID) 10.2.2.2, Interface address 10.0.2.2
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:08
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/3/3, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 2, maximum is 2
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 10.2.2.2  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show ip ospf interface | section GigabitEthernet2
+GigabitEthernet2 is up, line protocol is up 
+  Internet Address 10.0.1.1/24, Interface ID 8, Area 0
+  Attached via Interface Enable
+  Process ID 1, Router ID 10.1.1.1, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Enabled by interface config, including secondary ip addresses
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 10.1.1.1, Interface address 10.0.1.1
+  Backup Designated router (ID) 10.2.2.2, Interface address 10.0.1.2
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:03
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 2, maximum is 2
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 10.2.2.2  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "application"
+  Sending updates every 0 seconds
+  Invalid after 0 seconds, hold down 0, flushed after 0
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Maximum path: 32
+  Routing for Networks:
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 4)
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 10.1.1.1
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+  Routing on Interfaces Configured Explicitly (Area 0):
+    Loopback0
+    GigabitEthernet3
+    GigabitEthernet2
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    10.2.2.2             110      00:03:58
+  Distance: (default is 110)
+
+Routing Protocol is "bgp 65000"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  IGP synchronization is disabled
+  Automatic route summarization is disabled
+  Neighbor(s):
+    Address          FiltIn FiltOut DistIn DistOut Weight RouteMap
+    10.2.2.2                                             
+  Maximum path: 1
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    10.2.2.2             200      00:03:58
+  Distance: external 20 internal 200 local 200
+
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:37: %UNICON-INFO: +++ execute  +++
+show ip ospf database network
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+
+		Net Link States (Area 0)
+
+  LS age: 1308
+  Options: (No TOS-capability, DC)
+  LS Type: Network Links
+  Link State ID: 10.0.1.1 (address of Designated Router)
+  Advertising Router: 10.1.1.1
+  LS Seq Number: 80000009
+  Checksum: 0xA655
+  Length: 32
+  Network Mask: /24
+	Attached Router: 10.1.1.1
+	Attached Router: 10.2.2.2
+
+  LS age: 44
+  Options: (No TOS-capability, DC)
+  LS Type: Network Links
+  Link State ID: 10.0.2.1 (address of Designated Router)
+  Advertising Router: 10.1.1.1
+  LS Seq Number: 80000006
+  Checksum: 0xA15C
+  Length: 32
+  Network Mask: /24
+	Attached Router: 10.1.1.1
+	Attached Router: 10.2.2.2
+
+csr1000v-1#
+2018-04-09T14:33:38: %UNICON-INFO: +++ execute  +++
+show ip ospf interface
+Loopback0 is up, line protocol is up 
+  Internet Address 10.1.1.1/32, Interface ID 11, Area 0
+  Attached via Interface Enable
+  Process ID 1, Router ID 10.1.1.1, Network Type LOOPBACK, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Enabled by interface config, including secondary ip addresses
+  Loopback interface is treated as a stub Host
+GigabitEthernet3 is up, line protocol is up 
+  Internet Address 10.0.2.1/24, Interface ID 9, Area 0
+  Attached via Interface Enable
+  Process ID 1, Router ID 10.1.1.1, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Enabled by interface config, including secondary ip addresses
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 10.1.1.1, Interface address 10.0.2.1
+  Backup Designated router (ID) 10.2.2.2, Interface address 10.0.2.2
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:08
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/3/3, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 2, maximum is 2
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 10.2.2.2  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+GigabitEthernet2 is up, line protocol is up 
+  Internet Address 10.0.1.1/24, Interface ID 8, Area 0
+  Attached via Interface Enable
+  Process ID 1, Router ID 10.1.1.1, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Enabled by interface config, including secondary ip addresses
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 10.1.1.1, Interface address 10.0.1.1
+  Backup Designated router (ID) 10.2.2.2, Interface address 10.0.1.2
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:02
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 2, maximum is 2
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 10.2.2.2  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+csr1000v-1#
+2018-04-09T14:33:38: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:38: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:38: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:38: %UNICON-INFO: +++ execute  +++
+show ip ospf mpls traffic-eng link
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+
+  Area 0 MPLS TE not initialized
+csr1000v-1#
+2018-04-09T14:33:38: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#Applying configuration for Device nx-osv-1 (alias=uut), type NX-OSv 9000
+
+2018-04-09T14:33:38: %UNICON-INFO: +++ config  +++
+config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+nx-osv-1(config)# router ospf 9
+nx-osv-1(config-router)#  router-id 9.9.9.1
+nx-osv-1(config-router)#  exit
+nx-osv-1(config)# end
+nx-osv-1# Applying configuration for Device csr1000v-1 (alias=helper), type asr1k
+
+2018-04-09T14:33:43: %UNICON-INFO: +++ config  +++
+config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+csr1000v-1(config)#router ospf 9
+csr1000v-1(config-router)# router-id 9.9.9.2
+csr1000v-1(config-router)# exit
+csr1000v-1(config)#end
+csr1000v-1#
+2018-04-09T14:33:43: %UNICON-INFO: +++ execute  +++
+show ip ospf database summary detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+        OSPF Router with ID (9.9.9.1) (Process ID 9 VRF default)
+
+nx-osv-1# 
+2018-04-09T14:33:43: %UNICON-INFO: +++ execute  +++
+show ip ospf virtual-links vrf all
+nx-osv-1# 
+2018-04-09T14:33:43: %UNICON-INFO: +++ execute  +++
+show ip ospf interface vrf all
+ Ethernet2/1 is up, line protocol is up
+    IP address 10.0.1.2/24
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State BDR, Network type BROADCAST, cost 40
+    Index 2, Transmit delay 1 sec, Router Priority 1
+    Designated Router ID: 10.1.1.1, address: 10.0.1.1
+    Backup Designated Router ID: 10.2.2.2, address: 10.0.1.2
+    1 Neighbors, flooding to 1, adjacent with 1
+    Timer intervals: Hello 10, Dead 40, Wait 40, Retransmit 5
+      Hello timer due in 00:00:04
+    No authentication
+    Number of opaque link LSAs: 0, checksum sum 0
+ Ethernet2/2 is up, line protocol is up
+    IP address 10.0.2.2/24
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State BDR, Network type BROADCAST, cost 40
+    Index 3, Transmit delay 1 sec, Router Priority 1
+    Designated Router ID: 10.1.1.1, address: 10.0.2.1
+    Backup Designated Router ID: 10.2.2.2, address: 10.0.2.2
+    1 Neighbors, flooding to 1, adjacent with 1
+    Timer intervals: Hello 10, Dead 40, Wait 40, Retransmit 5
+      Hello timer due in 00:00:02
+    No authentication
+    Number of opaque link LSAs: 0, checksum sum 0
+ loopback0 is up, line protocol is up
+    IP address 10.2.2.2/32
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State LOOPBACK, Network type LOOPBACK, cost 1
+    Index 1
+
+nx-osv-1# 
+2018-04-09T14:33:43: %UNICON-INFO: +++ execute  +++
+show ip ospf database network detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+                Network Link States (Area 0.0.0.0)
+
+   LS age: 1315
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Network Links
+   Link State ID: 10.0.1.1 (Designated Router address)
+   Advertising Router: 10.1.1.1
+   LS Seq Number: 0x80000009
+   Checksum: 0xa655
+   Length: 32
+   Network Mask: /24
+         Attached Router: 10.1.1.1
+         Attached Router: 10.2.2.2
+
+   LS age: 51
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Network Links
+   Link State ID: 10.0.2.1 (Designated Router address)
+   Advertising Router: 10.1.1.1
+   LS Seq Number: 0x80000006
+   Checksum: 0xa15c
+   Length: 32
+   Network Mask: /24
+         Attached Router: 10.1.1.1
+         Attached Router: 10.2.2.2
+
+
+        OSPF Router with ID (9.9.9.1) (Process ID 9 VRF default)
+
+nx-osv-1# 
+2018-04-09T14:33:43: %UNICON-INFO: +++ execute  +++
+show ip ospf database external detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+        OSPF Router with ID (9.9.9.1) (Process ID 9 VRF default)
+
+nx-osv-1# 
+2018-04-09T14:33:43: %UNICON-INFO: +++ execute  +++
+show ip ospf vrf all
+
+ Routing Process 1 with ID 10.2.2.2 VRF default
+ Routing Process Instance Number 1
+ Stateful High Availability enabled
+ Graceful-restart is configured
+   Grace period: 60 state: Inactive 
+   Last graceful restart exit status: None
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Administrative distance 110
+ Reference Bandwidth is 40000 Mbps
+ SPF throttling delay time of 200.000 msecs,
+   SPF throttling hold time of 1000.000 msecs, 
+   SPF throttling maximum wait time of 5000.000 msecs
+ LSA throttling start time of 0.000 msecs,
+   LSA throttling hold interval of 5000.000 msecs, 
+   LSA throttling maximum wait time of 5000.000 msecs
+ Minimum LSA arrival 1000.000 msec
+ LSA group pacing timer 10 secs
+ Maximum paths to destination 8
+ Number of external LSAs 0, checksum sum 0
+ Number of opaque AS LSAs 0, checksum sum 0
+ Number of areas is 1, 1 normal, 0 stub, 0 nssa
+ Number of active areas is 1, 1 normal, 0 stub, 0 nssa
+ Install discard route for summarized external routes.
+ Install discard route for summarized internal routes.
+   Area BACKBONE(0.0.0.0) 
+        Area has existed for 3d23h
+        Interfaces in this area: 3 Active interfaces: 3
+        Passive interfaces: 0  Loopback interfaces: 1
+        No authentication available
+        SPF calculation has run 98 times
+         Last SPF ran for 0.000225s
+        Area ranges are
+        Number of LSAs: 4, checksum sum 0x2e45f
+
+ Routing Process 9 with ID 9.9.9.1 VRF default
+ Routing Process Instance Number 2
+ Stateful High Availability enabled
+ Graceful-restart is configured
+   Grace period: 60 state: Inactive 
+   Last graceful restart exit status: None
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Administrative distance 110
+ Reference Bandwidth is 40000 Mbps
+ SPF throttling delay time of 200.000 msecs,
+   SPF throttling hold time of 1000.000 msecs, 
+   SPF throttling maximum wait time of 5000.000 msecs
+ LSA throttling start time of 0.000 msecs,
+   LSA throttling hold interval of 5000.000 msecs, 
+   LSA throttling maximum wait time of 5000.000 msecs
+ Minimum LSA arrival 1000.000 msec
+ LSA group pacing timer 10 secs
+ Maximum paths to destination 8
+ Number of external LSAs 0, checksum sum 0
+ Number of opaque AS LSAs 0, checksum sum 0
+ Number of areas is 0, 0 normal, 0 stub, 0 nssa
+ Number of active areas is 0, 0 normal, 0 stub, 0 nssa
+ Install discard route for summarized external routes.
+ Install discard route for summarized internal routes.
+nx-osv-1# 
+2018-04-09T14:33:43: %UNICON-INFO: +++ execute  +++
+show feature
+Feature Name         Instance State 
+-------------------- -------- -----
+bfd                  1        disabled
+bfd_app              1        disabled
+bgp                  1        enabled
+bulkstat             1        disabled
+cable-management     1        disabled
+cts                  1        disabled
+dhcp                 1        disabled
+dot1x                1        disabled
+eigrp                1        disabled
+eigrp                2        disabled
+eigrp                3        disabled
+eigrp                4        disabled
+eigrp                5        disabled
+eigrp                6        disabled
+eigrp                7        disabled
+eigrp                8        disabled
+eigrp                9        disabled
+eigrp                10       disabled
+eigrp                11       disabled
+eigrp                12       disabled
+eigrp                13       disabled
+eigrp                14       disabled
+eigrp                15       disabled
+eigrp                16       disabled
+elo                  1        disabled
+eth_port_sec         1        disabled
+evb                  1        disabled
+evc                  1        disabled
+evmed                1        disabled
+fabric-access        1        disabled
+fabric_mcast         1        disabled
+glbp                 1        disabled
+hmm                  1        disabled
+hsrp_engine          1        disabled
+imp                  1        disabled
+interface-vlan       1        disabled
+isis                 1        disabled
+isis                 2        disabled
+isis                 3        disabled
+isis                 4        disabled
+isis                 5        disabled
+isis                 6        disabled
+isis                 7        disabled
+isis                 8        disabled
+isis                 9        disabled
+isis                 10       disabled
+isis                 11       disabled
+isis                 12       disabled
+isis                 13       disabled
+isis                 14       disabled
+isis                 15       disabled
+isis                 16       disabled
+itd                  1        disabled
+l2vpn                1        disabled
+l3vpn                1        disabled
+ldap                 1        disabled
+ldp                  1        disabled
+lisp                 1        disabled
+lldp                 1        disabled
+mpls_te              1        disabled
+msdp                 1        disabled
+msrp                 1        disabled
+mvpn                 1        disabled
+mvrp                 1        disabled
+netflow              1        disabled
+ngoam                1        disabled
+nve                  1        disabled
+nxapi                1        disabled
+onep                 1        disabled
+ospf                 1        enabled
+ospf                 2        enabled
+ospf                 3        enabled (not-running)
+ospf                 4        enabled (not-running)
+ospf                 5        enabled (not-running)
+ospf                 6        enabled (not-running)
+ospf                 7        enabled (not-running)
+ospf                 8        enabled (not-running)
+ospf                 9        enabled (not-running)
+ospf                 10       enabled (not-running)
+ospf                 11       enabled (not-running)
+ospf                 12       enabled (not-running)
+ospf                 13       enabled (not-running)
+ospf                 14       enabled (not-running)
+ospf                 15       enabled (not-running)
+ospf                 16       enabled (not-running)
+ospfv3               1        disabled
+ospfv3               2        disabled
+ospfv3               3        disabled
+ospfv3               4        disabled
+ospfv3               5        disabled
+ospfv3               6        disabled
+ospfv3               7        disabled
+ospfv3               8        disabled
+ospfv3               9        disabled
+ospfv3               10       disabled
+ospfv3               11       disabled
+ospfv3               12       disabled
+ospfv3               13       disabled
+ospfv3               14       disabled
+ospfv3               15       disabled
+ospfv3               16       disabled
+otv                  1        disabled
+pbr                  1        disabled
+pim                  1        disabled
+pim6                 1        disabled
+pong                 1        disabled
+private-vlan         1        disabled
+privilege            1        disabled
+ptp                  1        disabled
+rip                  1        disabled
+rip                  2        disabled
+rip                  3        disabled
+rip                  4        disabled
+rise                 1        disabled
+scheduler            1        disabled
+scpServer            1        disabled
+sftpServer           1        disabled
+sla_responder        1        disabled
+sla_sender           1        disabled
+smart-channel        1        disabled
+sshServer            1        enabled
+tacacs               1        disabled
+telnetServer         1        disabled
+tunnel               1        disabled
+vmtracker            1        disabled
+vni                  1        disabled
+vnseg_vlan           1        disabled
+vpc                  1        disabled
+vrrp                 1        disabled
+vrrpv3               1        disabled
+vtp                  1        disabled
+wccp                 1        disabled
+nx-osv-1# 
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf database router detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+                Router Link States (Area 0.0.0.0)
+
+   LS age: 51
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Router Links
+   Link State ID: 10.1.1.1 
+   Advertising Router: 10.1.1.1
+   LS Seq Number: 0x800000fa
+   Checksum: 0xb509
+   Length: 60
+    Number of links: 3
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.1.1.1
+      (Link Data) Network Mask: 255.255.255.255
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.2.1
+      (Link Data) Router Interface address: 10.0.2.1
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.1.1
+      (Link Data) Router Interface address: 10.0.1.1
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+   LS age: 919
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Router Links
+   Link State ID: 10.2.2.2 
+   Advertising Router: 10.2.2.2
+   LS Seq Number: 0x800000f2
+   Checksum: 0xe7a5
+   Length: 60
+    Number of links: 3
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.2.2.2
+      (Link Data) Network Mask: 255.255.255.255
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.1.1
+      (Link Data) Router Interface address: 10.0.1.2
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.2.1
+      (Link Data) Router Interface address: 10.0.2.2
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+
+
+        OSPF Router with ID (9.9.9.1) (Process ID 9 VRF default)
+
+nx-osv-1# 
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf database opaque-area detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+        OSPF Router with ID (9.9.9.1) (Process ID 9 VRF default)
+
+nx-osv-1# 
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf neighbors detail vrf all
+ Neighbor 10.1.1.1, interface address 10.0.1.1
+    Process ID 1 VRF default, in area 0.0.0.0 via interface Ethernet2/1
+    State is FULL, 5 state changes, last change 04:49:42
+    Neighbor priority is 1
+    DR is 10.0.1.1 BDR is 10.0.1.2
+    Hello options 0x12, dbd options 0x52
+    Last non-hello packet received never
+      Dead timer due in 00:00:39
+ Neighbor 10.1.1.1, interface address 10.0.2.1
+    Process ID 1 VRF default, in area 0.0.0.0 via interface Ethernet2/2
+    State is FULL, 5 state changes, last change 02:47:04
+    Neighbor priority is 1
+    DR is 10.0.2.1 BDR is 10.0.2.2
+    Hello options 0x12, dbd options 0x52
+    Last non-hello packet received never
+      Dead timer due in 00:00:32
+
+nx-osv-1# 
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf sham-links vrf all
+                        ^
+% Invalid command at '^' marker.
+nx-osv-1# 
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf mpls ldp interface vrf all
+loopback0 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State LOOPBACK, Network type LOOPBACK
+Ethernet2/1 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State BDR, Network type BROADCAST
+Ethernet2/2 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State BDR, Network type BROADCAST
+nx-osv-1# Found some difference for device Device nx-osv-1 (alias=uut), type NX-OSv 9000
+info:
+ vrf:
+  default:
+   address_family:
+    ipv4:
+     instance:
++      9: 
++       auto_cost: 
++        enable: False
++        reference_bandwidth: 40000
++       graceful_restart: 
++        ietf: 
++         enable: True
++         restart_interval: 60
++         type: ietf
++       nsr: 
++        enable: True
++       preference: 
++        single_value: 
++         all: 110
++       router_id: 9.9.9.1
++       spf_control: 
++        paths: 8
++        throttle: 
++         lsa: 
++          hold: 5000
++          maximum: 5000
++          start: 0
++         spf: 
++          hold: 1000
++          maximum: 5000
++          start: 200
+
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf database external
+
+            OSPF Router with ID (9.9.9.2) (Process ID 9)
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+csr1000v-1#
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf database summary
+
+            OSPF Router with ID (9.9.9.2) (Process ID 9)
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+csr1000v-1#
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf database router
+
+            OSPF Router with ID (9.9.9.2) (Process ID 9)
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+
+		Router Link States (Area 0)
+
+  LS age: 51
+  Options: (No TOS-capability, DC)
+  LS Type: Router Links
+  Link State ID: 10.1.1.1
+  Advertising Router: 10.1.1.1
+  LS Seq Number: 800000FA
+  Checksum: 0xB509
+  Length: 60
+  Number of Links: 3
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 10.1.1.1
+     (Link Data) Network Mask: 255.255.255.255
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 10.0.2.1
+     (Link Data) Router Interface address: 10.0.2.1
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 10.0.1.1
+     (Link Data) Router Interface address: 10.0.1.1
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+
+  LS age: 921
+  Options: (No TOS-capability, No DC)
+  LS Type: Router Links
+  Link State ID: 10.2.2.2
+  Advertising Router: 10.2.2.2
+  LS Seq Number: 800000F2
+  Checksum: 0xE7A5
+  Length: 60
+  Number of Links: 3
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 10.2.2.2
+     (Link Data) Network Mask: 255.255.255.255
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 10.0.1.1
+     (Link Data) Router Interface address: 10.0.1.2
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 40
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 10.0.2.1
+     (Link Data) Router Interface address: 10.0.2.2
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 40
+
+
+csr1000v-1#
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf sham-links
+csr1000v-1#
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf database opaque-area
+
+            OSPF Router with ID (9.9.9.2) (Process ID 9)
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+csr1000v-1#
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf virtual-links
+csr1000v-1#
+2018-04-09T14:33:44: %UNICON-INFO: +++ execute  +++
+show ip ospf mpls ldp interface
+Loopback0
+  Process ID 1, Area 0
+  LDP is not configured through LDP autoconfig
+  LDP-IGP Synchronization : Not required
+  Holddown timer is disabled
+  Interface is up 
+GigabitEthernet3
+  Process ID 1, Area 0
+  LDP is not configured through LDP autoconfig
+  LDP-IGP Synchronization : Not required
+  Holddown timer is disabled
+  Interface is up 
+GigabitEthernet2
+  Process ID 1, Area 0
+  LDP is not configured through LDP autoconfig
+  LDP-IGP Synchronization : Not required
+  Holddown timer is disabled
+  Interface is up 
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show ip ospf
+ Routing Process "ospf 9" with ID 9.9.9.2
+ Start time: 3d23h, Time elapsed: 00:00:01.689
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Supports Link-local Signaling (LLS)
+ Supports area transit capability
+ Supports NSSA (compatible with RFC 3101)
+ Supports Database Exchange Summary List Optimization (RFC 5243)
+ Event-log enabled, Maximum number of events: 1000, Mode: cyclic
+ Router is not originating router-LSAs with maximum metric
+ Initial SPF schedule delay 50 msecs
+ Minimum hold time between two consecutive SPFs 200 msecs
+ Maximum wait time between two consecutive SPFs 5000 msecs
+ Incremental-SPF disabled
+ Initial LSA throttle delay 50 msecs
+ Minimum hold time for LSA throttle 200 msecs
+ Maximum wait time for LSA throttle 5000 msecs
+ Minimum LSA arrival 100 msecs
+ LSA group pacing timer 240 secs
+ Interface flood pacing timer 33 msecs
+ Retransmission pacing timer 66 msecs
+ EXCHANGE/LOADING adjacency limit: initial 300, process maximum 300
+ Number of external LSA 0. Checksum Sum 0x000000
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 0. 0 normal 0 stub 0 nssa
+ Number of areas transit capable is 0
+ External flood list length 0
+ IETF NSF helper support enabled
+ Cisco NSF helper support enabled
+ Reference bandwidth unit is 100 mbps
+
+ Routing Process "ospf 1" with ID 10.1.1.1
+ Start time: 00:02:08.241, Time elapsed: 3d23h
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Supports Link-local Signaling (LLS)
+ Supports area transit capability
+ Supports NSSA (compatible with RFC 3101)
+ Supports Database Exchange Summary List Optimization (RFC 5243)
+ Event-log enabled, Maximum number of events: 1000, Mode: cyclic
+ Router is not originating router-LSAs with maximum metric
+ Initial SPF schedule delay 50 msecs
+ Minimum hold time between two consecutive SPFs 200 msecs
+ Maximum wait time between two consecutive SPFs 5000 msecs
+ Incremental-SPF disabled
+ Initial LSA throttle delay 50 msecs
+ Minimum hold time for LSA throttle 200 msecs
+ Maximum wait time for LSA throttle 5000 msecs
+ Minimum LSA arrival 100 msecs
+ LSA group pacing timer 240 secs
+ Interface flood pacing timer 33 msecs
+ Retransmission pacing timer 66 msecs
+ EXCHANGE/LOADING adjacency limit: initial 300, process maximum 300
+ Number of external LSA 0. Checksum Sum 0x000000
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+ Number of areas transit capable is 0
+ External flood list length 0
+ IETF NSF helper support enabled
+ Cisco NSF helper support enabled
+ Reference bandwidth unit is 100 mbps
+    Area BACKBONE(0)
+        Number of interfaces in this area is 3 (1 loopback)
+	Area has no authentication
+	SPF algorithm last executed 00:04:05.857 ago
+	SPF algorithm executed 143 times
+	Area ranges are
+	Number of LSA 4. Checksum Sum 0x02E45F
+	Number of opaque link LSA 0. Checksum Sum 0x000000
+	Number of DCbitless LSA 1
+	Number of indication LSA 0
+	Number of DoNotAge LSA 0
+	Flood list length 0
+
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show ip ospf neighbor detail
+ Neighbor 10.2.2.2, interface address 10.0.2.2
+    In the area 0 via interface GigabitEthernet3
+    Neighbor priority is 1, State is FULL, 54 state changes
+    DR is 10.0.2.1 BDR is 10.0.2.2
+    Options is 0x2 in Hello (E-bit)
+    Options is 0x42 in DBD (E-bit, O-bit)
+    Dead timer due in 00:00:32
+    Neighbor is up for 02:47:04
+    Index 1/2/2, retransmission queue length 0, number of retransmission 1
+    First 0x0(0)/0x0(0)/0x0(0) Next 0x0(0)/0x0(0)/0x0(0)
+    Last retransmission scan length is 1, maximum is 1
+    Last retransmission scan time is 0 msec, maximum is 0 msec
+ Neighbor 10.2.2.2, interface address 10.0.1.2
+    In the area 0 via interface GigabitEthernet2
+    Neighbor priority is 1, State is FULL, 18 state changes
+    DR is 10.0.1.1 BDR is 10.0.1.2
+    Options is 0x2 in Hello (E-bit)
+    Options is 0x42 in DBD (E-bit, O-bit)
+    Dead timer due in 00:00:34
+    Neighbor is up for 04:49:42
+    Index 1/1/1, retransmission queue length 0, number of retransmission 1
+    First 0x0(0)/0x0(0)/0x0(0) Next 0x0(0)/0x0(0)/0x0(0)
+    Last retransmission scan length is 1, maximum is 1
+    Last retransmission scan time is 0 msec, maximum is 0 msec
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show ip ospf interface | section GigabitEthernet3
+GigabitEthernet3 is up, line protocol is up 
+  Internet Address 10.0.2.1/24, Interface ID 9, Area 0
+  Attached via Interface Enable
+  Process ID 1, Router ID 10.1.1.1, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Enabled by interface config, including secondary ip addresses
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 10.1.1.1, Interface address 10.0.2.1
+  Backup Designated router (ID) 10.2.2.2, Interface address 10.0.2.2
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:01
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/3/3, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 2, maximum is 2
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 10.2.2.2  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show ip ospf interface | section GigabitEthernet2
+GigabitEthernet2 is up, line protocol is up 
+  Internet Address 10.0.1.1/24, Interface ID 8, Area 0
+  Attached via Interface Enable
+  Process ID 1, Router ID 10.1.1.1, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Enabled by interface config, including secondary ip addresses
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 10.1.1.1, Interface address 10.0.1.1
+  Backup Designated router (ID) 10.2.2.2, Interface address 10.0.1.2
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:05
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 2, maximum is 2
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 10.2.2.2  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "application"
+  Sending updates every 0 seconds
+  Invalid after 0 seconds, hold down 0, flushed after 0
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Maximum path: 32
+  Routing for Networks:
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 4)
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 10.1.1.1
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+  Routing on Interfaces Configured Explicitly (Area 0):
+    Loopback0
+    GigabitEthernet3
+    GigabitEthernet2
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    10.2.2.2             110      00:04:06
+  Distance: (default is 110)
+
+Routing Protocol is "bgp 65000"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  IGP synchronization is disabled
+  Automatic route summarization is disabled
+  Neighbor(s):
+    Address          FiltIn FiltOut DistIn DistOut Weight RouteMap
+    10.2.2.2                                             
+  Maximum path: 1
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    10.2.2.2             200      00:04:06
+  Distance: external 20 internal 200 local 200
+
+Routing Protocol is "ospf 9"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 9.9.9.2
+  Number of areas in this router is 0. 0 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 110)
+
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 9
+router ospf 9
+ router-id 9.9.9.2
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show ip ospf database network
+
+            OSPF Router with ID (9.9.9.2) (Process ID 9)
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+
+		Net Link States (Area 0)
+
+  LS age: 1316
+  Options: (No TOS-capability, DC)
+  LS Type: Network Links
+  Link State ID: 10.0.1.1 (address of Designated Router)
+  Advertising Router: 10.1.1.1
+  LS Seq Number: 80000009
+  Checksum: 0xA655
+  Length: 32
+  Network Mask: /24
+	Attached Router: 10.1.1.1
+	Attached Router: 10.2.2.2
+
+  LS age: 52
+  Options: (No TOS-capability, DC)
+  LS Type: Network Links
+  Link State ID: 10.0.2.1 (address of Designated Router)
+  Advertising Router: 10.1.1.1
+  LS Seq Number: 80000006
+  Checksum: 0xA15C
+  Length: 32
+  Network Mask: /24
+	Attached Router: 10.1.1.1
+	Attached Router: 10.2.2.2
+
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show ip ospf interface
+Loopback0 is up, line protocol is up 
+  Internet Address 10.1.1.1/32, Interface ID 11, Area 0
+  Attached via Interface Enable
+  Process ID 1, Router ID 10.1.1.1, Network Type LOOPBACK, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Enabled by interface config, including secondary ip addresses
+  Loopback interface is treated as a stub Host
+GigabitEthernet3 is up, line protocol is up 
+  Internet Address 10.0.2.1/24, Interface ID 9, Area 0
+  Attached via Interface Enable
+  Process ID 1, Router ID 10.1.1.1, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Enabled by interface config, including secondary ip addresses
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 10.1.1.1, Interface address 10.0.2.1
+  Backup Designated router (ID) 10.2.2.2, Interface address 10.0.2.2
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:00
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/3/3, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 2, maximum is 2
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 10.2.2.2  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+GigabitEthernet2 is up, line protocol is up 
+  Internet Address 10.0.1.1/24, Interface ID 8, Area 0
+  Attached via Interface Enable
+  Process ID 1, Router ID 10.1.1.1, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Enabled by interface config, including secondary ip addresses
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 10.1.1.1, Interface address 10.0.1.1
+  Backup Designated router (ID) 10.2.2.2, Interface address 10.0.1.2
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:04
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 2, maximum is 2
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 10.2.2.2  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:45: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:46: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#
+2018-04-09T14:33:46: %UNICON-INFO: +++ execute  +++
+show ip ospf mpls traffic-eng link
+
+            OSPF Router with ID (10.1.1.1) (Process ID 1)
+
+  Area 0 MPLS TE not initialized
+csr1000v-1#
+2018-04-09T14:33:46: %UNICON-INFO: +++ execute  +++
+show running-config | section router ospf 1
+router ospf 1
+ router-id 10.1.1.1
+csr1000v-1#Found some difference for device Device csr1000v-1 (alias=helper), type asr1k
+info:
+ vrf:
+  default:
+   address_family:
+    ipv4:
+     instance:
++      9: 
++       adjacency_stagger: 
++        initial_number: 300
++        maximum_number: 300
++       auto_cost: 
++        enable: False
++       bfd: 
++        enable: False
++       graceful_restart: 
++        cisco: 
++         enable: False
++         type: cisco
++        ietf: 
++         enable: False
++         type: ietf
++       nsr: 
++        enable: False
++       preference: 
++        single_value: 
++         all: 110
++       router_id: 9.9.9.2
++       spf_control: 
++        paths: 4
++        throttle: 
++         lsa: 
++          hold: 200
++          maximum: 5000
++          start: 50
++         spf: 
++          hold: 200
++          maximum: 5000
++          start: 50
++       stub_router: 
++        always: 
++         always: False
++         external_lsa: False
++         include_stub: False
++         summary_lsa: False
+Removing configuration for Device nx-osv-1 (alias=uut), type NX-OSv 9000
+
+2018-04-09T14:33:46: %UNICON-INFO: +++ config  +++
+config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+nx-osv-1(config)# no router ospf 9
+nx-osv-1(config)# end
+nx-osv-1# Removing configuration for Device csr1000v-1 (alias=helper), type asr1k
+
+2018-04-09T14:33:46: %UNICON-INFO: +++ config  +++
+config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+csr1000v-1(config)#no router ospf 9
+csr1000v-1(config)#end
+csr1000v-1#

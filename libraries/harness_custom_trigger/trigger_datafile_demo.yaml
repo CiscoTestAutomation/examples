@@ -1,0 +1,7 @@
+extends: '%ENV{VIRTUAL_ENV}/genie_yamls/nxos/trigger_datafile_nxos.yaml'
+
+TriggerClearArpVrfAllForceDelete:
+    source:
+        class: examples.genie.demo4_harness_custom_trigger.trigger.TriggerClearArpVrfAllForceDelete
+    devices: ['uut']
+    sleep: 10

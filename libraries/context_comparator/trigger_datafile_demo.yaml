@@ -1,0 +1,531 @@
+# TriggerShowBgpProcessVrfAll:
+#     groups: ['Cli', 'Xml']
+#     context1: 'cli'
+#     context2: 'xml'
+#     cmd:
+#         pkg: genie.libs.parser
+#         class: show_bgp.ShowBgpProcessVrfAll
+#     source:
+#         class: examples.genie.demo9_context_comparator.trigger.Comparator
+#     devices: ['uut']
+
+TriggerShowBgpAllDampeningFlapStatistics:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    exclude: ['duration', 'reuse_time']
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpAllDampeningFlapStatistics
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpAllNexthopDatabase:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    exclude: ['resolve_time']
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpAllNexthopDatabase
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpPeerTemplate:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPeerTemplateCmd
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv4UnicastPolicyStatisticsRedistribute:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsRedistribute
+        parameters:
+            vrf: all
+            address_family: 'ipv4 unicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv4MulticastPolicyStatisticsRedistribute:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsRedistribute
+        parameters:
+            vrf: all
+            address_family: 'ipv4 multicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv6UnicastPolicyStatisticsRedistribute:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsRedistribute
+        parameters:
+            vrf: all
+            address_family: 'ipv6 unicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv6MulticastPolicyStatisticsRedistribute:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsRedistribute
+        parameters:
+            vrf: all
+            address_family: 'ipv6 multicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv4UnicastPolicyStatisticsRedistribute:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsRedistribute
+        parameters:
+            address_family: 'ipv4 unicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv4MulticastPolicyStatisticsRedistribute:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsRedistribute
+        parameters:
+            address_family: 'ipv4 multicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv6UnicastPolicyStatisticsRedistribute:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsRedistribute
+        parameters:
+            address_family: 'ipv6 unicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv6MulticastPolicyStatisticsRedistribute:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsRedistribute
+        parameters:
+            address_family: 'ipv6 multicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv4UnicastPolicyStatisticsNeighbor:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsNeighbor
+        parameters:
+            vrf: all
+            address_family: 'ipv4 unicast'
+            neighbor: 19.0.101.1
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv4MulticastPolicyStatisticsNeighbor:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsNeighbor
+        parameters:
+            vrf: all
+            address_family: 'ipv4 multicast'
+            neighbor: 19.0.101.1
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv6UnicastPolicyStatisticsNeighbor:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsNeighbor
+        parameters:
+            vrf: all
+            address_family: 'ipv6 unicast'
+            neighbor: 19.0.101.1
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv6MulticastPolicyStatisticsNeighbor:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsNeighbor
+        parameters:
+            vrf: all
+            address_family: 'ipv6 multicast'
+            neighbor: 19.0.101.1
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllVpnv4UnicastPolicyStatisticsNeighbor:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsNeighbor
+        parameters:
+            vrf: all
+            address_family: 'vpnv4 unicast'
+            neighbor: 19.0.101.1
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv4UnicastPolicyStatisticsNeighbor:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsNeighbor
+        parameters:
+            address_family: 'ipv4 unicast'
+            neighbor: 19.0.101.1
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv4MulticastPolicyStatisticsNeighbor:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsNeighbor
+        parameters:
+            address_family: 'ipv4 multicast'
+            neighbor: 19.0.101.1
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv6UnicastPolicyStatisticsNeighbor:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsNeighbor
+        parameters:
+            address_family: 'ipv6 unicast'
+            neighbor: 19.0.101.1
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv6MulticastPolicyStatisticsNeighbor:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsNeighbor
+        parameters:
+            address_family: 'ipv6 multicast'
+            neighbor: 19.0.101.1
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVpnv4UnicastPolicyStatisticsNeighbor:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsNeighbor
+        parameters:
+            address_family: 'vpnv4 unicast'
+            neighbor: 19.0.101.1
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv4UnicastPolicyStatisticsDampening:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsDampening
+        parameters:
+            vrf: all
+            address_family: 'ipv4 unicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv4MulticastPolicyStatisticsDampening:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsDampening
+        parameters:
+            vrf: all
+            address_family: 'ipv4 multicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv6UnicastPolicyStatisticsDampening:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsDampening
+        parameters:
+            vrf: all
+            address_family: 'ipv6 unicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllIpv6MulticastPolicyStatisticsDampening:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsDampening
+        parameters:
+            vrf: all
+            address_family: 'ipv6 multicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv4UnicastPolicyStatisticsDampening:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsDampening
+        parameters:
+            address_family: 'ipv4 unicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv4MulticastPolicyStatisticsDampening:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsDampening
+        parameters:
+            address_family: 'ipv4 multicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv6UnicastPolicyStatisticsDampening:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsDampening
+        parameters:
+            address_family: 'ipv6 unicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpIpv6MulticastPolicyStatisticsDampening:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpPolicyStatisticsDampening
+        parameters:
+            address_family: 'ipv6 multicast'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+TriggerShowBgpVrfAllAllSummary:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    exclude: ['state_pfxrcd', 'up_down', 'msg_sent']
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpVrfAllAllSummary
+        parameters:
+            vrf: 'all'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+ShowBgpVrfAllAllDampeningParameters:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpVrfAllAllDampeningParameters
+        parameters:
+            vrf: 'all'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+ShowBgpIpv4UnicastLabelsVrfAll:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpLabels
+        parameters:
+            address_family: 'ipv4 unicast'
+            vrf: 'all'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+ShowBgpIpv6UnicastLabelsVrfAll:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpLabels
+        parameters:
+            address_family: 'ipv6 unicast'
+            vrf: 'all'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+ShowBgpIpv4MulticastLabelsVrfAll:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpLabels
+        parameters:
+            address_family: 'ipv4 multicast'
+            vrf: 'all'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+ShowBgpIpv6MulticastLabelsVrfAll:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpLabels
+        parameters:
+            address_family: 'ipv6 multicast'
+            vrf: 'all'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+ShowBgpVpnv4UnicastLabelsVrfAll:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpLabels
+        parameters:
+            address_family: 'vpnv4 unicast'
+            vrf: 'all'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+ShowBgpVpnv6UnicastLabelsVrfAll:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpLabels
+        parameters:
+            address_family: 'vpnv6 unicast'
+            vrf: 'all'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']
+
+ShowBgpSessionsVrfAll:
+    groups: ['Cli', 'Xml']
+    context1: 'cli'
+    context2: 'xml'
+    exclude: ['last_read', 'last_write', 'last_flap']
+    cmd:
+        pkg: genie.libs.parser
+        class: show_bgp.ShowBgpSessions
+        parameters:
+            vrf: 'all'
+    source:
+        class: examples.genie.demo9_context_comparator.trigger.Comparator
+    devices: ['uut']

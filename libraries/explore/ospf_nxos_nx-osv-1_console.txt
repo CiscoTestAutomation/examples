@@ -1,0 +1,381 @@
+nx-osv-1#
++++ nx-osv-1: execute command 'show feature' +++
+show feature
+Feature Name         Instance State 
+-------------------- -------- -----
+bfd                  1        disabled
+bfd_app              1        disabled
+bgp                  1        enabled
+bulkstat             1        disabled
+cable-management     1        disabled
+cts                  1        disabled
+dhcp                 1        disabled
+dot1x                1        disabled
+eigrp                1        disabled
+eigrp                2        disabled
+eigrp                3        disabled
+eigrp                4        disabled
+eigrp                5        disabled
+eigrp                6        disabled
+eigrp                7        disabled
+eigrp                8        disabled
+eigrp                9        disabled
+eigrp                10       disabled
+eigrp                11       disabled
+eigrp                12       disabled
+eigrp                13       disabled
+eigrp                14       disabled
+eigrp                15       disabled
+eigrp                16       disabled
+elo                  1        disabled
+eth_port_sec         1        disabled
+evb                  1        disabled
+evc                  1        disabled
+evmed                1        disabled
+fabric-access        1        disabled
+fabric_mcast         1        disabled
+glbp                 1        disabled
+hmm                  1        disabled
+hsrp_engine          1        disabled
+imp                  1        disabled
+interface-vlan       1        disabled
+isis                 1        disabled
+isis                 2        disabled
+isis                 3        disabled
+isis                 4        disabled
+isis                 5        disabled
+isis                 6        disabled
+isis                 7        disabled
+isis                 8        disabled
+isis                 9        disabled
+isis                 10       disabled
+isis                 11       disabled
+isis                 12       disabled
+isis                 13       disabled
+isis                 14       disabled
+isis                 15       disabled
+isis                 16       disabled
+itd                  1        disabled
+l2vpn                1        disabled
+l3vpn                1        disabled
+ldap                 1        disabled
+ldp                  1        disabled
+lisp                 1        disabled
+lldp                 1        disabled
+mpls_te              1        disabled
+msdp                 1        disabled
+msrp                 1        disabled
+mvpn                 1        disabled
+mvrp                 1        disabled
+netflow              1        disabled
+ngoam                1        disabled
+nve                  1        disabled
+nxapi                1        disabled
+onep                 1        disabled
+ospf                 1        enabled
+ospf                 2        enabled (not-running)
+ospf                 3        enabled (not-running)
+ospf                 4        enabled (not-running)
+ospf                 5        enabled (not-running)
+ospf                 6        enabled (not-running)
+ospf                 7        enabled (not-running)
+ospf                 8        enabled (not-running)
+ospf                 9        enabled (not-running)
+ospf                 10       enabled (not-running)
+ospf                 11       enabled (not-running)
+ospf                 12       enabled (not-running)
+ospf                 13       enabled (not-running)
+ospf                 14       enabled (not-running)
+ospf                 15       enabled (not-running)
+ospf                 16       enabled (not-running)
+ospfv3               1        disabled
+ospfv3               2        disabled
+ospfv3               3        disabled
+ospfv3               4        disabled
+ospfv3               5        disabled
+ospfv3               6        disabled
+ospfv3               7        disabled
+ospfv3               8        disabled
+ospfv3               9        disabled
+ospfv3               10       disabled
+ospfv3               11       disabled
+ospfv3               12       disabled
+ospfv3               13       disabled
+ospfv3               14       disabled
+ospfv3               15       disabled
+ospfv3               16       disabled
+otv                  1        disabled
+pbr                  1        disabled
+pim                  1        disabled
+pim6                 1        disabled
+pong                 1        disabled
+private-vlan         1        disabled
+privilege            1        disabled
+ptp                  1        disabled
+rip                  1        disabled
+rip                  2        disabled
+rip                  3        disabled
+rip                  4        disabled
+rise                 1        disabled
+scheduler            1        disabled
+scpServer            1        disabled
+sftpServer           1        disabled
+sla_responder        1        disabled
+sla_sender           1        disabled
+smart-channel        1        disabled
+sshServer            1        enabled
+tacacs               1        disabled
+telnetServer         1        disabled
+tunnel               1        disabled
+vmtracker            1        disabled
+vni                  1        disabled
+vnseg_vlan           1        disabled
+vpc                  1        disabled
+vrrp                 1        disabled
+vrrpv3               1        disabled
+vtp                  1        disabled
+wccp                 1        disabled
+nx-osv-1#
++++ nx-osv-1: execute command 'show ip ospf vrf all' +++
+show ip ospf vrf all
+
+ Routing Process 1 with ID 10.2.2.2 VRF default
+ Routing Process Instance Number 1
+ Stateful High Availability enabled
+ Graceful-restart is configured
+   Grace period: 60 state: Inactive 
+   Last graceful restart exit status: None
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Administrative distance 110
+ Reference Bandwidth is 40000 Mbps
+ SPF throttling delay time of 200.000 msecs,
+   SPF throttling hold time of 1000.000 msecs, 
+   SPF throttling maximum wait time of 5000.000 msecs
+ LSA throttling start time of 0.000 msecs,
+   LSA throttling hold interval of 5000.000 msecs, 
+   LSA throttling maximum wait time of 5000.000 msecs
+ Minimum LSA arrival 1000.000 msec
+ LSA group pacing timer 10 secs
+ Maximum paths to destination 8
+ Number of external LSAs 0, checksum sum 0
+ Number of opaque AS LSAs 0, checksum sum 0
+ Number of areas is 1, 1 normal, 0 stub, 0 nssa
+ Number of active areas is 1, 1 normal, 0 stub, 0 nssa
+ Install discard route for summarized external routes.
+ Install discard route for summarized internal routes.
+   Area BACKBONE(0.0.0.0) 
+        Area has existed for 6d01h
+        Interfaces in this area: 3 Active interfaces: 3
+        Passive interfaces: 0  Loopback interfaces: 1
+        No authentication available
+        SPF calculation has run 8 times
+         Last SPF ran for 0.000169s
+        Area ranges are
+        Number of LSAs: 4, checksum sum 0x23fc3
+nx-osv-1#
++++ nx-osv-1: execute command 'show ip ospf mpls ldp interface vrf all' +++
+show ip ospf mpls ldp interface vrf all
+loopback0 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State LOOPBACK, Network type LOOPBACK
+Ethernet2/1 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State BDR, Network type BROADCAST
+Ethernet2/2 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State DR, Network type BROADCAST
+nx-osv-1#
++++ nx-osv-1: execute command 'show ip ospf database router detail vrf all' +++
+show ip ospf database router detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+                Router Link States (Area 0.0.0.0)
+
+   LS age: 122
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Router Links
+   Link State ID: 10.1.1.1 
+   Advertising Router: 10.1.1.1
+   LS Seq Number: 0x8000010f
+   Checksum: 0xc4e3
+   Length: 60
+    Number of links: 3
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.1.1.1
+      (Link Data) Network Mask: 255.255.255.255
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.1.1
+      (Link Data) Router Interface address: 10.0.1.1
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.2.2
+      (Link Data) Router Interface address: 10.0.2.1
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+   LS age: 132
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Router Links
+   Link State ID: 10.2.2.2 
+   Advertising Router: 10.2.2.2
+   LS Seq Number: 0x80000125
+   Checksum: 0xa2b6
+   Length: 60
+    Number of links: 3
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 10.2.2.2
+      (Link Data) Network Mask: 255.255.255.255
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.1.1
+      (Link Data) Router Interface address: 10.0.1.2
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 10.0.2.2
+      (Link Data) Router Interface address: 10.0.2.2
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+nx-osv-1#
++++ nx-osv-1: execute command 'show ip ospf database network detail vrf all' +++
+show ip ospf database network detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+
+                Network Link States (Area 0.0.0.0)
+
+   LS age: 134
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Network Links
+   Link State ID: 10.0.1.1 (Designated Router address)
+   Advertising Router: 10.1.1.1
+   LS Seq Number: 0x80000001
+   Checksum: 0xb64d
+   Length: 32
+   Network Mask: /24
+         Attached Router: 10.1.1.1
+         Attached Router: 10.2.2.2
+
+   LS age: 1493
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Network Links
+   Link State ID: 10.0.2.2 (Designated Router address)
+   Advertising Router: 10.2.2.2
+   LS Seq Number: 0x80000120
+   Checksum: 0x21dd
+   Length: 32
+   Network Mask: /24
+         Attached Router: 10.2.2.2
+         Attached Router: 10.1.1.1
+nx-osv-1#
++++ nx-osv-1: execute command 'show ip ospf database summary detail vrf all' +++
+show ip ospf database summary detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+nx-osv-1#
++++ nx-osv-1: execute command 'show ip ospf database external detail vrf all' +++
+show ip ospf database external detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+nx-osv-1#
++++ nx-osv-1: execute command 'show ip ospf database opaque-area detail vrf all' +++
+show ip ospf database opaque-area detail vrf all
+        OSPF Router with ID (10.2.2.2) (Process ID 1 VRF default)
+nx-osv-1#
++++ nx-osv-1: execute command 'show ip ospf virtual-links vrf all' +++
+show ip ospf virtual-links vrf all
+Could not learn <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfVirtualLinks'>
+Parser Output is empty
+nx-osv-1#
++++ nx-osv-1: execute command 'show ip ospf interface vrf all' +++
+show ip ospf interface vrf all
+ Ethernet2/1 is up, line protocol is up
+    IP address 10.0.1.2/24
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State BDR, Network type BROADCAST, cost 40
+    Index 2, Transmit delay 1 sec, Router Priority 1
+    Designated Router ID: 10.1.1.1, address: 10.0.1.1
+    Backup Designated Router ID: 10.2.2.2, address: 10.0.1.2
+    1 Neighbors, flooding to 1, adjacent with 1
+    Timer intervals: Hello 10, Dead 40, Wait 40, Retransmit 5
+      Hello timer due in 00:00:00
+    No authentication
+    Number of opaque link LSAs: 0, checksum sum 0
+ Ethernet2/2 is up, line protocol is up
+    IP address 10.0.2.2/24
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State DR, Network type BROADCAST, cost 40
+    Index 3, Transmit delay 1 sec, Router Priority 1
+    Designated Router ID: 10.2.2.2, address: 10.0.2.2
+    Backup Designated Router ID: 10.1.1.1, address: 10.0.2.1
+    1 Neighbors, flooding to 1, adjacent with 1
+    Timer intervals: Hello 10, Dead 40, Wait 40, Retransmit 5
+      Hello timer due in 00:00:01
+    No authentication
+    Number of opaque link LSAs: 0, checksum sum 0
+ loopback0 is up, line protocol is up
+    IP address 10.2.2.2/32
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State LOOPBACK, Network type LOOPBACK, cost 1
+    Index 1
+nx-osv-1#
++++ nx-osv-1: execute command 'show ip ospf neighbors detail vrf all' +++
+show ip ospf neighbors detail vrf all
+ Neighbor 10.1.1.1, interface address 10.0.1.1
+    Process ID 1 VRF default, in area 0.0.0.0 via interface Ethernet2/1
+    State is FULL, 5 state changes, last change 00:02:14
+    Neighbor priority is 1
+    DR is 10.0.1.1 BDR is 10.0.1.2
+    Hello options 0x12, dbd options 0x52
+    Last non-hello packet received never
+      Dead timer due in 00:00:41
+ Neighbor 10.1.1.1, interface address 10.0.2.1
+    Process ID 1 VRF default, in area 0.0.0.0 via interface Ethernet2/2
+    State is FULL, 5 state changes, last change 6d01h
+    Neighbor priority is 1
+    DR is 10.0.2.2 BDR is 10.0.2.1
+    Hello options 0x12, dbd options 0x52
+    Last non-hello packet received never
+      Dead timer due in 00:00:34
+nx-osv-1#
++++ nx-osv-1: execute command 'show ip ospf sham-links vrf all' +++
+show ip ospf sham-links vrf all
+                        ^
+% Invalid command at '^' marker.
+Could not learn <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfShamLinks'>
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Ospf'                                                                                                               |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.nxos.show_feature.ShowFeature'>                                                                                   |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspf'>, arguments: {'vrf':'all'}                                                             |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfMplsLdpInterface'>, arguments: {'vrf':'all'}                                             |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseRouterDetail'>, arguments: {'vrf':'all'}                                         |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseNetworkDetail'>, arguments: {'vrf':'all'}                                        |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseSummaryDetail'>, arguments: {'vrf':'all'}                                        |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseExternalDetail'>, arguments: {'vrf':'all'}                                       |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseOpaqueAreaDetail'>, arguments: {'vrf':'all'}                                     |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfInterface'>, arguments: {'vrf':'all'}                                                    |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfNeighborDetail'>, arguments: {'vrf':'all'}                                               |
+|====================================================================================================================================================|
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfVirtualLinks'>, arguments: {'vrf':'all'}                                                 |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfShamLinks'>, arguments: {'vrf':'all'}                                                    |
+|====================================================================================================================================================|
