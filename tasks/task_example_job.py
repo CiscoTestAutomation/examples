@@ -8,7 +8,7 @@ from pyats.easypy import Task
 
 def main():
     # Find the location of the script in relation to the job file
-    test_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    test_path = os.path.dirname(os.path.abspath(__file__))
     testscript = os.path.join(test_path, 'task_example.py')
 
     # create two tasks. for simplicity's sake, we'll reuse the same script
