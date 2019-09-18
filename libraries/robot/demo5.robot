@@ -29,9 +29,9 @@ parser show bgp all detail
     ${output}=    parse "show version" on device "nx-osv-1"
 
 Verify Ping from nx-osv-1 to helper
-    run testcase     examples.genie.demo5_robot.pyats_loopback_reachability.NxosPingTestcase    device=nx-osv-1
+    run testcase     pyats_loopback_reachability.NxosPingTestcase    device=nx-osv-1
 Verify Ping from helper to nx-osv-1
-    run testcase     examples.genie.demo5_robot.pyats_loopback_reachability.PingTestcase    device=helper
+    run testcase     pyats_loopback_reachability.PingTestcase    device=helper
 
 # Verify Bgp Neighbors
 Verify the counts of Bgp 'established' neighbors for nx-osv-1&helper
