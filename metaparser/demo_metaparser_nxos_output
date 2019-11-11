@@ -1,0 +1,462 @@
+
+2018-01-25T14:17:42: %UNICON-INFO: +++ initializing context +++
+
+2018-01-25T14:17:42: %UNICON-INFO: +++ initializing state_machine +++
+
+2018-01-25T14:17:42: %UNICON-INFO: +++ initializing services +++
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  ping6   :  <unicon.plugins.nxos.service_implementation.Ping6 object at 0x7f859c91fa58>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  log_user   :  <unicon.plugins.generic.service_implementation.LogUser object at 0x7f859c91f8d0>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  expect   :  <unicon.plugins.generic.service_implementation.Expect object at 0x7f859c91fa90>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  config   :  <unicon.plugins.generic.service_implementation.Config object at 0x7f859c91f668>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  copy   :  <unicon.plugins.generic.service_implementation.Copy object at 0x7f859c91f7f0>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  switchback   :  <unicon.plugins.nxos.service_implementation.SwitchbackVdc object at 0x7f859c91f630>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  ping   :  <unicon.plugins.generic.service_implementation.Ping object at 0x7f859c91f7b8>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  execute   :  <unicon.plugins.generic.service_implementation.Execute object at 0x7f859c91f828>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  switchto   :  <unicon.plugins.nxos.service_implementation.SwitchVdc object at 0x7f859c91f710>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  sendline   :  <unicon.plugins.generic.service_implementation.Sendline object at 0x7f859c91f780>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  shellexec   :  <unicon.plugins.nxos.service_implementation.ShellExec object at 0x7f859c91f908>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  expect_log   :  <unicon.plugins.generic.service_implementation.ExpectLogging object at 0x7f859c91f2b0>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  configure   :  <unicon.plugins.generic.service_implementation.Configure object at 0x7f859c91fbe0>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  create_vdc   :  <unicon.plugins.nxos.service_implementation.CreateVdc object at 0x7f859c91f518>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  reload   :  <unicon.plugins.nxos.service_implementation.Reload object at 0x7f859c91f5c0>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  list_vdc   :  <unicon.plugins.nxos.service_implementation.ListVdc object at 0x7f859c91f6d8>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  send   :  <unicon.plugins.generic.service_implementation.Send object at 0x7f859c91f4e0>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  disable   :  <unicon.plugins.generic.service_implementation.Disable object at 0x7f859c91f320>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  delete_vdc   :  <unicon.plugins.nxos.service_implementation.DeleteVdc object at 0x7f859c91f358>
+
+2018-01-25T14:17:42: %UNICON-INFO: adding service  enable   :  <unicon.plugins.generic.service_implementation.Enable object at 0x7f859c91f588>
+
+2018-01-25T14:17:42: %UNICON-INFO: connection to agg3
+
+2018-01-25T14:17:42: %UNICON-INFO: +++ connection to spawn_command: telnet 172.25.192.90 17000, id: 140211829356584 +++
+
+2018-01-25T14:17:42: %UNICON-INFO: telnet 172.25.192.90 17000
+Trying 172.25.192.90...
+Connected to 172.25.192.90.
+Escape character is '^]'.
+
+agg3# 
+2018-01-25T14:17:42: %UNICON-INFO: +++ initializing handle +++
+
+2018-01-25T14:17:42: %UNICON-INFO: +++ execute  +++
+term length 0
+agg3# 
+2018-01-25T14:17:43: %UNICON-INFO: +++ execute  +++
+term width 511
+agg3# 
+2018-01-25T14:17:43: %UNICON-INFO: +++ execute  +++
+terminal session-timeout 0
+agg3# 
+2018-01-25T14:17:43: %UNICON-INFO: +++ config  +++
+config term
+Enter configuration commands, one per line. End with CNTL/Z.
+agg3(config)# no logging console
+agg3(config)# line console
+agg3(config-console)# exec-timeout 0
+agg3(config-console)# terminal width 511
+agg3(config-console)# end
+agg3# 
+2018-01-25T14:17:44: %UNICON-INFO: Attaching  all Subcommands
+
+2018-01-25T14:17:44: %UNICON-INFO: +++ execute  +++
+show bgp process vrf all
+
+BGP Process Information
+BGP Process ID                 : 28708
+BGP Protocol Started, reason:  : configuration
+BGP Performance Mode:          : No
+BGP Protocol Tag               : 1
+BGP Protocol State             : Running
+BGP Isolate Mode               : No
+BGP MMODE                      : Initialized
+BGP Memory State               : Severe Alert
+BGP Low Memory Timer Expiry    : 00:01:36
+BGP asformat                   : asplain
+
+BGP attributes information
+Number of attribute entries    : 1
+HWM of attribute entries       : 1
+Bytes used by entries          : 116
+Entries pending delete         : 0
+HWM of entries pending delete  : 0
+BGP paths per attribute HWM    : 1
+BGP AS path entries            : 0
+Bytes used by AS path entries  : 0
+
+Information regarding configured VRFs:
+
+BGP Information for VRF default
+VRF Id                         : 1
+VRF state                      : UP
+Router-ID                      : 192.168.0.3
+Configured Router-ID           : 192.168.0.3
+Confed-ID                      : 0
+Cluster-ID                     : 0.0.0.0
+No. of configured peers        : 4
+No. of pending config peers    : 0
+No. of established peers       : 0
+VRF RD                         : Not configured
+
+    Information for address family IPv4 Unicast in VRF default
+    Table Id                   : 0x1
+    Table state                : UP
+    Peers      Active-peers    Routes     Paths      Networks   Aggregates
+    4          0               1          1          1          0         
+
+    Redistribution                
+        None
+
+    Wait for IGP convergence is not configured
+
+
+    Nexthop trigger-delay
+        critical 3000 ms
+        non-critical 10000 ms
+
+    Information for address family IPv6 Unicast in VRF default
+    Table Id                   : 0x80000001
+    Table state                : UP
+    Peers      Active-peers    Routes     Paths      Networks   Aggregates
+    0          0               0          0          0          0         
+
+    Redistribution                
+        None
+
+    Wait for IGP convergence is not configured
+
+
+    Nexthop trigger-delay
+        critical 3000 ms
+        non-critical 10000 ms
+agg3# {'bgp_as_path_entries': 0,
+ 'bgp_asformat': 'asplain',
+ 'bgp_isolate_mode': 'No',
+ 'bgp_memory_state': 'severe alert',
+ 'bgp_mmode': 'Initialized',
+ 'bgp_paths_per_hwm_attr': 1,
+ 'bgp_performance_mode': 'No',
+ 'bgp_pid': 28708,
+ 'bgp_protocol_started_reason': 'configuration',
+ 'bgp_protocol_state': 'running',
+ 'bgp_tag': '1',
+ 'bytes_used': 116,
+ 'bytes_used_as_path_entries': 0,
+ 'entries_pending_delete': 0,
+ 'hwm_attr_entries': 1,
+ 'hwm_entries_pending_delete': 0,
+ 'num_attr_entries': 1,
+ 'vrf': {'default': {'address_family': {'ipv4 unicast': {'next_hop_trigger_delay': {'critical': 3000,
+                                                                                    'non_critical': 10000},
+                                                         'peers': {4: {'active_peers': 0,
+                                                                       'aggregates': 0,
+                                                                       'networks': 1,
+                                                                       'paths': 1,
+                                                                       'routes': 1}},
+                                                         'table_id': '0x1',
+                                                         'table_state': 'up'},
+                                        'ipv6 unicast': {'next_hop_trigger_delay': {'critical': 3000,
+                                                                                    'non_critical': 10000},
+                                                         'peers': {0: {'active_peers': 0,
+                                                                       'aggregates': 0,
+                                                                       'networks': 0,
+                                                                       'paths': 0,
+                                                                       'routes': 0}},
+                                                         'table_id': '0x80000001',
+                                                         'table_state': 'up'}},
+                     'cluster_id': '0.0.0.0',
+                     'conf_router_id': '192.168.0.3',
+                     'confed_id': 0,
+                     'num_conf_peers': 4,
+                     'num_established_peers': 0,
+                     'num_pending_conf_peers': 0,
+                     'router_id': '192.168.0.3',
+                     'vrf_id': '1',
+                     'vrf_rd': 'not configured',
+                     'vrf_state': 'up'}}}
+
+2018-01-25T14:17:44: %UNICON-INFO: +++ execute  +++
+show bgp process vrf all | xml
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nf:rpc-reply xmlns="http://www.cisco.com/nxos:1.0:bgp" xmlns:nf="urn:ietf:params:xml:ns:netconf:base:1.0">
+ <nf:data>
+  <show>
+   <bgp>
+    <__XML__OPT_Cmd_show_ip_bgp_session_cmd_vrf>
+     <process>
+      <__XML__OPT_Cmd_show_bgp_process_cmd_vrf>
+       <__XML__OPT_Cmd_show_bgp_process_cmd___readonly__>
+        <__readonly__>
+         <processid>28708</processid>
+         <protocolstartedreason>configuration</protocolstartedreason>
+         <protocoltag>1</protocoltag>
+         <protocolstate>Running</protocolstate>
+         <isolatemode>No</isolatemode>
+         <mmode>Initialized</mmode>
+         <memorystate>Severe Alert</memorystate>
+         <lowmemorytimer>00:01:36</lowmemorytimer>
+         <forwardingstatesaved>false</forwardingstatesaved>
+         <asformat>asplain</asformat>
+         <attributeentries>1</attributeentries>
+         <hwmattributeentries>1</hwmattributeentries>
+         <bytesused>116</bytesused>
+         <entriespendingdelete>0</entriespendingdelete>
+         <hwmentriespendingdelete>0</hwmentriespendingdelete>
+         <pathsperattribute>1</pathsperattribute>
+         <aspathentries>0</aspathentries>
+         <aspathbytes>0</aspathbytes>
+         <TABLE_vrf>
+          <ROW_vrf>
+           <vrf-name-out>default</vrf-name-out>
+           <vrf-id>1</vrf-id>
+           <vrf-state>UP</vrf-state>
+           <vrf-delete-pending>false</vrf-delete-pending>
+           <vrf-router-id>192.168.0.3</vrf-router-id>
+           <vrf-cfgd-id>192.168.0.3</vrf-cfgd-id>
+           <vrf-confed-id>0</vrf-confed-id>
+           <vrf-cluster-id>0.0.0.0</vrf-cluster-id>
+           <vrf-peers>4</vrf-peers>
+           <vrf-pending-peers>0</vrf-pending-peers>
+           <vrf-est-peers>0</vrf-est-peers>
+           <TABLE_af>
+            <ROW_af>
+             <af-id>0</af-id>
+             <af-name>IPv4 Unicast</af-name>
+             <af-table-id>1</af-table-id>
+             <af-state>UP</af-state>
+             <af-num-peers>4</af-num-peers>
+             <af-num-active-peers>0</af-num-active-peers>
+             <af-peer-routes>1</af-peer-routes>
+             <af-peer-paths>1</af-peer-paths>
+             <af-peer-networks>1</af-peer-networks>
+             <af-peer-aggregates>0</af-peer-aggregates>
+             <af-rr>false</af-rr>
+             <default-information-enabled>false</default-information-enabled>
+             <nexthop-trigger-delay-critical>3000</nexthop-trigger-delay-critical>
+             <nexthop-trigger-delay-non-critical>10000</nexthop-trigger-delay-non-critical>
+            </ROW_af>
+            <ROW_af>
+             <af-id>2</af-id>
+             <af-name>IPv6 Unicast</af-name>
+             <af-table-id>80000001</af-table-id>
+             <af-state>UP</af-state>
+             <af-num-peers>0</af-num-peers>
+             <af-num-active-peers>0</af-num-active-peers>
+             <af-peer-routes>0</af-peer-routes>
+             <af-peer-paths>0</af-peer-paths>
+             <af-peer-networks>0</af-peer-networks>
+             <af-peer-aggregates>0</af-peer-aggregates>
+             <af-rr>false</af-rr>
+             <default-information-enabled>false</default-information-enabled>
+             <nexthop-trigger-delay-critical>3000</nexthop-trigger-delay-critical>
+             <nexthop-trigger-delay-non-critical>10000</nexthop-trigger-delay-non-critical>
+            </ROW_af>
+           </TABLE_af>
+          </ROW_vrf>
+         </TABLE_vrf>
+        </__readonly__>
+       </__XML__OPT_Cmd_show_bgp_process_cmd___readonly__>
+      </__XML__OPT_Cmd_show_bgp_process_cmd_vrf>
+     </process>
+    </__XML__OPT_Cmd_show_ip_bgp_session_cmd_vrf>
+   </bgp>
+  </show>
+ </nf:data>
+</nf:rpc-reply>
+]]>]]>agg3# {'bgp_as_path_entries': 0,
+ 'bgp_asformat': 'asplain',
+ 'bgp_isolate_mode': 'No',
+ 'bgp_memory_state': 'severe alert',
+ 'bgp_mmode': 'Initialized',
+ 'bgp_paths_per_hwm_attr': 1,
+ 'bgp_performance_mode': 'No',
+ 'bgp_pid': 28708,
+ 'bgp_protocol_started_reason': 'configuration',
+ 'bgp_protocol_state': 'running',
+ 'bgp_tag': '1',
+ 'bytes_used': 116,
+ 'bytes_used_as_path_entries': 0,
+ 'entries_pending_delete': 0,
+ 'hwm_attr_entries': 1,
+ 'hwm_entries_pending_delete': 0,
+ 'num_attr_entries': 1,
+ 'vrf': {'default': {'address_family': {'ipv4 unicast': {'next_hop_trigger_delay': {'critical': 3000,
+                                                                                    'non_critical': 10000},
+                                                         'peers': {4: {'active_peers': 0,
+                                                                       'aggregates': 0,
+                                                                       'networks': 1,
+                                                                       'paths': 1,
+                                                                       'routes': 1}},
+                                                         'table_id': '0x1',
+                                                         'table_state': 'up'},
+                                        'ipv6 unicast': {'next_hop_trigger_delay': {'critical': 3000,
+                                                                                    'non_critical': 10000},
+                                                         'peers': {0: {'active_peers': 0,
+                                                                       'aggregates': 0,
+                                                                       'networks': 0,
+                                                                       'paths': 0,
+                                                                       'routes': 0}},
+                                                         'table_id': '0x80000001',
+                                                         'table_state': 'up'}},
+                     'cluster_id': '0.0.0.0',
+                     'conf_router_id': '192.168.0.3',
+                     'confed_id': 0,
+                     'num_conf_peers': 4,
+                     'num_established_peers': 0,
+                     'num_pending_conf_peers': 0,
+                     'router_id': '192.168.0.3',
+                     'vrf_id': '1',
+                     'vrf_rd': 'not configured',
+                     'vrf_state': 'up'}}}
+
+2018-01-25T14:17:44: %UNICON-INFO: +++ execute  +++
+show bgp process vrf all | xml
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nf:rpc-reply xmlns="http://www.cisco.com/nxos:1.0:bgp" xmlns:nf="urn:ietf:params:xml:ns:netconf:base:1.0">
+ <nf:data>
+  <show>
+   <bgp>
+    <__XML__OPT_Cmd_show_ip_bgp_session_cmd_vrf>
+     <process>
+      <__XML__OPT_Cmd_show_bgp_process_cmd_vrf>
+       <__XML__OPT_Cmd_show_bgp_process_cmd___readonly__>
+        <__readonly__>
+         <processid>28708</processid>
+         <protocolstartedreason>configuration</protocolstartedreason>
+         <protocoltag>1</protocoltag>
+         <protocolstate>Running</protocolstate>
+         <isolatemode>No</isolatemode>
+         <mmode>Initialized</mmode>
+         <memorystate>Severe Alert</memorystate>
+         <lowmemorytimer>00:01:35</lowmemorytimer>
+         <forwardingstatesaved>false</forwardingstatesaved>
+         <asformat>asplain</asformat>
+         <attributeentries>1</attributeentries>
+         <hwmattributeentries>1</hwmattributeentries>
+         <bytesused>116</bytesused>
+         <entriespendingdelete>0</entriespendingdelete>
+         <hwmentriespendingdelete>0</hwmentriespendingdelete>
+         <pathsperattribute>1</pathsperattribute>
+         <aspathentries>0</aspathentries>
+         <aspathbytes>0</aspathbytes>
+         <TABLE_vrf>
+          <ROW_vrf>
+           <vrf-name-out>default</vrf-name-out>
+           <vrf-id>1</vrf-id>
+           <vrf-state>UP</vrf-state>
+           <vrf-delete-pending>false</vrf-delete-pending>
+           <vrf-router-id>192.168.0.3</vrf-router-id>
+           <vrf-cfgd-id>192.168.0.3</vrf-cfgd-id>
+           <vrf-confed-id>0</vrf-confed-id>
+           <vrf-cluster-id>0.0.0.0</vrf-cluster-id>
+           <vrf-peers>4</vrf-peers>
+           <vrf-pending-peers>0</vrf-pending-peers>
+           <vrf-est-peers>0</vrf-est-peers>
+           <TABLE_af>
+            <ROW_af>
+             <af-id>0</af-id>
+             <af-name>IPv4 Unicast</af-name>
+             <af-table-id>1</af-table-id>
+             <af-state>UP</af-state>
+             <af-num-peers>4</af-num-peers>
+             <af-num-active-peers>0</af-num-active-peers>
+             <af-peer-routes>1</af-peer-routes>
+             <af-peer-paths>1</af-peer-paths>
+             <af-peer-networks>1</af-peer-networks>
+             <af-peer-aggregates>0</af-peer-aggregates>
+             <af-rr>false</af-rr>
+             <default-information-enabled>false</default-information-enabled>
+             <nexthop-trigger-delay-critical>3000</nexthop-trigger-delay-critical>
+             <nexthop-trigger-delay-non-critical>10000</nexthop-trigger-delay-non-critical>
+            </ROW_af>
+            <ROW_af>
+             <af-id>2</af-id>
+             <af-name>IPv6 Unicast</af-name>
+             <af-table-id>80000001</af-table-id>
+             <af-state>UP</af-state>
+             <af-num-peers>0</af-num-peers>
+             <af-num-active-peers>0</af-num-active-peers>
+             <af-peer-routes>0</af-peer-routes>
+             <af-peer-paths>0</af-peer-paths>
+             <af-peer-networks>0</af-peer-networks>
+             <af-peer-aggregates>0</af-peer-aggregates>
+             <af-rr>false</af-rr>
+             <default-information-enabled>false</default-information-enabled>
+             <nexthop-trigger-delay-critical>3000</nexthop-trigger-delay-critical>
+             <nexthop-trigger-delay-non-critical>10000</nexthop-trigger-delay-non-critical>
+            </ROW_af>
+           </TABLE_af>
+          </ROW_vrf>
+         </TABLE_vrf>
+        </__readonly__>
+       </__XML__OPT_Cmd_show_bgp_process_cmd___readonly__>
+      </__XML__OPT_Cmd_show_bgp_process_cmd_vrf>
+     </process>
+    </__XML__OPT_Cmd_show_ip_bgp_session_cmd_vrf>
+   </bgp>
+  </show>
+ </nf:data>
+</nf:rpc-reply>
+]]>]]>agg3# {'bgp_as_path_entries': 0,
+ 'bgp_asformat': 'asplain',
+ 'bgp_isolate_mode': 'No',
+ 'bgp_memory_state': 'severe alert',
+ 'bgp_mmode': 'Initialized',
+ 'bgp_paths_per_hwm_attr': 1,
+ 'bgp_performance_mode': 'No',
+ 'bgp_pid': 28708,
+ 'bgp_protocol_started_reason': 'configuration',
+ 'bgp_protocol_state': 'running',
+ 'bgp_tag': '1',
+ 'bytes_used': 116,
+ 'bytes_used_as_path_entries': 0,
+ 'entries_pending_delete': 0,
+ 'hwm_attr_entries': 1,
+ 'hwm_entries_pending_delete': 0,
+ 'num_attr_entries': 1,
+ 'vrf': {'default': {'address_family': {'ipv4 unicast': {'next_hop_trigger_delay': {'critical': 3000,
+                                                                                    'non_critical': 10000},
+                                                         'peers': {4: {'active_peers': 0,
+                                                                       'aggregates': 0,
+                                                                       'networks': 1,
+                                                                       'paths': 1,
+                                                                       'routes': 1}},
+                                                         'table_id': '0x1',
+                                                         'table_state': 'up'},
+                                        'ipv6 unicast': {'next_hop_trigger_delay': {'critical': 3000,
+                                                                                    'non_critical': 10000},
+                                                         'peers': {0: {'active_peers': 0,
+                                                                       'aggregates': 0,
+                                                                       'networks': 0,
+                                                                       'paths': 0,
+                                                                       'routes': 0}},
+                                                         'table_id': '0x80000001',
+                                                         'table_state': 'up'}},
+                     'cluster_id': '0.0.0.0',
+                     'conf_router_id': '192.168.0.3',
+                     'confed_id': 0,
+                     'num_conf_peers': 4,
+                     'num_established_peers': 0,
+                     'num_pending_conf_peers': 0,
+                     'router_id': '192.168.0.3',
+                     'vrf_id': '1',
+                     'vrf_rd': 'not configured',
+                     'vrf_state': 'up'}}}

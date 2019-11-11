@@ -1,0 +1,14 @@
+Description:
+------------
+This directory contains a number of standalone scripts that show how
+scripts may be written to test parsergen against hardcoded router output.
+
+A mocking infrastructure is set up that "fools" pyAts into "thinking" that
+it is talking to a real device, when in reality it is just talking to
+a mocked-up stub whose behavior is under the user's complete control.
+
+Since these tests may be run extremely quickly, it is easier than ever to
+do quick and iterative parser development.
+
+Example:
+python cli_command_formatting_example.py

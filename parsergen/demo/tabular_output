@@ -1,0 +1,689 @@
+
+2018-01-25T14:06:08: %UNICON-INFO: +++ initializing context +++
+
+2018-01-25T14:06:08: %UNICON-INFO: +++ initializing state_machine +++
+
+2018-01-25T14:06:08: %UNICON-INFO: +++ initializing services +++
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  create_vdc   :  <unicon.plugins.nxos.service_implementation.CreateVdc object at 0x7f77355129b0>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  expect   :  <unicon.plugins.generic.service_implementation.Expect object at 0x7f7735512b70>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  expect_log   :  <unicon.plugins.generic.service_implementation.ExpectLogging object at 0x7f7735512c50>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  switchback   :  <unicon.plugins.nxos.service_implementation.SwitchbackVdc object at 0x7f7735512c18>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  list_vdc   :  <unicon.plugins.nxos.service_implementation.ListVdc object at 0x7f7735512cc0>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  configure   :  <unicon.plugins.generic.service_implementation.Configure object at 0x7f7735512898>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  disable   :  <unicon.plugins.generic.service_implementation.Disable object at 0x7f7735512a58>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  ping   :  <unicon.plugins.generic.service_implementation.Ping object at 0x7f7735512b38>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  ping6   :  <unicon.plugins.nxos.service_implementation.Ping6 object at 0x7f7735512ba8>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  sendline   :  <unicon.plugins.generic.service_implementation.Sendline object at 0x7f7735512940>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  config   :  <unicon.plugins.generic.service_implementation.Config object at 0x7f7735512a20>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  execute   :  <unicon.plugins.generic.service_implementation.Execute object at 0x7f77355129e8>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  switchto   :  <unicon.plugins.nxos.service_implementation.SwitchVdc object at 0x7f7735512a90>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  delete_vdc   :  <unicon.plugins.nxos.service_implementation.DeleteVdc object at 0x7f7735512860>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  send   :  <unicon.plugins.generic.service_implementation.Send object at 0x7f7735512908>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  enable   :  <unicon.plugins.generic.service_implementation.Enable object at 0x7f77355128d0>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  shellexec   :  <unicon.plugins.nxos.service_implementation.ShellExec object at 0x7f7735512978>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  reload   :  <unicon.plugins.nxos.service_implementation.Reload object at 0x7f7735512ac8>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  log_user   :  <unicon.plugins.generic.service_implementation.LogUser object at 0x7f7735512c88>
+
+2018-01-25T14:06:08: %UNICON-INFO: adding service  copy   :  <unicon.plugins.generic.service_implementation.Copy object at 0x7f7735512d30>
+
+2018-01-25T14:06:08: %UNICON-INFO: connection to agg3
+
+2018-01-25T14:06:08: %UNICON-INFO: +++ connection to spawn_command: telnet 172.25.192.90 17000, id: 140149972405776 +++
+
+2018-01-25T14:06:08: %UNICON-INFO: telnet 172.25.192.90 17000
+Trying 172.25.192.90...
+Connected to 172.25.192.90.
+Escape character is '^]'.
+
+agg3(config-console)# 
+2018-01-25T14:06:08: %UNICON-INFO: +++ initializing handle +++
+end
+agg3# 
+2018-01-25T14:06:08: %UNICON-INFO: +++ execute  +++
+term length 0
+agg3# 
+2018-01-25T14:06:09: %UNICON-INFO: +++ execute  +++
+term width 511
+agg3# 
+2018-01-25T14:06:09: %UNICON-INFO: +++ execute  +++
+terminal session-timeout 0
+agg3# 
+2018-01-25T14:06:09: %UNICON-INFO: +++ config  +++
+config term
+Enter configuration commands, one per line. End with CNTL/Z.
+agg3(config)# no logging console
+agg3(config)# line console
+agg3(config-console)# exec-timeout 0
+agg3(config-console)# terminal width 511
+agg3(config-console)# end
+agg3# 
+2018-01-25T14:06:10: %UNICON-INFO: Attaching  all Subcommands
+
+2018-01-25T14:06:10: %UNICON-INFO: +++ execute  +++
+show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           up     172.16.1.178                            1000     1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Port
+Interface                                                                    Ch #
+--------------------------------------------------------------------------------
+Eth1/1        --      eth  routed up      none                       1000(D) --
+Eth1/2        --      eth  routed up      none                       1000(D) --
+Eth1/3        --      eth  routed up      none                       1000(D) --
+Eth1/4        --      eth  routed up      none                       1000(D) --
+Eth1/5        --      eth  routed up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  access down    Link not connected         auto(D) --
+Eth1/8        1       eth  access down    Link not connected         auto(D) --
+Eth1/9        1       eth  access down    Link not connected         auto(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+Eth1/35       1       eth  access down    Link not connected         auto(D) --
+Eth1/36       1       eth  access down    Link not connected         auto(D) --
+Eth1/37       1       eth  access down    Link not connected         auto(D) --
+Eth1/38       1       eth  access down    Link not connected         auto(D) --
+Eth1/39       1       eth  access down    Link not connected         auto(D) --
+Eth1/40       1       eth  access down    Link not connected         auto(D) --
+Eth1/41       1       eth  access down    Link not connected         auto(D) --
+Eth1/42       1       eth  access down    Link not connected         auto(D) --
+Eth1/43       1       eth  access down    Link not connected         auto(D) --
+Eth1/44       1       eth  access down    Link not connected         auto(D) --
+Eth1/45       1       eth  access down    Link not connected         auto(D) --
+Eth1/46       1       eth  access down    Link not connected         auto(D) --
+Eth1/47       1       eth  access down    Link not connected         auto(D) --
+Eth1/48       1       eth  access down    Link not connected         auto(D) --
+Eth1/49       1       eth  access down    Link not connected         auto(D) --
+Eth1/50       1       eth  access down    Link not connected         auto(D) --
+Eth1/51       1       eth  access down    Link not connected         auto(D) --
+Eth1/52       1       eth  access down    Link not connected         auto(D) --
+Eth1/53       1       eth  access down    Link not connected         auto(D) --
+Eth1/54       1       eth  access down    Link not connected         auto(D) --
+Eth1/55       1       eth  access down    Link not connected         auto(D) --
+Eth1/56       1       eth  access down    Link not connected         auto(D) --
+Eth1/57       1       eth  access down    Link not connected         auto(D) --
+Eth1/58       1       eth  access down    Link not connected         auto(D) --
+Eth1/59       1       eth  access down    Link not connected         auto(D) --
+Eth1/60       1       eth  access down    Link not connected         auto(D) --
+Eth1/61       1       eth  access down    Link not connected         auto(D) --
+Eth1/62       1       eth  access down    Link not connected         auto(D) --
+Eth1/63       1       eth  access down    Link not connected         auto(D) --
+Eth1/64       1       eth  access down    Link not connected         auto(D) --
+
+--------------------------------------------------------------------------------
+Interface     Status     Description
+--------------------------------------------------------------------------------
+Lo0           up         Loopback
+agg3# {'Eth1/1': {'Ethernet Interface': 'Eth1/1',
+            'Mode': 'routed',
+            'Port': '--',
+            'Reason': 'none',
+            'Speed': '1000(D)',
+            'Status': 'up',
+            'Type': 'eth',
+            'VLAN': '--'},
+ 'Eth1/10': {'Ethernet Interface': 'Eth1/10',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/11': {'Ethernet Interface': 'Eth1/11',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/12': {'Ethernet Interface': 'Eth1/12',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/13': {'Ethernet Interface': 'Eth1/13',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/14': {'Ethernet Interface': 'Eth1/14',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/15': {'Ethernet Interface': 'Eth1/15',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/16': {'Ethernet Interface': 'Eth1/16',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/17': {'Ethernet Interface': 'Eth1/17',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/18': {'Ethernet Interface': 'Eth1/18',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/19': {'Ethernet Interface': 'Eth1/19',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/2': {'Ethernet Interface': 'Eth1/2',
+            'Mode': 'routed',
+            'Port': '--',
+            'Reason': 'none',
+            'Speed': '1000(D)',
+            'Status': 'up',
+            'Type': 'eth',
+            'VLAN': '--'},
+ 'Eth1/20': {'Ethernet Interface': 'Eth1/20',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/21': {'Ethernet Interface': 'Eth1/21',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/22': {'Ethernet Interface': 'Eth1/22',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/23': {'Ethernet Interface': 'Eth1/23',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/24': {'Ethernet Interface': 'Eth1/24',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/25': {'Ethernet Interface': 'Eth1/25',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/26': {'Ethernet Interface': 'Eth1/26',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/27': {'Ethernet Interface': 'Eth1/27',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/28': {'Ethernet Interface': 'Eth1/28',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/29': {'Ethernet Interface': 'Eth1/29',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/3': {'Ethernet Interface': 'Eth1/3',
+            'Mode': 'routed',
+            'Port': '--',
+            'Reason': 'none',
+            'Speed': '1000(D)',
+            'Status': 'up',
+            'Type': 'eth',
+            'VLAN': '--'},
+ 'Eth1/30': {'Ethernet Interface': 'Eth1/30',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/31': {'Ethernet Interface': 'Eth1/31',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/32': {'Ethernet Interface': 'Eth1/32',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/33': {'Ethernet Interface': 'Eth1/33',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/34': {'Ethernet Interface': 'Eth1/34',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/35': {'Ethernet Interface': 'Eth1/35',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/36': {'Ethernet Interface': 'Eth1/36',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/37': {'Ethernet Interface': 'Eth1/37',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/38': {'Ethernet Interface': 'Eth1/38',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/39': {'Ethernet Interface': 'Eth1/39',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/4': {'Ethernet Interface': 'Eth1/4',
+            'Mode': 'routed',
+            'Port': '--',
+            'Reason': 'none',
+            'Speed': '1000(D)',
+            'Status': 'up',
+            'Type': 'eth',
+            'VLAN': '--'},
+ 'Eth1/40': {'Ethernet Interface': 'Eth1/40',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/41': {'Ethernet Interface': 'Eth1/41',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/42': {'Ethernet Interface': 'Eth1/42',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/43': {'Ethernet Interface': 'Eth1/43',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/44': {'Ethernet Interface': 'Eth1/44',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/45': {'Ethernet Interface': 'Eth1/45',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/46': {'Ethernet Interface': 'Eth1/46',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/47': {'Ethernet Interface': 'Eth1/47',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/48': {'Ethernet Interface': 'Eth1/48',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/49': {'Ethernet Interface': 'Eth1/49',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/5': {'Ethernet Interface': 'Eth1/5',
+            'Mode': 'routed',
+            'Port': '--',
+            'Reason': 'none',
+            'Speed': '1000(D)',
+            'Status': 'up',
+            'Type': 'eth',
+            'VLAN': '--'},
+ 'Eth1/50': {'Ethernet Interface': 'Eth1/50',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/51': {'Ethernet Interface': 'Eth1/51',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/52': {'Ethernet Interface': 'Eth1/52',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/53': {'Ethernet Interface': 'Eth1/53',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/54': {'Ethernet Interface': 'Eth1/54',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/55': {'Ethernet Interface': 'Eth1/55',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/56': {'Ethernet Interface': 'Eth1/56',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/57': {'Ethernet Interface': 'Eth1/57',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/58': {'Ethernet Interface': 'Eth1/58',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/59': {'Ethernet Interface': 'Eth1/59',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/6': {'Ethernet Interface': 'Eth1/6',
+            'Mode': 'routed',
+            'Port': '--',
+            'Reason': 'none',
+            'Speed': '1000(D)',
+            'Status': 'up',
+            'Type': 'eth',
+            'VLAN': '--'},
+ 'Eth1/60': {'Ethernet Interface': 'Eth1/60',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/61': {'Ethernet Interface': 'Eth1/61',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/62': {'Ethernet Interface': 'Eth1/62',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/63': {'Ethernet Interface': 'Eth1/63',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/64': {'Ethernet Interface': 'Eth1/64',
+             'Mode': 'access',
+             'Port': '--',
+             'Reason': 'Link not connected',
+             'Speed': 'auto(D)',
+             'Status': 'down',
+             'Type': 'eth',
+             'VLAN': '1'},
+ 'Eth1/7': {'Ethernet Interface': 'Eth1/7',
+            'Mode': 'access',
+            'Port': '--',
+            'Reason': 'Link not connected',
+            'Speed': 'auto(D)',
+            'Status': 'down',
+            'Type': 'eth',
+            'VLAN': '1'},
+ 'Eth1/8': {'Ethernet Interface': 'Eth1/8',
+            'Mode': 'access',
+            'Port': '--',
+            'Reason': 'Link not connected',
+            'Speed': 'auto(D)',
+            'Status': 'down',
+            'Type': 'eth',
+            'VLAN': '1'},
+ 'Eth1/9': {'Ethernet Interface': 'Eth1/9',
+            'Mode': 'access',
+            'Port': '--',
+            'Reason': 'Link not connected',
+            'Speed': 'auto(D)',
+            'Status': 'down',
+            'Type': 'eth',
+            'VLAN': '1'},
+ 'Interface': {'Ethernet Interface': 'Interface',
+               'Mode': 'scripti',
+               'Port': '',
+               'Reason': '',
+               'Speed': '',
+               'Status': 'on',
+               'Type': 'De',
+               'VLAN': 'Status'},
+ 'Lo0': {'Ethernet Interface': 'Lo0',
+         'Mode': 'opback',
+         'Port': '',
+         'Reason': '',
+         'Speed': '',
+         'Status': '',
+         'Type': 'Lo',
+         'VLAN': 'up'}}

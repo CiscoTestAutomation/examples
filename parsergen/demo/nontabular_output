@@ -1,0 +1,199 @@
+root@6be39d21f7b9:/pyats/cl/demos/demo10_virl_parsergen# python nontabular_example.py
+
+2018-01-25T14:03:34: %UNICON-INFO: +++ initializing context +++
+
+2018-01-25T14:03:34: %UNICON-INFO: +++ initializing state_machine +++
+
+2018-01-25T14:03:34: %UNICON-INFO: +++ initializing services +++
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  expect_log   :  <unicon.plugins.generic.service_implementation.ExpectLogging object at 0x7f3933396b38>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  configure   :  <unicon.plugins.generic.service_implementation.Configure object at 0x7f3933396c18>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  switchback   :  <unicon.plugins.nxos.service_implementation.SwitchbackVdc object at 0x7f3933396dd8>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  send   :  <unicon.plugins.generic.service_implementation.Send object at 0x7f3933396ef0>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  shellexec   :  <unicon.plugins.nxos.service_implementation.ShellExec object at 0x7f3933396ac8>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  enable   :  <unicon.plugins.generic.service_implementation.Enable object at 0x7f3933396b70>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  execute   :  <unicon.plugins.generic.service_implementation.Execute object at 0x7f3933396ba8>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  reload   :  <unicon.plugins.nxos.service_implementation.Reload object at 0x7f3933396da0>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  config   :  <unicon.plugins.generic.service_implementation.Config object at 0x7f3933396cf8>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  ping6   :  <unicon.plugins.nxos.service_implementation.Ping6 object at 0x7f3933396860>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  ping   :  <unicon.plugins.generic.service_implementation.Ping object at 0x7f3933396b00>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  log_user   :  <unicon.plugins.generic.service_implementation.LogUser object at 0x7f3933396c50>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  disable   :  <unicon.plugins.generic.service_implementation.Disable object at 0x7f3933396710>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  list_vdc   :  <unicon.plugins.nxos.service_implementation.ListVdc object at 0x7f39333969b0>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  copy   :  <unicon.plugins.generic.service_implementation.Copy object at 0x7f3933396898>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  expect   :  <unicon.plugins.generic.service_implementation.Expect object at 0x7f3933396978>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  switchto   :  <unicon.plugins.nxos.service_implementation.SwitchVdc object at 0x7f39333966a0>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  sendline   :  <unicon.plugins.generic.service_implementation.Sendline object at 0x7f3933396828>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  delete_vdc   :  <unicon.plugins.nxos.service_implementation.DeleteVdc object at 0x7f3933396940>
+
+2018-01-25T14:03:34: %UNICON-INFO: adding service  create_vdc   :  <unicon.plugins.nxos.service_implementation.CreateVdc object at 0x7f3933396a20>
+
+2018-01-25T14:03:34: %UNICON-INFO: connection to agg3
+
+2018-01-25T14:03:34: %UNICON-INFO: +++ connection to spawn_command: telnet 172.25.192.90 17000, id: 139883647417928 +++
+
+2018-01-25T14:03:34: %UNICON-INFO: telnet 172.25.192.90 17000
+Trying 172.25.192.90...
+Connected to 172.25.192.90.
+Escape character is '^]'.
+
+agg3#
+2018-01-25T14:03:35: %UNICON-INFO: +++ initializing handle +++
+
+2018-01-25T14:03:35: %UNICON-INFO: +++ execute  +++
+term length 0
+agg3#
+2018-01-25T14:03:35: %UNICON-INFO: +++ execute  +++
+term width 511
+agg3#
+2018-01-25T14:03:35: %UNICON-INFO: +++ execute  +++
+terminal session-timeout 0
+agg3#
+2018-01-25T14:03:35: %UNICON-INFO: +++ config  +++
+config term
+Enter configuration commands, one per line. End with CNTL/Z.
+agg3(config)# no logging console
+agg3(config)# line console
+agg3(config-console)# exec-timeout 0
+agg3(config-console)# terminal width 511
+agg3(config-console)# end
+agg3#
+2018-01-25T14:03:36: %UNICON-INFO: Attaching  all Subcommands
+
+2018-01-25T14:03:36: %UNICON-INFO: +++ execute  +++
+show interface brief
+
+--------------------------------------------------------------------------------
+Port   VRF          Status IP Address                              Speed    MTU
+--------------------------------------------------------------------------------
+mgmt0  --           up     172.16.1.178                            1000     1500
+
+--------------------------------------------------------------------------------
+Ethernet      VLAN    Type Mode   Status  Reason                   Speed     Port
+Interface                                                                    Ch #
+--------------------------------------------------------------------------------
+Eth1/1        --      eth  routed up      none                       1000(D) --
+Eth1/2        --      eth  routed up      none                       1000(D) --
+Eth1/3        --      eth  routed up      none                       1000(D) --
+Eth1/4        --      eth  routed up      none                       1000(D) --
+Eth1/5        --      eth  routed up      none                       1000(D) --
+Eth1/6        --      eth  routed up      none                       1000(D) --
+Eth1/7        1       eth  access down    Link not connected         auto(D) --
+Eth1/8        1       eth  access down    Link not connected         auto(D) --
+Eth1/9        1       eth  access down    Link not connected         auto(D) --
+Eth1/10       1       eth  access down    Link not connected         auto(D) --
+Eth1/11       1       eth  access down    Link not connected         auto(D) --
+Eth1/12       1       eth  access down    Link not connected         auto(D) --
+Eth1/13       1       eth  access down    Link not connected         auto(D) --
+Eth1/14       1       eth  access down    Link not connected         auto(D) --
+Eth1/15       1       eth  access down    Link not connected         auto(D) --
+Eth1/16       1       eth  access down    Link not connected         auto(D) --
+Eth1/17       1       eth  access down    Link not connected         auto(D) --
+Eth1/18       1       eth  access down    Link not connected         auto(D) --
+Eth1/19       1       eth  access down    Link not connected         auto(D) --
+Eth1/20       1       eth  access down    Link not connected         auto(D) --
+Eth1/21       1       eth  access down    Link not connected         auto(D) --
+Eth1/22       1       eth  access down    Link not connected         auto(D) --
+Eth1/23       1       eth  access down    Link not connected         auto(D) --
+Eth1/24       1       eth  access down    Link not connected         auto(D) --
+Eth1/25       1       eth  access down    Link not connected         auto(D) --
+Eth1/26       1       eth  access down    Link not connected         auto(D) --
+Eth1/27       1       eth  access down    Link not connected         auto(D) --
+Eth1/28       1       eth  access down    Link not connected         auto(D) --
+Eth1/29       1       eth  access down    Link not connected         auto(D) --
+Eth1/30       1       eth  access down    Link not connected         auto(D) --
+Eth1/31       1       eth  access down    Link not connected         auto(D) --
+Eth1/32       1       eth  access down    Link not connected         auto(D) --
+Eth1/33       1       eth  access down    Link not connected         auto(D) --
+Eth1/34       1       eth  access down    Link not connected         auto(D) --
+Eth1/35       1       eth  access down    Link not connected         auto(D) --
+Eth1/36       1       eth  access down    Link not connected         auto(D) --
+Eth1/37       1       eth  access down    Link not connected         auto(D) --
+Eth1/38       1       eth  access down    Link not connected         auto(D) --
+Eth1/39       1       eth  access down    Link not connected         auto(D) --
+Eth1/40       1       eth  access down    Link not connected         auto(D) --
+Eth1/41       1       eth  access down    Link not connected         auto(D) --
+Eth1/42       1       eth  access down    Link not connected         auto(D) --
+Eth1/43       1       eth  access down    Link not connected         auto(D) --
+Eth1/44       1       eth  access down    Link not connected         auto(D) --
+Eth1/45       1       eth  access down    Link not connected         auto(D) --
+Eth1/46       1       eth  access down    Link not connected         auto(D) --
+Eth1/47       1       eth  access down    Link not connected         auto(D) --
+Eth1/48       1       eth  access down    Link not connected         auto(D) --
+Eth1/49       1       eth  access down    Link not connected         auto(D) --
+Eth1/50       1       eth  access down    Link not connected         auto(D) --
+Eth1/51       1       eth  access down    Link not connected         auto(D) --
+Eth1/52       1       eth  access down    Link not connected         auto(D) --
+Eth1/53       1       eth  access down    Link not connected         auto(D) --
+Eth1/54       1       eth  access down    Link not connected         auto(D) --
+Eth1/55       1       eth  access down    Link not connected         auto(D) --
+Eth1/56       1       eth  access down    Link not connected         auto(D) --
+Eth1/57       1       eth  access down    Link not connected         auto(D) --
+Eth1/58       1       eth  access down    Link not connected         auto(D) --
+Eth1/59       1       eth  access down    Link not connected         auto(D) --
+Eth1/60       1       eth  access down    Link not connected         auto(D) --
+Eth1/61       1       eth  access down    Link not connected         auto(D) --
+Eth1/62       1       eth  access down    Link not connected         auto(D) --
+Eth1/63       1       eth  access down    Link not connected         auto(D) --
+Eth1/64       1       eth  access down    Link not connected         auto(D) --
+
+--------------------------------------------------------------------------------
+Interface     Status     Description
+--------------------------------------------------------------------------------
+Lo0           up         Loopback
+agg3#
+2018-01-25T14:03:36: %UNICON-INFO: +++ execute  +++
+show interface mgmt0
+mgmt0 is up
+admin state is up,
+  Hardware: Ethernet, address: 5e00.0002.0000 (bia 5e00.0002.0000)
+  Description: OOB Management
+  Internet Address is 172.16.1.178/24
+  MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec
+  reliability 205/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, medium is broadcast
+  full-duplex, 1000 Mb/s
+  Auto-Negotiation is turned on
+  Auto-mdix is turned off
+  EtherType is 0x0000
+  1 minute input rate 9016 bits/sec, 8 packets/sec
+  1 minute output rate 288 bits/sec, 0 packets/sec
+  Rx
+    4327 input packets 124 unicast packets 3365 multicast packets
+    838 broadcast packets 573832 bytes
+  Tx
+    134 output packets 122 unicast packets 10 multicast packets
+    2 broadcast packets 14829 bytes
+
+agg3# {'show.intf.admin_state': 'up,',
+ 'show.intf.bia_address': '5e00.0002.0000',
+ 'show.intf.bw': '1000000',
+ 'show.intf.dly': '10',
+ 'show.intf.encapsulation': 'ARPA',
+ 'show.intf.hardware': 'Ethernet',
+ 'show.intf.if_name': 'mgmt0',
+ 'show.intf.ip_address': '172.16.1.178',
+ 'show.intf.line_protocol': 'up',
+ 'show.intf.mac_address': '5e00.0002.0000',
+ 'show.intf.mtu': '1500',
+ 'show.intf.reliability': '205/255',
+ 'show.intf.rxload': '1/255',
+ 'show.intf.txload': '1/255'}

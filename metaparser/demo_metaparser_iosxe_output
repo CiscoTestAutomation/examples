@@ -1,0 +1,505 @@
+
+2018-01-25T16:14:07: %UNICON-INFO: +++ initializing context +++
+
+2018-01-25T16:14:07: %UNICON-INFO: +++ initializing state_machine +++
+
+2018-01-25T16:14:07: %UNICON-INFO: +++ initializing services +++
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  enable   :  <unicon.plugins.generic.service_implementation.Enable object at 0x7fa60f3c5898>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  reload   :  <unicon.plugins.generic.service_implementation.Reload object at 0x7fa60f3c55f8>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  disable   :  <unicon.plugins.generic.service_implementation.Disable object at 0x7fa60f3c57b8>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  configure   :  <unicon.plugins.iosxe.service_implementation.Configure object at 0x7fa60f3c56d8>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  config   :  <unicon.plugins.iosxe.service_implementation.Config object at 0x7fa60f3c59b0>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  expect_log   :  <unicon.plugins.generic.service_implementation.ExpectLogging object at 0x7fa60f3c5a90>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  expect   :  <unicon.plugins.generic.service_implementation.Expect object at 0x7fa60f3c59e8>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  send   :  <unicon.plugins.generic.service_implementation.Send object at 0x7fa60f3c5b00>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  sendline   :  <unicon.plugins.generic.service_implementation.Sendline object at 0x7fa60f3c5748>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  log_user   :  <unicon.plugins.generic.service_implementation.LogUser object at 0x7fa60f3c5780>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  execute   :  <unicon.plugins.iosxe.service_implementation.Execute object at 0x7fa60f3c5828>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  ping   :  <unicon.plugins.generic.service_implementation.Ping object at 0x7fa60f3c5630>
+
+2018-01-25T16:14:07: %UNICON-INFO: adding service  copy   :  <unicon.plugins.generic.service_implementation.Copy object at 0x7fa60f3c5940>
+
+2018-01-25T16:14:07: %UNICON-INFO: connection to branch10-router10
+
+2018-01-25T16:14:07: %UNICON-INFO: +++ connection to spawn_command: telnet 172.25.192.90 17004, id: 140351194950680 +++
+
+2018-01-25T16:14:07: %UNICON-INFO: telnet 172.25.192.90 17004
+Trying 172.25.192.90...
+Connected to 172.25.192.90.
+Escape character is '^]'.
+
+branch10-router10#
+2018-01-25T16:14:08: %UNICON-INFO: +++ initializing handle +++
+
+2018-01-25T16:14:08: %UNICON-INFO: +++ execute  +++
+term length 0
+branch10-router10#
+2018-01-25T16:14:08: %UNICON-INFO: +++ execute  +++
+term width 0
+branch10-router10#
+2018-01-25T16:14:08: %UNICON-INFO: +++ execute  +++
+show version
+Cisco IOS XE Software, Version 16.06.01
+Cisco IOS Software [Everest], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 16.6.1, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2017 by Cisco Systems, Inc.
+Compiled Sat 22-Jul-17 05:51 by mcpre
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2017 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: IOS-XE ROMMON
+
+branch10-router10 uptime is 2 hours, 19 minutes
+Uptime for this control processor is 2 hours, 20 minutes
+System returned to ROM by reload
+System image file is "bootflash:packages.conf"
+Last reload reason: Unknown reason
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+License Level: ax
+License Type: Default. No valid license found.
+Next reload license Level: ax
+
+cisco CSR1000V (VXE) processor (revision VXE) with 1225511K/3075K bytes of memory.
+Processor board ID 91IGIRA8Q75
+3 Gigabit Ethernet interfaces
+32768K bytes of non-volatile configuration memory.
+3018776K bytes of physical memory.
+16162815K bytes of virtual hard disk at bootflash:.
+0K bytes of WebUI ODM Files at webui:.
+
+Configuration register is 0x2102
+
+branch10-router10#
+2018-01-25T16:14:08: %UNICON-INFO: +++ config  +++
+config term
+Enter configuration commands, one per line.  End with CNTL/Z.
+branch10-router10(config)#no logging console
+branch10-router10(config)#line console 0
+branch10-router10(config-line)#exec-timeout 0
+branch10-router10(config-line)#end
+branch10-router10#
+2018-01-25T16:14:09: %UNICON-INFO: Attaching  all Subcommands
+
+2018-01-25T16:14:09: %UNICON-INFO: +++ execute  +++
+show interfaces
+GigabitEthernet1 is up, line protocol is up 
+  Hardware is CSR vNIC, address is 5e00.0008.0000 (bia 5e00.0008.0000)
+  Description: OOB Management
+  Internet address is 172.16.1.179/24
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full Duplex, 1000Mbps, link type is auto, media type is RJ45
+  output flow-control is unsupported, input flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input 00:00:00, output 01:48:29, output hang never
+  Last clearing of "show interface" counters 01:28:22
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 17000 bits/sec, 18 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     96734 packets input, 11814114 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles 
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     1590 packets output, 155820 bytes, 0 underruns
+     0 output errors, 0 collisions, 0 interface resets
+     710 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+GigabitEthernet2 is up, line protocol is up 
+  Hardware is CSR vNIC, address is fa16.3e98.d98f (bia fa16.3e98.d98f)
+  Description: to wan9
+  Internet address is 10.0.0.85/30
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full Duplex, 1000Mbps, link type is auto, media type is RJ45
+  output flow-control is unsupported, input flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input 01:24:02, output 01:24:02, output hang never
+  Last clearing of "show interface" counters 01:28:22
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     841 packets input, 77019 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles 
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     862 packets output, 83664 bytes, 0 underruns
+     0 output errors, 0 collisions, 3 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+GigabitEthernet3 is up, line protocol is up 
+  Hardware is CSR vNIC, address is fa16.3e35.ada6 (bia fa16.3e35.ada6)
+  Description: to branch10-host11
+  Internet address is 10.0.0.90/30
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full Duplex, 1000Mbps, link type is auto, media type is RJ45
+  output flow-control is unsupported, input flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output 02:18:50, output hang never
+  Last clearing of "show interface" counters 01:28:22
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles 
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     559 packets output, 57018 bytes, 0 underruns
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+Loopback0 is up, line protocol is up 
+  Hardware is Loopback
+  Description: Loopback
+  Internet address is 192.168.0.10/32
+  MTU 1514 bytes, BW 8000000 Kbit/sec, DLY 5000 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation LOOPBACK, loopback not set
+  Keepalive set (10 sec)
+  Last input 02:12:57, output never, output hang never
+  Last clearing of "show interface" counters 01:28:22
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/0 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles 
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 packets output, 0 bytes, 0 underruns
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+     0 output buffer failures, 0 output buffers swapped out
+branch10-router10#{'GigabitEthernet1': {'arp_timeout': '04:00:00',
+                      'arp_type': 'arpa',
+                      'auto_negotiate': True,
+                      'bandwidth': 1000000,
+                      'counters': {'in_broadcast_pkts': 0,
+                                   'in_crc_errors': 0,
+                                   'in_errors': 0,
+                                   'in_frame': 0,
+                                   'in_giants': 0,
+                                   'in_ignored': 0,
+                                   'in_mac_pause_frames': 0,
+                                   'in_multicast_pkts': 0,
+                                   'in_no_buffer': 0,
+                                   'in_octets': 11814114,
+                                   'in_overrun': 0,
+                                   'in_pkts': 96734,
+                                   'in_runts': 0,
+                                   'in_throttles': 0,
+                                   'in_watchdog': 0,
+                                   'last_clear': '01:28:22',
+                                   'out_babble': 0,
+                                   'out_buffer_failure': 0,
+                                   'out_buffers_swapped': 0,
+                                   'out_collision': 0,
+                                   'out_deferred': 0,
+                                   'out_errors': 0,
+                                   'out_interface_resets': 0,
+                                   'out_late_collision': 0,
+                                   'out_lost_carrier': 0,
+                                   'out_mac_pause_frames': 0,
+                                   'out_no_carrier': 0,
+                                   'out_octets': 155820,
+                                   'out_pkts': 1590,
+                                   'out_underruns': 0,
+                                   'out_unknown_protocl_drops': 710,
+                                   'rate': {'in_rate': 17000,
+                                            'in_rate_pkts': 18,
+                                            'load_interval': 300,
+                                            'out_rate': 0,
+                                            'out_rate_pkts': 0}},
+                      'delay': 10,
+                      'duplex_mode': 'full',
+                      'enabled': True,
+                      'encapsulations': {'encapsulation': 'arpa'},
+                      'flow_control': {'receive': False, 'send': False},
+                      'ipv4': {'172.16.1.179/24': {'ip': '172.16.1.179',
+                                                   'prefix_length': '24'}},
+                      'keepalive': 10,
+                      'last_input': '00:00:00',
+                      'last_output': '01:48:29',
+                      'line_protocol': 'up',
+                      'link_type': 'auto',
+                      'mac_address': '5e00.0008.0000',
+                      'media_type': 'RJ45',
+                      'mtu': 1500,
+                      'oper_status': 'up',
+                      'output_hang': 'never',
+                      'phys_address': '5e00.0008.0000',
+                      'port_channel': {'port_channel_member': False},
+                      'port_speed': '1000',
+                      'queues': {'input_queue_drops': 0,
+                                 'input_queue_flushes': 0,
+                                 'input_queue_max': 375,
+                                 'input_queue_size': 0,
+                                 'output_queue_max': 40,
+                                 'output_queue_size': 0,
+                                 'queue_strategy': 'fifo',
+                                 'total_output_drop': 0},
+                      'reliability': '255/255',
+                      'rxload': '1/255',
+                      'txload': '1/255',
+                      'type': 'CSR vNIC'},
+ 'GigabitEthernet2': {'arp_timeout': '04:00:00',
+                      'arp_type': 'arpa',
+                      'auto_negotiate': True,
+                      'bandwidth': 1000000,
+                      'counters': {'in_broadcast_pkts': 0,
+                                   'in_crc_errors': 0,
+                                   'in_errors': 0,
+                                   'in_frame': 0,
+                                   'in_giants': 0,
+                                   'in_ignored': 0,
+                                   'in_mac_pause_frames': 0,
+                                   'in_multicast_pkts': 0,
+                                   'in_no_buffer': 0,
+                                   'in_octets': 77019,
+                                   'in_overrun': 0,
+                                   'in_pkts': 841,
+                                   'in_runts': 0,
+                                   'in_throttles': 0,
+                                   'in_watchdog': 0,
+                                   'last_clear': '01:28:22',
+                                   'out_babble': 0,
+                                   'out_buffer_failure': 0,
+                                   'out_buffers_swapped': 0,
+                                   'out_collision': 0,
+                                   'out_deferred': 0,
+                                   'out_errors': 0,
+                                   'out_interface_resets': 3,
+                                   'out_late_collision': 0,
+                                   'out_lost_carrier': 0,
+                                   'out_mac_pause_frames': 0,
+                                   'out_no_carrier': 0,
+                                   'out_octets': 83664,
+                                   'out_pkts': 862,
+                                   'out_underruns': 0,
+                                   'out_unknown_protocl_drops': 0,
+                                   'rate': {'in_rate': 0,
+                                            'in_rate_pkts': 0,
+                                            'load_interval': 300,
+                                            'out_rate': 0,
+                                            'out_rate_pkts': 0}},
+                      'delay': 10,
+                      'duplex_mode': 'full',
+                      'enabled': True,
+                      'encapsulations': {'encapsulation': 'arpa'},
+                      'flow_control': {'receive': False, 'send': False},
+                      'ipv4': {'10.0.0.85/30': {'ip': '10.0.0.85',
+                                                'prefix_length': '30'}},
+                      'keepalive': 10,
+                      'last_input': '01:24:02',
+                      'last_output': '01:24:02',
+                      'line_protocol': 'up',
+                      'link_type': 'auto',
+                      'mac_address': 'fa16.3e98.d98f',
+                      'media_type': 'RJ45',
+                      'mtu': 1500,
+                      'oper_status': 'up',
+                      'output_hang': 'never',
+                      'phys_address': 'fa16.3e98.d98f',
+                      'port_channel': {'port_channel_member': False},
+                      'port_speed': '1000',
+                      'queues': {'input_queue_drops': 0,
+                                 'input_queue_flushes': 0,
+                                 'input_queue_max': 375,
+                                 'input_queue_size': 0,
+                                 'output_queue_max': 40,
+                                 'output_queue_size': 0,
+                                 'queue_strategy': 'fifo',
+                                 'total_output_drop': 0},
+                      'reliability': '255/255',
+                      'rxload': '1/255',
+                      'txload': '1/255',
+                      'type': 'CSR vNIC'},
+ 'GigabitEthernet3': {'arp_timeout': '04:00:00',
+                      'arp_type': 'arpa',
+                      'auto_negotiate': True,
+                      'bandwidth': 1000000,
+                      'counters': {'in_broadcast_pkts': 0,
+                                   'in_crc_errors': 0,
+                                   'in_errors': 0,
+                                   'in_frame': 0,
+                                   'in_giants': 0,
+                                   'in_ignored': 0,
+                                   'in_mac_pause_frames': 0,
+                                   'in_multicast_pkts': 0,
+                                   'in_no_buffer': 0,
+                                   'in_octets': 0,
+                                   'in_overrun': 0,
+                                   'in_pkts': 0,
+                                   'in_runts': 0,
+                                   'in_throttles': 0,
+                                   'in_watchdog': 0,
+                                   'last_clear': '01:28:22',
+                                   'out_babble': 0,
+                                   'out_buffer_failure': 0,
+                                   'out_buffers_swapped': 0,
+                                   'out_collision': 0,
+                                   'out_deferred': 0,
+                                   'out_errors': 0,
+                                   'out_interface_resets': 0,
+                                   'out_late_collision': 0,
+                                   'out_lost_carrier': 0,
+                                   'out_mac_pause_frames': 0,
+                                   'out_no_carrier': 0,
+                                   'out_octets': 57018,
+                                   'out_pkts': 559,
+                                   'out_underruns': 0,
+                                   'out_unknown_protocl_drops': 0,
+                                   'rate': {'in_rate': 0,
+                                            'in_rate_pkts': 0,
+                                            'load_interval': 300,
+                                            'out_rate': 0,
+                                            'out_rate_pkts': 0}},
+                      'delay': 10,
+                      'duplex_mode': 'full',
+                      'enabled': True,
+                      'encapsulations': {'encapsulation': 'arpa'},
+                      'flow_control': {'receive': False, 'send': False},
+                      'ipv4': {'10.0.0.90/30': {'ip': '10.0.0.90',
+                                                'prefix_length': '30'}},
+                      'keepalive': 10,
+                      'last_input': 'never',
+                      'last_output': '02:18:50',
+                      'line_protocol': 'up',
+                      'link_type': 'auto',
+                      'mac_address': 'fa16.3e35.ada6',
+                      'media_type': 'RJ45',
+                      'mtu': 1500,
+                      'oper_status': 'up',
+                      'output_hang': 'never',
+                      'phys_address': 'fa16.3e35.ada6',
+                      'port_channel': {'port_channel_member': False},
+                      'port_speed': '1000',
+                      'queues': {'input_queue_drops': 0,
+                                 'input_queue_flushes': 0,
+                                 'input_queue_max': 375,
+                                 'input_queue_size': 0,
+                                 'output_queue_max': 40,
+                                 'output_queue_size': 0,
+                                 'queue_strategy': 'fifo',
+                                 'total_output_drop': 0},
+                      'reliability': '255/255',
+                      'rxload': '1/255',
+                      'txload': '1/255',
+                      'type': 'CSR vNIC'},
+ 'Loopback0': {'bandwidth': 8000000,
+               'counters': {'in_abort': 0,
+                            'in_broadcast_pkts': 0,
+                            'in_crc_errors': 0,
+                            'in_errors': 0,
+                            'in_frame': 0,
+                            'in_giants': 0,
+                            'in_ignored': 0,
+                            'in_multicast_pkts': 0,
+                            'in_no_buffer': 0,
+                            'in_octets': 0,
+                            'in_overrun': 0,
+                            'in_pkts': 0,
+                            'in_runts': 0,
+                            'in_throttles': 0,
+                            'last_clear': '01:28:22',
+                            'out_buffer_failure': 0,
+                            'out_buffers_swapped': 0,
+                            'out_collision': 0,
+                            'out_errors': 0,
+                            'out_interface_resets': 0,
+                            'out_octets': 0,
+                            'out_pkts': 0,
+                            'out_underruns': 0,
+                            'out_unknown_protocl_drops': 0,
+                            'rate': {'in_rate': 0,
+                                     'in_rate_pkts': 0,
+                                     'load_interval': 300,
+                                     'out_rate': 0,
+                                     'out_rate_pkts': 0}},
+               'delay': 5000,
+               'description': 'Loopback',
+               'enabled': True,
+               'encapsulations': {'encapsulation': 'loopback'},
+               'ipv4': {'192.168.0.10/32': {'ip': '192.168.0.10',
+                                            'prefix_length': '32'}},
+               'keepalive': 10,
+               'last_input': '02:12:57',
+               'last_output': 'never',
+               'line_protocol': 'up',
+               'mtu': 1514,
+               'oper_status': 'up',
+               'output_hang': 'never',
+               'port_channel': {'port_channel_member': False},
+               'queues': {'input_queue_drops': 0,
+                          'input_queue_flushes': 0,
+                          'input_queue_max': 75,
+                          'input_queue_size': 0,
+                          'output_queue_max': 0,
+                          'output_queue_size': 0,
+                          'queue_strategy': 'fifo',
+                          'total_output_drop': 0},
+               'reliability': '255/255',
+               'rxload': '1/255',
+               'txload': '1/255',
+               'type': 'Loopback'}}
