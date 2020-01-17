@@ -1,6 +1,6 @@
 import os
 import argparse
-from ats.easypy import run
+from pyats.easypy import run
 
 parser = argparse.ArgumentParser()
 

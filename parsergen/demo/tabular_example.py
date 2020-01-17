@@ -5,7 +5,7 @@ import pprint
 import argparse
 
 from genie import parsergen
-from ats.topology import loader
+from pyats.topology import loader
 
 
 def load(testbed, device_name):

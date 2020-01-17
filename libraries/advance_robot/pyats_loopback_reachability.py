@@ -5,8 +5,8 @@ import logging
 from time import sleep
 
 # import ats
-from ats import aetest
-from ats.log.utils import banner
+from pyats import aetest
+from pyats.log.utils import banner
 
 # import genie
 from genie.abstract import Lookup

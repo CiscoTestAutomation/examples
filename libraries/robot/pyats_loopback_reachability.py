@@ -1,8 +1,8 @@
 import re
 import logging
 
-from ats import aetest
-from ats.log.utils import banner
+from pyats import aetest
+from pyats.log.utils import banner
 
 #
 # create a logger for this testscript

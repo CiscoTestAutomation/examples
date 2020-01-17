@@ -13,13 +13,13 @@
 ###################################################################
 
 try:
-    from ats import tcl
-    from ats.tcl import KeyedList
+    from pyats import tcl
+    from pyats.tcl import KeyedList
 except Exception:
     pass
 
-from ats import aetest
-from ats.log.utils import banner
+from pyats import aetest
+from pyats.log.utils import banner
 
 import pprint
 import re

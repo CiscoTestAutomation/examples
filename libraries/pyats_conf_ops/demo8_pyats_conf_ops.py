@@ -7,9 +7,9 @@ import time
 import logging
 
 # Needed for aetest script
-from ats import aetest
-from ats.utils.objects import R
-from ats.datastructures.logic import Not
+from pyats import aetest
+from pyats.utils.objects import R
+from pyats.datastructures.logic import Not
 
 from genie.abstract import Lookup
 from genie.libs import conf, ops

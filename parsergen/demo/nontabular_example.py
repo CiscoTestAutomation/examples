@@ -4,7 +4,7 @@
 import pprint
 import argparse
 
-from ats.topology import loader
+from pyats.topology import loader
 
 from genie import parsergen
 import nontabular_markup

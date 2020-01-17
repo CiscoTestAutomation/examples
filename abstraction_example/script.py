@@ -10,7 +10,7 @@ Feel free to make changes to the tb.yaml file and see how lookup behavior change
 
 from genie import abstract
 
-from ats import aetest
+from pyats import aetest
 
 import abstracted_pkg
 
@@ -46,7 +46,7 @@ class LookupTestcase(aetest.Testcase):
 if __name__ == '__main__':
     
     import argparse
-    from ats import topology
+    from pyats import topology
     
     parser = argparse.ArgumentParser()
     parser.add_argument('--testbed', type = topology.loader.load)

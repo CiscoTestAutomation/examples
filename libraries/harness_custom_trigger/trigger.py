@@ -3,7 +3,7 @@ import time
 import logging
 
 # pyATS
-from ats import aetest
+from pyats import aetest
 
 # Genie
 from genie.harness.base import Trigger
