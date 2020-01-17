@@ -5,7 +5,7 @@
 #              shown.
 
 import os
-from ats.easypy import run
+from pyats.easypy import run
 
 def main():
     # Find the examples/tests directory where the test script exists

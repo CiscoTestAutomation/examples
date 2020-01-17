@@ -1,7 +1,7 @@
 import time
 import importlib
 
-from ats import aetest
+from pyats import aetest
 from genie.harness.base import Trigger
 from genie.harness.base import Template
 from genie.ops.base import Context

@@ -12,7 +12,7 @@
 import logging
 
 # Needed for aetest script
-from ats import aetest
+from pyats import aetest
 
 # Genie Imports
 from genie.harness.standalone import run_genie_sdk, GenieStandalone

@@ -4,7 +4,7 @@
 #              with few passing tests
 
 import os
-from ats.easypy import run
+from pyats.easypy import run
 
 # All run() must be inside a main function
 def main():

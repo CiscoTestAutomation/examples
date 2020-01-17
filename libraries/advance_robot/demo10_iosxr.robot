@@ -2,7 +2,7 @@
 
 *** Settings ***
 # Importing test libraries, resource files and variable files.
-Library        ats.robot.pyATSRobot
+Library        pyats.robot.pyATSRobot
 Library        genie.libs.robot.GenieRobot
 
 

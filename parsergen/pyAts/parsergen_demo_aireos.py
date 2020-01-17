@@ -16,8 +16,8 @@ import pprint
 import logging
 from genie import parsergen as pg
 
-from ats import aetest
-from ats.log.utils import banner
+from pyats import aetest
+from pyats.log.utils import banner
 from genie.parsergen.examples.parsergen.pyAts import parsergen_demo_mkpg
 from csccon.expect import exp_internal
 
