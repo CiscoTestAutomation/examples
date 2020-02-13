@@ -23,7 +23,7 @@ This demo requires devices. There is 3 options on how to run this demo:
    to real devices as below.
 
 ```
-pyats run job demo3_harness_telemetry_job.py --testbed-file cisco_live.yaml --replay mock_device
+pyats run job demo3_harness_telemetry_job.py --testbed-file virl.yaml --replay mock_device
 ```
 
 2) This demo is ready to be used with the VIRL devices. Please follow the guide
