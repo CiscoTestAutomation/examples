@@ -1,0 +1,30 @@
+testbed:
+    name: 'virl'
+
+devices:
+    nx-osv-1:
+        type: "NX-OSv 9000"
+        os: "nxos"
+        alias: uut
+        credentials:
+            default:
+                username: admin
+                password: admin
+        connections:
+            a:
+                protocol: telnet
+                ip: 172.25.192.90
+                port: 17023
+    csr1000v-1:
+        type: asr1k
+        os: "iosxe"
+        alias: helper
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            a:
+                protocol: telnet
+                ip: 172.25.192.90
+                port: 17021
