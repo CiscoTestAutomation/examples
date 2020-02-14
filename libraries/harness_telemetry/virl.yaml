@@ -8,8 +8,8 @@ devices:
         alias: uut
         credentials:
             default:
-                username: root
-                password: D_Vay!_10&
+                username: admin
+                password: admin
         connections:
             a:
                 protocol: telnet
@@ -21,8 +21,8 @@ devices:
         alias: helper
         credentials:
             default:
-                username: root
-                password: D_Vay!_10&
+                username: cisco
+                password: cisco
         connections:
             a:
                 protocol: telnet
