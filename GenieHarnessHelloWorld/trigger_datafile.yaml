@@ -1,6 +1,16 @@
+# Hello World Testcase
 HelloWorld:
     source:
       # Python path
       # Directory.file.ClassName
       class: examples.GenieHarnessHelloWorld.HelloWorld.HelloWorld
     devices: ['uut']
+
+# Basic testcase
+Basic:
+    source:
+      # Python path
+      # Directory.file.ClassName
+      class: examples.GenieHarnessHelloWorld.Basic.Basic
+    devices: ['uut']
+
