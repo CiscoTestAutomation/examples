@@ -1,0 +1,6 @@
+HelloWorld:
+    source:
+      # Python path
+      # Directory.file.ClassName
+      class: examples.GenieHarnessHelloWorld.HelloWorld.HelloWorld
+    devices: ['uut']

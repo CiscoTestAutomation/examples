@@ -1,0 +1,36 @@
+devices:
+  nx-osv-1:
+      type: 'router'
+      os: 'nxos'
+      alias: 'uut'
+      credentials:
+        default:
+          username: admin
+          password: admin
+        enable:
+          password: admin
+      connections:
+          defaults:
+            class: 'unicon.Unicon'
+          cli:
+              protocol: telnet
+              ip: "172.25.192.90"
+              port: 17064
+
+  csr1000v-1:
+      type: 'router'
+      os: "iosxe"
+      alias: 'helper'
+      credentials:
+        default:
+          username: cisco
+          password: cisco
+        enable:
+          password: cisco
+      connections:
+          defaults:
+            class: 'unicon.Unicon'
+          cli:
+              protocol: telnet
+              ip: "172.25.192.90"
+              port: 17062
