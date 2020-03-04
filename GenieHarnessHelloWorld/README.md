@@ -35,10 +35,10 @@ case, we selected `HelloWorld` and `Basic`.
 
 In the `Basic` testcase, we sent commands to the device. There are many different API to use to interact with the devices; here are the most useful ones.
 
-1. device.parse('show version') <-- Call a parser and returns a dictionary datastructure
-2. device.execute('show version') <-- Send command to the device and return string from the device
-3. device.configure('interface ethernet2/2\nshutdown') <-- Go to conf t and send configuration to th    e device
-4. device.api.get_interface_mtu_size('Ethernet2/2') <-- Call any of our apis
-5. device.learn('bgp') <-- OS Agnostic model for specific feature. The object returned has a .info which gives a dictionary which is identical between all OS.
+1. *device.parse('show version')* <-- Call a parser and returns a dictionary datastructure
+2. *device.execute('show version')* <-- Send command to the device and return string from the device
+3. *device.configure('interface ethernet2/2\nshutdown')* <-- Go to conf t and send configuration to th    e device
+4. *device.api.get_interface_mtu_size('Ethernet2/2')* <-- Call any of our apis
+5. *device.learn('bgp')* <-- OS Agnostic model for specific feature. The object returned has a .info which gives a dictionary which is identical between all OS.
 
 The full list of available parsers, learn and api is available here: https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/
