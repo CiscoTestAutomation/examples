@@ -1,7 +1,7 @@
 # To run the job:
 # pyats run job features_example_job.py
 # Description: This example shows an overview of the different features/flows
-#              that PyATS supports like skipping testcases, looping, variants,
+#              that pyATS supports like skipping testcases, looping, variants,
 #              in addition to basic usage (passing/failing/etc)
 
 import os
