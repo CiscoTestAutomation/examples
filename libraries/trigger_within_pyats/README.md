@@ -5,7 +5,7 @@
 This script demonstrates how to include `Genie` Triggers and Verifications
 within any existing `pyATS` script.
 
-Make sure to read https://pubhub.devnetcloud.com/media/pyats-packages/docs/genie/userguide/harness/user/pyats.html for more details!
+Make sure to read https://pubhub.devnetcloud.com/media/genie-docs/docs/userguide/harness/user/pyats.html for more details!
 
 # Execution
 
