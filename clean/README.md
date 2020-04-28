@@ -1,13 +1,12 @@
-# pyATS | Library Examples
+# pyATS | Clean Examples
 
-This repository contains pyATS and its library's usage examples. The purpose
-of these examples is not to perform _real testing_, but rather to:
+This repository contains usage examples for the pyATS clean library's.
+These are not working examples, but rather:
 
-- demonstrate **the various features and functionalities** of the 
-  framework using examples and comments
+- showcase **the various features and functionalities** of the pyATS clean
+  framework
 
-- and demonstrating **how to use the libraries** with example scripts
-  using mock devices in `libraries/` folder
+- demonstrate **how to use the pyATS clean libraries** 
  
 ## Getting Started
 
@@ -15,6 +14,9 @@ of these examples is not to perform _real testing_, but rather to:
 
 # 1. make sure pyATS is installed (including the libraries)
 bash$ pip install pyats[full]
+
+# 2. ensure all pyATS clean library is installed
+bash$ pip list | grep genie.libs.clean
 
 # 2. clone this repository into your environment
 bash$ git clone https://github.com/CiscoTestAutomation/examples
