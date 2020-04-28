@@ -1,0 +1,52 @@
+testbed:
+  name: SAMPLE-TESTBED
+  servers:
+    tftp:
+      server: the-tftp-server
+      address: 10.81.116.4
+      credentials:
+        default:
+          username: user
+          password: "%ENC{w5zDmsOD}"
+      path: /auto/path/images/
+    scp:
+      server: the-tftp-server
+      address: 10.81.116.4
+      credentials:
+        default:
+          username: user
+          password: "%ENC{w5zDmsOD}"
+      path: /auto/path/images/
+
+devices:
+  N9500-1:
+    alias: uut
+    os: nxos
+    type: n9k
+    platform: n9k
+    credentials:
+      default:
+        password: "%ENC{w5zDmsOD}"
+        username: admin
+      enable:
+        password: "%ENC{w5zDmsOD}"
+        username: admin
+    connections:
+      defaults:
+        class: unicon.Unicon
+      vty:
+        protocol: telnet
+        ip: 1.1.1.1
+      cli:
+        protocol: telnet
+        ip: 2.2.2.2
+        port: 2001
+      a:
+        protocol: telnet
+        ip: 2.2.2.2
+        port: 2001
+    custom:
+      execute_timeout: 600
+      configure_timeout: 250
+      abstraction:
+        order: [os, platform]

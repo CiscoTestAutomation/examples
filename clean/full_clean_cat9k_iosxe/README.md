@@ -1,14 +1,14 @@
-## pyATS Clean for NXOS N9K Hardware
+## pyATS Clean for IOSXE CAT9K
 
 This folder contains the following sample files:
 
-- clean.yaml file for NXOS N9K hardware platform
-- testbed.yaml file for NXOS N9K hardware platform
+- clean.yaml file for IOSXE CAT9K platform
+- testbed.yaml file for IOSXE CAT9K platform
 
 These files can be used as a template to execute a full end-to-end clean on an
-NXOS N9K hardware device. It performs the following steps in order:
+IOSXE CAT9K device. It performs the following steps in order:
 
-- connects to NXOS N9K hardware device
+- connects to IOSXE CAT9K device
 - (Optional) pings execution servers to verify connectivity
 - (Optional) copies necessary images to intermediate server
 - copies images to device

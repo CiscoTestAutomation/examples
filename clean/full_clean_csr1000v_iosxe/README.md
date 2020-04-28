@@ -17,3 +17,6 @@ IOSXE CSR1000v device. It performs the following steps in order:
 - reload device
 - apply base configuration after reload
 - verifies the running image matches what was specified
+
+Please substitute your device IP addresses, credentials and image directories in
+the templates provided before use.

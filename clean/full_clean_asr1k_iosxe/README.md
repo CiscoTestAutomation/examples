@@ -16,4 +16,7 @@ IOSXE ASR1K device. It performs the following steps in order:
 - executes 'write erase'
 - reload device
 - apply base configuration after reload
-- verifies the running image matches what was specified
+- verifies the running image matches what was provided
+
+Please substitute your device IP addresses, credentials and image directories in
+the templates provided before use.
