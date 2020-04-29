@@ -1,0 +1,76 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [isr-4400-1]
+
+devices:
+  isr-4400-1:
+    images:
+      - /auto/release/path/isr4400-universalk9.164422SSA.bin
+
+    global_recovery:
+      break_count: 5
+      console_activity_pattern: "\\.\\.\\.\\."
+      timeout: 600
+      recovery_password: "%ENC{w5zDmsOD}"
+      golden_image:
+        - bootflash:/golden_image.bin
+
+    connect:
+
+    ping_server:
+      server: the-tftp-server
+      vrf: Mgmt-intf
+
+    copy_to_linux:
+      destination:
+        directory: /auto/path/images/
+      overwrite: True
+      copy_attempts: 3
+      append_hostname: True
+
+    copy_to_device:
+      origin:
+        hostname: the-tftp-server
+      destination:
+        directory: 'bootflash:'
+      protocol: ftp
+      overwrite: True
+      verify_num_images: False
+      check_file_stability: True
+      min_free_space_percent: 50
+
+    change_boot_variable:
+
+    write_erase:
+
+    reload:
+
+    apply_configuration:
+      configuration: |
+        hostname isr-4400-1
+        enable password banana
+        interface GigabitEthernet0
+          ip address X.X.X.X 255.255.255.0
+          no shut
+        line console 0
+          exec-timeout 0 0
+          logging synchronous
+        line vty 0 4
+          transport input all
+      config_timeout: 30
+      config_stable_time: 120
+
+    verify_running_image:
+
+    order:
+      - 'connect'
+      - 'ping_server'
+      - 'copy_to_linux'
+      - 'copy_to_device'
+      - 'change_boot_variable'
+      - 'write_erase'
+      - 'reload'
+      - 'apply_configuration'
+      - 'verify_running_image'
+  

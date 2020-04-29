@@ -1,0 +1,79 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [csr-1000v-1]
+
+devices:
+  csr-1000v-1:
+    images:
+      - /auto/release/path/csr1000v-universalk9.03.10.00.S.153-3.S-ext.SPA.bin
+
+    global_recovery:
+      break_count: 5
+      console_activity_pattern: "\\.\\.\\.\\."
+      timeout: 600
+      recovery_password: "%ENC{w5zDmsOD}"
+      golden_image:
+        - bootflash:/golden_image.bin
+
+    connect:
+
+    ping_server:
+      server: the-tftp-server
+      vrf: Mgmt-intf
+
+    copy_to_linux:
+      destination:
+        directory: /auto/path/images/
+      overwrite: True
+      copy_attempts: 3
+      append_hostname: True
+
+    copy_to_device:
+      origin:
+        hostname: the-tftp-server
+      destination:
+        directory: 'bootflash:'
+      protocol: ftp
+      overwrite: True
+      verify_num_images: False
+      check_file_stability: True
+      min_free_space_percent: 50
+
+    change_boot_variable:
+      write_memory: True
+
+    write_erase:
+
+    reload:
+
+    apply_configuration:
+      configuration: |
+        hostname csr-1000v-1
+        enable password banana
+        interface GigabitEthernet1
+          ip address X.X.X.X 255.255.255.0
+          negotiation auto
+          no shut
+        line console 0
+          exec-timeout 0 0
+          logging synchronous
+        line vty 0 4
+          password lab
+          transport input all
+      config_timeout: 30
+      config_stable_time: 120
+
+    verify_running_image:
+
+    order:
+      - 'connect'
+      - 'ping_server'
+      - 'copy_to_linux'
+      - 'copy_to_device'
+      - 'change_boot_variable'
+      - 'write_erase'
+      - 'reload'
+      - 'apply_configuration'
+      - 'verify_running_image'
+  

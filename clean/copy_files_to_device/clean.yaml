@@ -1,0 +1,30 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [asr1000]
+
+devices:
+  asr1000:
+
+    connect:
+
+    copy_to_device:
+      origin:
+        files:
+          - /auto/release/path/vmlinux.bin
+          - /auto/configs/asr1000_ospf_config.cfg
+          - /auto/configs/asr1000_bgp_config.cfg
+        hostname: 10.81.116.4
+      destination:
+        directory: 'bootflash:/'
+      protocol: ftp
+      overwrite: True
+      copy_attempts: 3
+      min_free_space_percent: 30
+      protected_files:
+        - golden_config.cfg
+        - (base.*)
+
+    order:
+      - 'connect'
+      - 'copy_to_device'

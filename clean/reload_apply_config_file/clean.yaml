@@ -1,0 +1,26 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [N9500-1]
+
+devices:
+  N9500-1:
+
+    connect:
+
+    reload:
+      sleep_after_reload: 300
+      module_timeout: 180
+      module_interval: 60
+
+    apply_configuration:
+      file: 'bootflash:n9500_golden_config.cfg'
+      config_timeout: 60
+      max_time: 180
+      check_interval: 60
+      config_stable_time: 120
+
+    order:
+      - 'connect'
+      - 'reload'
+      - 'apply_configuration'
