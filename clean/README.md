@@ -6,7 +6,14 @@ not working examples, but rather:
 - showcase **the various features and functionalities** of the pyATS clean
   framework
 
-- demonstrate **how to use the pyATS clean libraries** 
+- demonstrate **how to use the pyATS clean libraries**
+
+pyATS Clean is broken down into several 'stages' which are executed in the 'order'
+specified within the clean YAML and is therefore highly customizable.
+
+The usecases and examples provided in this section can be merged or combined
+to generate your custom order or sequence of pyATS Clean stages.
+
 
 ## Getting Started
 
@@ -28,6 +35,7 @@ bash$ git clone https://github.com/CiscoTestAutomation/examples
 
 ## General Information
 
+- pyATS Clean Documentation: https://pubhub.devnetcloud.com/media/genie-docs/docs/clean/index.html
 - Website: https://developer.cisco.com/pyats/
 - Documentation: https://developer.cisco.com/docs/pyats/
 - Support: pyats-support-ext@cisco.com

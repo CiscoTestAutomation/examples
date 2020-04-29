@@ -18,5 +18,10 @@ IOSXE ASR1K device. It performs the following steps in order:
 - apply base configuration after reload
 - verifies the running image matches what was provided
 
+If the devices are not in stable state at the time of execution, pyATS Clean
+provides a built-in recovery mechanism, where it attempts to bring the device
+back to stable state by powercycling the device and then rebooting it from
+rommon with a known stable (golden) image.
+
 Please substitute your device IP addresses, credentials and image directories in
 the templates provided before use.
