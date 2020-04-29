@@ -15,6 +15,9 @@ not working examples, but rather:
 # 1. make sure pyATS is installed (including the libraries)
 bash$ pip install pyats[full]
 
+# Cisco Internal only
+bash$ pip install ats[full]
+
 # 2. ensure the pyATS clean library is installed
 bash$ pip list | grep genie.libs.clean
 
