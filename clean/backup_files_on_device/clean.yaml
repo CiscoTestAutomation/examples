@@ -1,0 +1,18 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [asr1000]
+
+devices:
+  asr1000:
+
+    connect:
+
+    backup_file_on_device:
+      copy_dir: 'bootflash:/'
+      copy_file: 'asr1000_mpls_config.cfg'
+      overwrite: False
+
+    order:
+      - 'connect'
+      - 'backup_file_on_device'
