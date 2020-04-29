@@ -1,0 +1,22 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [csr-1000v-1]
+
+devices:
+  csr-1000v-1:
+
+    connect:
+
+    tftp_boot:
+      image:
+        - /auto/release/path/csr1000v-universalk9.03.10.00.S.153-3.S-ext.SPA.bin
+      ip_address: [10.1.2.64]
+      gateway: 10.1.2.1
+      subnet_mask: 255.255.255.0
+      tftp_server: 10.81.116.4
+      timeout: 30000
+
+    order:
+      - 'connect'
+      - 'tftp_boot'
