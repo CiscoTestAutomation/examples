@@ -8,7 +8,7 @@ devices:
     images:
       - /auto/release/path/csr1000v-universalk9.03.10.00.S.153-3.S-ext.SPA.bin
 
-    global_recovery:
+    device_recovery:
       break_count: 5
       console_activity_pattern: "\\.\\.\\.\\."
       timeout: 600
@@ -76,4 +76,3 @@ devices:
       - 'reload'
       - 'apply_configuration'
       - 'verify_running_image'
-  
