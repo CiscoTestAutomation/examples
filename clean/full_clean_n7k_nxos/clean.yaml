@@ -11,13 +11,14 @@ devices:
       kickstart:
         - /auto/release/path/n7000-s2-kickstart.6.2.10.bin
 
-    global_recovery:
+    device_recovery:
       break_count: 5
       console_activity_pattern: "\\.\\.\\.\\."
       timeout: 600
       recovery_password: "%ENC{w5zDmsOD}"
       golden_image:
-        - bootflash:/golden_image.bin
+        system: bootflash:/golden_system_image.bin
+        kickstart: bootflash:/golden_kickstart_image.bin
 
     connect:
 
@@ -81,4 +82,3 @@ devices:
       - 'reload'
       - 'apply_configuration'
       - 'verify_running_image'
-  

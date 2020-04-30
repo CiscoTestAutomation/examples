@@ -9,13 +9,13 @@ devices:
       system:
         - /auto/release/path/nxos.7.0.3.I7.1.bin
 
-    global_recovery:
+    device_recovery:
       break_count: 5
       console_activity_pattern: "\\.\\.\\.\\."
       timeout: 600
       recovery_password: "%ENC{w5zDmsOD}"
       golden_image:
-        - bootflash:/golden_image.bin
+        system: bootflash:/golden_system_image.bin
 
     connect:
 
@@ -79,4 +79,3 @@ devices:
       - 'reload'
       - 'apply_configuration'
       - 'verify_running_image'
-  
