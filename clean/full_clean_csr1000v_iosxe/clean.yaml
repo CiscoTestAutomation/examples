@@ -20,7 +20,7 @@ devices:
 
     ping_server:
       server: the-tftp-server
-      vrf: Mgmt-intf
+      max_attempts: 2
 
     copy_to_linux:
       destination:
