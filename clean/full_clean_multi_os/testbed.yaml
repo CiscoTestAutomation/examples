@@ -1,0 +1,140 @@
+testbed:
+  name: SAMPLE-TESTBED
+  servers:
+    tftp:
+      server: the-tftp-server
+      address: 10.81.116.4
+      credentials:
+        default:
+          username: user
+          password: "%ENC{w5zDmsOD}"
+      path: /auto/path/images/
+    scp:
+      server: the-tftp-server
+      address: 10.81.116.4
+      credentials:
+        default:
+          username: user
+          password: "%ENC{w5zDmsOD}"
+      path: /auto/path/images/
+
+
+devices:
+  asr1000:
+    alias: uut
+    os: iosxe
+    type: asr1k
+    platform: asr1k
+    credentials:
+      default:
+        password: "%ENC{w5zDmsOD}"
+        username: admin
+      enable:
+        password: "%ENC{w5zDmsOD}"
+        username: admin
+    connections:
+      defaults:
+        class: unicon.Unicon
+      vty:
+        protocol: telnet
+        ip: 1.1.1.1
+      cli:
+        protocol: telnet
+        ip: 2.2.2.2
+        port: 2001
+      a:
+        protocol: telnet
+        ip: 2.2.2.2
+        port: 2001
+    custom:
+      execute_timeout: 600
+      configure_timeout: 250
+      abstraction:
+        order: [os, platform]
+    peripherals:
+      terminal_server:
+        the-terminal-server: [41]
+      power_cycler:
+        type: dualcomm
+        connection_type: snmp
+        host: 6.6.6.6
+        read_community: public
+        write_community: public
+        outlets: [1, 2]
+
+  the-terminal-server:
+    connections:
+      a:
+        ip: 3.3.3.3
+        protocol: telnet
+    credentials:
+      default:
+        password: lab
+      enable:
+        password: lab
+    os: ios
+    type: ios
+
+  N7700-1:
+    alias: uut
+    os: nxos
+    type: n7k
+    platform: n7k
+    credentials:
+      default:
+        password: "%ENC{w5zDmsOD}"
+        username: admin
+      enable:
+        password: "%ENC{w5zDmsOD}"
+        username: admin
+    connections:
+      defaults:
+        class: unicon.Unicon
+      vty:
+        protocol: telnet
+        ip: 1.1.1.1
+      cli:
+        protocol: telnet
+        ip: 2.2.2.2
+        port: 2001
+      a:
+        protocol: telnet
+        ip: 2.2.2.2
+        port: 2001
+    custom:
+      execute_timeout: 600
+      configure_timeout: 250
+      abstraction:
+        order: [os, platform]
+
+  cat-9300-1:
+    alias: uut
+    os: iosxe
+    type: cat9k
+    platform: cat9k
+    credentials:
+      default:
+        password: "%ENC{w5zDmsOD}"
+        username: admin
+      enable:
+        password: "%ENC{w5zDmsOD}"
+        username: admin
+    connections:
+      defaults:
+        class: unicon.Unicon
+      vty:
+        protocol: telnet
+        ip: 1.1.1.1
+      cli:
+        protocol: telnet
+        ip: 2.2.2.2
+        port: 2001
+      a:
+        protocol: telnet
+        ip: 2.2.2.2
+        port: 2001
+    custom:
+      execute_timeout: 600
+      configure_timeout: 250
+      abstraction:
+        order: [os, platform]
