@@ -1,0 +1,22 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [N7700-1]
+
+devices:
+  N7700-1:
+
+    connect:
+
+    change_boot_variable:
+      copy_vdc_all: True
+      images:
+        system: 'bootflash:/n7700-s2-dk9.6.2.10.bin'
+        kickstart: 'bootflash:/n7000-s2-kickstart.6.2.10.bin'
+
+    reload:
+
+    order:
+      - 'connect'
+      - 'change_boot_variable'
+      - 'reload'

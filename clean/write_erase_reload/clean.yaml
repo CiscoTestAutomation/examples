@@ -1,0 +1,22 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [csr-1000v-1]
+
+devices:
+  csr-1000v-1:
+
+    connect:
+
+    write_erase:
+      timeout: 300
+
+    reload:
+      sleep_after_reload: 300
+      module_timeout: 180
+      module_interval: 60
+
+    order:
+      - 'connect'
+      - 'write_erase'
+      - 'reload'

@@ -1,0 +1,21 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [asr1000]
+
+devices:
+  asr1000:
+
+    connect:
+
+    delete_files_from_server:
+      server: 10.81.116.4
+      protocol: 'sftp'
+      files:
+          - /auto/release/path/vmlinux.bin
+          - /auto/configs/asr1000_ospf_config.cfg
+          - /auto/configs/asr1000_bgp_config.cfg
+
+    order:
+      - 'connect'
+      - 'delete_files_from_server'

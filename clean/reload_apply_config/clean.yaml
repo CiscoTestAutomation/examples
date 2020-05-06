@@ -1,0 +1,39 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [N9500-1]
+
+devices:
+  N9500-1:
+
+    connect:
+
+    reload:
+      sleep_after_reload: 300
+      module_timeout: 180
+      module_interval: 60
+
+    apply_configuration:
+      configuration: |
+        switchname N9500-1
+        power redundancy-mode combined force
+        username admin password lalala role network-admin
+        no password strength-check
+        interface mgmt0
+          ip address X.X.X.X 255.255.255.0
+          no shutdown
+        vrf context management
+          ip route 0.0.0.0/0 10.X.X.X
+        line console
+          exec-timeout 0
+        no ip domain-lookup
+        feature telnet
+      config_timeout: 60
+      max_time: 180
+      check_interval: 60
+      config_stable_time: 120
+
+    order:
+      - 'connect'
+      - 'reload'
+      - 'apply_configuration'

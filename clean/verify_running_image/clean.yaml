@@ -1,0 +1,17 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [csr-1000v-1]
+
+devices:
+  csr-1000v-1:
+
+    connect:
+
+    verify_running_image:
+      images:
+        - bootflash:csr1000v-universalk9.03.10.00.S.153-3.S-ext.SPA.bin
+
+    order:
+      - 'connect'
+      - 'verify_running_image'

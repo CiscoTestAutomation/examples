@@ -1,0 +1,21 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [asr1000]
+
+devices:
+  asr1000:
+
+    connect:
+
+    ping_server:
+      server: 10.81.116.4
+      vrf: Mgmt-intf
+      timeout: 60
+      min_success_rate: 80
+      max_attempts: 5
+      interval: 30
+
+    order:
+      - 'connect'
+      - 'ping_server'

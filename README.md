@@ -6,7 +6,7 @@ of these examples is not to perform _real testing_, but rather to:
 - demonstrate **the various features and functionalities** of the 
   framework using examples and comments
 
-- and demonstraing **how to use the libraries** with example scripts
+- and demonstrating **how to use the libraries** with example scripts
   using mock devices in `libraries/` folder
  
 ## Getting Started

@@ -1,0 +1,84 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [N7700-1]
+
+devices:
+  N7700-1:
+    images:
+      system:
+        - /auto/release/path/n7700-s2-dk9.6.2.10.bin
+      kickstart:
+        - /auto/release/path/n7000-s2-kickstart.6.2.10.bin
+
+    device_recovery:
+      break_count: 5
+      console_activity_pattern: "\\.\\.\\.\\."
+      timeout: 600
+      recovery_password: "%ENC{w5zDmsOD}"
+      golden_image:
+        system: bootflash:/golden_system_image.bin
+        kickstart: bootflash:/golden_kickstart_image.bin
+
+    connect:
+
+    ping_server:
+      server: the-tftp-server
+      vrf: management
+
+    copy_to_linux:
+      destination:
+        directory: /auto/path/images/
+      overwrite: True
+      copy_attempts: 3
+      append_hostname: True
+
+    copy_to_device:
+      origin:
+        hostname: the-tftp-server
+      destination:
+        directory: 'bootflash:'
+      protocol: ftp
+      vrf: management
+      overwrite: True
+      verify_num_images: False
+      check_file_stability: True
+      min_free_space_percent: 50
+
+    change_boot_variable:
+      copy_vdc_all: True
+
+    write_erase:
+
+    reload:
+
+    apply_configuration:
+      configuration: |
+        switchname N7700-1
+        power redundancy-mode combined force
+        username admin password lalala role network-admin
+        no password strength-check
+        interface mgmt0
+          ip address X.X.X.X 255.255.255.0
+          no shutdown
+        vrf context management
+          ip route 0.0.0.0/0 10.X.X.X
+        line console
+          exec-timeout 0
+        no ip domain-lookup
+        feature telnet
+      config_timeout: 30
+      config_stable_time: 120
+
+    verify_running_image:
+
+    order:
+      - 'connect'
+      - 'ping_server'
+      - 'copy_to_linux'
+      - 'copy_to_device'
+      - 'change_boot_variable'
+      - 'write_erase'
+      - 'reload'
+      - 'apply_configuration'
+      - 'verify_running_image'
