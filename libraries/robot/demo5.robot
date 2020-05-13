@@ -11,7 +11,7 @@ Library        genie.libs.robot.GenieRobot
 # Can also be driven as dash argument at runtime
 
 # Define the pyATS testbed file to use for this run
-${testbed}     cisco_live.yaml 
+${testbed}     virl.yaml 
 
 *** Test Cases ***
 # Creating test cases from available keywords.
