@@ -25,4 +25,4 @@ def main():
     # trigger_uids and verification_uids limit which test to execute
     gRun(pts_features=['platform', 'bgp', 'interface'],
          verification_uids=['Verify_IpInterfaceBrief', 'Verify_IpRoute_vrf_all'],
-         trigger_uids=['TriggerUnconfigConfigBgp.uut', 'TriggerShutNoShutBgpNeighbors', 'TriggerModifyLoopbackInterfaceIp.uut', 'TriggerShutNoShutEthernetInterface'])
+         trigger_uids=['TriggerUnconfigConfigBgp', 'TriggerShutNoShutBgpNeighbors', 'TriggerModifyLoopbackInterfaceIp', 'TriggerShutNoShutEthernetInterface'])

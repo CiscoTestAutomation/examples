@@ -27,4 +27,4 @@ def main():
     gRun(trigger_datafile=os.path.join(test_path, 'trigger_datafile_demo.yaml'),
          pts_features=['platform', 'bgp', 'interface'],
          verification_uids=['Verify_IpInterfaceBrief', 'Verify_IpRoute_vrf_all'],
-         trigger_uids=['TriggerUnconfigConfigBgp.uut', 'TriggerShutNoShutBgpNeighbors', 'TriggerModifyLoopbackInterfaceIp.uut', 'TriggerShutNoShutEthernetInterface', 'TriggerClearArpVrfAllForceDelete'])
+         trigger_uids=['TriggerUnconfigConfigBgp', 'TriggerShutNoShutBgpNeighbors', 'TriggerModifyLoopbackInterfaceIp', 'TriggerShutNoShutEthernetInterface', 'TriggerClearArpVrfAllForceDelete'])

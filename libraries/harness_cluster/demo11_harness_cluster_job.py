@@ -24,5 +24,5 @@ def main():
     # mapping_datafile is mandatory
     # trigger_uids limit which test to execute
     gRun(trigger_uids=['TriggerCluster'],
-         verification_uids=['Verify_BgpVrfAllAll.uut', 'Verify_Interface.uut'],
+         verification_uids=['Verify_BgpVrfAllAll', 'Verify_Interface'],
          trigger_datafile='trigger_datafile.yaml')
