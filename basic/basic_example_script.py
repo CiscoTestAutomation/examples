@@ -117,6 +117,28 @@ class tc_two(aetest.Testcase):
         """ Testcase cleanup section """
         log.info("Pass testcase cleanup")
 
+        # Testcase name : tc_two
+class tc_three(aetest.Testcase):
+    """ This is user Testcases section """
+
+    @ aetest.test
+    def simple_test_1(self):
+        """ Sample test section. Only print """
+        log.info("First test section ")
+        self.failed('This is an intentional failure')
+
+    # Second test section
+    @ aetest.test
+    def simple_test_2(self):
+        """ Sample test section. Only print """
+        log.info("Second test section ")
+
+    # This is how to create a cleanup section
+    @aetest.cleanup
+    def clean_testcase(self):
+        """ Testcase cleanup section """
+        log.info("Pass testcase cleanup")
+
 #####################################################################
 ####                       COMMON CLEANUP SECTION                 ###
 #####################################################################
