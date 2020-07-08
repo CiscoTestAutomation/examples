@@ -1,3 +1,6 @@
+"""
+<PYATS_JOBFILE>
+"""
 # To run the job:
 # pyats run job basic_example_job.py
 # Description: This example shows the basic functionality of pyats
