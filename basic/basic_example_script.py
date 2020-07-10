@@ -103,7 +103,7 @@ class tc_two(aetest.Testcase):
     def simple_test_1(self):
         """ Sample test section. Only print """
         log.info("First test section ")
-        self.failed('This is an intentional failure')
+        # self.failed('This is an intentional failure')
 
     # Second test section
     @ aetest.test
