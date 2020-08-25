@@ -28,5 +28,5 @@ class Basic(Trigger):
         '''Why not do it again?'''
         output = uut.execute('show clock')
         # Output now contains the string which was returned by the device
-        log.info('The string returned by show clock is:\n{}'.format(pprint.pprint(output)))
+        log.info('The string returned by show clock is:\n{}'.format(output))
 
