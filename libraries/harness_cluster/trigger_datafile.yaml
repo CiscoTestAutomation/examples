@@ -1,4 +1,4 @@
-extends: '%ENV{VIRTUAL_ENV}/genie_yamls/nxos/trigger_datafile_nxos.yaml'
+extends: "%CALLABLE{genie.libs.sdk.genie_yamls.datafile(trigger,nxos)}"
 
 TriggerCluster:
     sub_verifications: ['Verify_BgpVrfAllAll']
