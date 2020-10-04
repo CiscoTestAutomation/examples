@@ -1,0 +1,24 @@
+pyats_health_processors:
+  source:
+    pkg: genie.libs.health
+    class: health.Health
+  test_sections:
+    - traceback:
+        - api:
+            device: iosxe_latest
+            function: get_platform_logging
+            arguments:
+              keywords:
+                - 'TRACEBACK'
+              num_of_logs: True
+            include:
+              - "== 0"
+    - core:
+        - api:
+            device: iosxe_latest
+            function: get_platform_core
+            arguments:
+              default_dir: 'bootflash:'
+              num_of_cores: True
+            include:
+              - "== 0"

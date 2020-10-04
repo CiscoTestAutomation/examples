@@ -1,0 +1,112 @@
+devices:
+  ios-xe-mgmt-latest:
+    alias: iosxe_latest
+    connections:
+      defaults:
+        via: cli
+      cli:
+        ip: ios-xe-mgmt-latest.cisco.com
+        port: 8181
+        protocol: ssh
+        arguments:
+          learn_hostname: True
+      netconf:
+        ip: ios-xe-mgmt-latest.cisco.com
+        port: 10000
+        class: yang.connector.Netconf
+      restconf:
+        ip: ios-xe-mgmt-latest.cisco.com
+        port: 9443
+        class: rest.connector.Rest
+    credentials:
+      default:
+        password: C1sco12345
+        username: developer
+      enable:
+        password: C1sco12345
+    os: iosxe
+    platform: iosxe
+    type: CSR1000v
+  ios-xe-mgmt:
+    alias: iosxe
+    connections:
+      defaults:
+        via: cli
+      cli:
+        ip: ios-xe-mgmt.cisco.com
+        port: 8181
+        protocol: ssh
+        arguments:
+          learn_hostname: True
+      netconf:
+        ip: ios-xe-mgmt.cisco.com
+        port: 10000
+        class: yang.connector.Netconf
+      restconf:
+        ip: ios-xe-mgmt.cisco.com
+        port: 9443
+        class: rest.connector.Rest
+    credentials:
+      default:
+        password: C1sco12345
+        username: developer
+      enable:
+        password: C1sco12345
+    os: iosxe
+    platform: iosxe
+    type: CSR1000v
+  sbx-iosxr-mgmt:
+    alias: iosxr
+    connections:
+      defaults:
+        via: cli
+      cli:
+        ip: sbx-iosxr-mgmt.cisco.com
+        port: 8181
+        protocol: ssh
+        arguments:
+          learn_hostname: True
+        settings:
+          CONFIG_TIMEOUT: 333
+      netconf:
+        ip: sbx-iosxr-mgmt.cisco.com
+        port: 10000
+        class: yang.connector.Netconf
+    credentials:
+      default:
+        password: C1sco12345
+        username: admin
+      enable:
+        password: C1sco12345
+    os: iosxr
+    platform: iosxr
+    type: XRv9000
+  sbx-n9kv-ao:
+    alias: nxos
+    connections:
+      defaults:
+        via: cli
+      cli:
+        ip: sbx-nxos-mgmt.cisco.com
+        port: 8181
+        protocol: ssh
+        arguments:
+          learn_hostname: True
+        ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+      netconf:
+        ip: sbx-nxos-mgmt.cisco.com
+        port: 10000
+        class: yang.connector.Netconf
+      restconf:
+        ip: sbx-nxos-mgmt.cisco.com
+        port: 9443
+        class: rest.connector.Rest
+    credentials:
+      default:
+        password: Admin_1234!
+        username: admin
+      enable:
+        password: Admin_1234!
+    os: nxos
+    platform: nxos
+    type: Nexus9000v

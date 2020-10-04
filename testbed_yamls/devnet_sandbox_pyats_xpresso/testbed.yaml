@@ -1,0 +1,440 @@
+testbed:
+  name: Multi Platform Network
+  credentials:
+    default:
+      username: cisco
+      password: cisco
+      enable_password: cisco
+
+devices:
+  terminal_server:
+    os: linux
+    type: linux
+    credentials:
+      default:
+        username: developer
+        password: C1sco12345
+    connections:
+      defaults:
+        via: ssh
+      ssh:
+        protocol: ssh
+        ip: 10.10.20.161
+        ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+  internet-host01:
+    os: linux
+    type: server
+    credentials:
+      default:
+        username: cisco
+        password: cisco
+    connections:
+      defaults:
+        via: ssh
+      ssh:
+        protocol: ssh
+        ip: 10.10.20.182
+        ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n1/0
+  internet-rtr01:
+    os: iosxe
+    type: router
+    series: csr1000v
+    connections:
+      defaults:
+        via: telnet
+      telnet:
+        protocol: telnet
+        ip: 10.10.20.181
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n0/0
+  edge-firewall01:
+    os: asa
+    type: firewall
+    connections:
+      defaults:
+        via: console
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n2/0
+  edge-sw01:
+    os: ios
+    type: switch
+    series: iosv
+    connections:
+      defaults:
+        via: telnet
+      telnet:
+        protocol: telnet
+        ip: 10.10.20.172
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n11/0
+  core-rtr01:
+    os: iosxr
+    type: router
+    series: iosxrv
+    connections:
+      defaults:
+        via: telnet
+      telnet:
+        protocol: telnet
+        ip: 10.10.20.173
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n3/0
+  core-rtr02:
+    os: iosxr
+    type: router
+    series: iosxrv
+    connections:
+      defaults:
+        via: telnet
+      telnet:
+        protocol: telnet
+        ip: 10.10.20.174
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n4/0
+  dist-rtr01:
+    os: iosxe
+    type: router
+    series: csr1000v
+    connections:
+      defaults:
+        via: telnet
+      telnet:
+        protocol: telnet
+        ip: 10.10.20.175
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n5/0
+  dist-rtr02:
+    os: iosxe
+    type: router
+    series: csr1000v
+    connections:
+      defaults:
+        via: telnet
+      telnet:
+        protocol: telnet
+        ip: 10.10.20.176
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n6/0
+  dist-sw01:
+    os: nxos
+    type: switch
+    series: n9k
+    connections:
+      defaults:
+        via: ssh
+      ssh:
+        protocol: ssh
+        ip: 10.10.20.177
+        ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+      telnet:
+        protocol: telnet
+        ip: 10.10.20.177
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n7/0
+  dist-sw02:
+    os: nxos
+    type: switch
+    series: n9k
+    connections:
+      defaults:
+        via: ssh
+      ssh:
+        protocol: ssh
+        ip: 10.10.20.178
+        ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+      telnet:
+        protocol: telnet
+        ip: 10.10.20.178
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n8/0
+  inside-host01:
+    os: linux
+    type: server
+    connections:
+      defaults:
+        via: ssh
+      ssh:
+        protocol: ssh
+        ip: 10.10.20.179
+        ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n9/0
+  inside-host02:
+    os: linux
+    type: server
+    connections:
+      defaults:
+        via: ssh
+      ssh:
+        protocol: ssh
+        ip: 10.10.20.180
+        ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n10/0
+topology:
+  internet-rtr01:
+    interfaces:
+      Loopback0:
+        type: loopback
+      GigabitEthernet1:
+        link: l20
+        type: ethernet
+      GigabitEthernet2:
+        link: l1
+        type: ethernet
+      GigabitEthernet3:
+        link: l0
+        type: ethernet
+      GigabitEthernet4:
+        type: ethernet
+  internet-host01:
+    interfaces:
+      enp0s2:
+        link: l0
+        type: ethernet
+      enp0s3:
+        type: ethernet
+      enp0s4:
+        type: ethernet
+      enp0s5:
+        type: ethernet
+      enp0s6:
+        type: ethernet
+      enp0s7:
+        type: ethernet
+      enp0s8:
+        type: ethernet
+      enp0s9:
+        link: l29
+        type: ethernet
+  edge-firewall01:
+    interfaces:
+      Management0/0:
+        link: l21
+        type: ethernet
+      GigabitEthernet0/0:
+        link: l1
+        type: ethernet
+      GigabitEthernet0/1:
+        link: l2
+        type: ethernet
+  core-rtr01:
+    interfaces:
+      Loopback0:
+        type: loopback
+      MgmtEth0/0/CPU0/0:
+        link: l23
+        type: ethernet
+      GigabitEthernet0/0/0/0:
+        link: l3
+        type: ethernet
+      GigabitEthernet0/0/0/1:
+        link: l7
+        type: ethernet
+      GigabitEthernet0/0/0/2:
+        link: l9
+        type: ethernet
+      GigabitEthernet0/0/0/3:
+        link: l10
+        type: ethernet
+  core-rtr02:
+    interfaces:
+      Loopback0:
+        type: loopback
+      MgmtEth0/0/CPU0/0:
+        link: l24
+        type: ethernet
+      GigabitEthernet0/0/0/0:
+        link: l3
+        type: ethernet
+      GigabitEthernet0/0/0/1:
+        link: l8
+        type: ethernet
+      GigabitEthernet0/0/0/2:
+        link: l11
+        type: ethernet
+      GigabitEthernet0/0/0/3:
+        link: l12
+        type: ethernet
+  dist-rtr01:
+    interfaces:
+      Loopback0:
+        type: loopback
+      GigabitEthernet1:
+        link: l4
+        type: ethernet
+      GigabitEthernet2:
+        link: l9
+        type: ethernet
+      GigabitEthernet3:
+        link: l11
+        type: ethernet
+      GigabitEthernet4:
+        link: l13
+        type: ethernet
+      GigabitEthernet5:
+        link: l14
+        type: ethernet
+      GigabitEthernet6:
+        link: l26
+        type: ethernet
+  dist-rtr02:
+    interfaces:
+      Loopback0:
+        type: loopback
+      GigabitEthernet1:
+        link: l25
+        type: ethernet
+      GigabitEthernet2:
+        link: l10
+        type: ethernet
+      GigabitEthernet3:
+        link: l12
+        type: ethernet
+      GigabitEthernet4:
+        link: l15
+        type: ethernet
+      GigabitEthernet5:
+        link: l16
+        type: ethernet
+      GigabitEthernet6:
+        link: l26
+        type: ethernet
+  dist-sw01:
+    interfaces:
+      Loopback0:
+        type: loopback
+      mgmt0:
+        link: l27
+        type: ethernet
+      Ethernet1/1:
+        link: l5
+        type: ethernet
+      Ethernet1/2:
+        link: l6
+        type: ethernet
+      Ethernet1/3:
+        link: l13
+        type: ethernet
+      Ethernet1/4:
+        link: l15
+        type: ethernet
+      Ethernet1/5:
+        type: ethernet
+      Ethernet1/6:
+        type: ethernet
+      Ethernet1/7:
+        type: ethernet
+      Ethernet1/8:
+        type: ethernet
+      Ethernet1/9:
+        type: ethernet
+      Ethernet1/10:
+        type: ethernet
+      Ethernet1/11:
+        link: l17
+        type: ethernet
+  dist-sw02:
+    interfaces:
+      Loopback0:
+        type: loopback
+      mgmt0:
+        link: l28
+        type: ethernet
+      Ethernet1/1:
+        link: l5
+        type: ethernet
+      Ethernet1/2:
+        link: l6
+        type: ethernet
+      Ethernet1/3:
+        link: l14
+        type: ethernet
+      Ethernet1/4:
+        link: l16
+        type: ethernet
+      Ethernet1/5:
+        type: ethernet
+      Ethernet1/6:
+        type: ethernet
+      Ethernet1/7:
+        type: ethernet
+      Ethernet1/8:
+        type: ethernet
+      Ethernet1/9:
+        type: ethernet
+      Ethernet1/10:
+        type: ethernet
+      Ethernet1/11:
+        link: l18
+        type: ethernet
+  inside-host01:
+    interfaces:
+      enp0s2:
+        link: l17
+        type: ethernet
+      enp0s3:
+        type: ethernet
+      enp0s4:
+        type: ethernet
+      enp0s5:
+        type: ethernet
+      enp0s6:
+        type: ethernet
+      enp0s7:
+        type: ethernet
+      enp0s8:
+        type: ethernet
+      enp0s9:
+        link: l30
+        type: ethernet
+  edge-sw01:
+    interfaces:
+      Loopback0:
+        type: loopback
+      GigabitEthernet0/0:
+        link: l22
+        type: ethernet
+      GigabitEthernet0/1:
+        link: l2
+        type: ethernet
+      GigabitEthernet0/2:
+        link: l7
+        type: ethernet
+      GigabitEthernet0/3:
+        link: l8
+        type: ethernet
+  inside-host02:
+    interfaces:
+      eth0:
+        link: l18
+        type: ethernet
+      eth1:
+        link: l31
+        type: ethernet

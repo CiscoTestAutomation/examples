@@ -1,0 +1,42 @@
+variables:
+  device: iosxe_latest
+  interfaces: 
+    - GigabitEthernet2
+    - GigabitEthernet3
+  description: configured by pyATS
+
+config_interface:
+  groups: ["config", "interface"]
+  source:
+    pkg: genie.libs.sdk
+    class: triggers.blitz.blitz.Blitz
+  test_sections:
+    - default_interfaces:
+        - loop:
+            loop_variable_name: intfs
+            value: "%{variables.interfaces}"
+            actions:
+              - configure:
+                  device: "%{variables.device}"
+                  command: |
+                    default interface %VARIABLES{intfs}
+    - configure_interfaces:
+        - loop:
+            loop_variable_name: intfs
+            value: "%{variables.interfaces}"
+            actions:
+              - configure:
+                  device: "%{variables.device}"
+                  command: |
+                    interface %VARIABLES{intfs}
+                     description %{variables.description}
+    - verify_configuration:
+        - loop:
+            loop_variable_name: intfs
+            value: "%{variables.interfaces}"
+            actions:
+              - parse:
+                  device: "%{variables.device}"
+                  command: show interfaces description
+                  include: 
+                    - contains("%VARIABLES{intfs}").contains_key_value('description', "%{variables.description}")
