@@ -11,5 +11,5 @@ Please adjust some parameters such as device, threshold and etc to your testbed/
 ### How to use
 
 ```
-pyats run job ../../blitz/config/job.py --testbed-file ../../testbed_yamls/devnet_sandbox_always_on/testbed.yaml --health-file pyats_health.yaml
+pyats run job ../../blitz/generate_core/job.py --testbed-file ../../testbed_yamls/devnet_sandbox_pyats_xpresso/testbed.yaml --health-file pyats_health.yaml --mapping-datafile mapping_datafile.yaml
 ```

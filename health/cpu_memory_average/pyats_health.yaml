@@ -5,7 +5,7 @@ pyats_health_processors:
   test_sections:
     - cpu:
         - api:
-            device: iosxe_latest
+            device: uut
             function: get_platform_cpu_load
             arguments:
               processes: ['SSH.*']
@@ -13,7 +13,7 @@ pyats_health_processors:
               - "<= 90"
     - memory:
         - api:
-            device: iosxe_latest
+            device: uut
             function: get_platform_memory_usage
             arguments:
               processes: ['SSH.*']

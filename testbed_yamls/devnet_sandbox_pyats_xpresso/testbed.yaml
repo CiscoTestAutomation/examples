@@ -5,10 +5,17 @@ testbed:
       username: cisco
       password: cisco
       enable_password: cisco
+  servers:
+    scp:
+      address: 10.10.20.50
+      password: C1sco12345
+      server: 10.10.20.50
+      username: developer
+      custom:
+        port: '22'
 
 devices:
   terminal_server:
-    alias: ts
     os: linux
     type: linux
     credentials:
@@ -17,13 +24,13 @@ devices:
         password: C1sco12345
     connections:
       defaults:
-        via: ssh
-      ssh:
+        via: cli
+      cli:
         protocol: ssh
         ip: 10.10.20.161
         ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
   internet-host01:
-    os: linux3
+    os: linux
     type: server
     credentials:
       default:
@@ -31,8 +38,8 @@ devices:
         password: cisco
     connections:
       defaults:
-        via: ssh
-      ssh:
+        via: cli
+      cli:
         protocol: ssh
         ip: 10.10.20.182
         ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
@@ -41,14 +48,13 @@ devices:
         proxy: terminal_server
         command: open /e65a3c/n1/0
   internet-rtr01:
-    alias: iosxe3
     os: iosxe
     type: router
     series: csr1000v
     connections:
       defaults:
-        via: telnet
-      telnet:
+        via: cli
+      cli:
         protocol: telnet
         ip: 10.10.20.181
       console:
@@ -56,25 +62,23 @@ devices:
         proxy: terminal_server
         command: open /e65a3c/n0/0
   edge-firewall01:
-    alias: asa
     os: asa
     type: firewall
     connections:
       defaults:
-        via: console
-      console:
+        via: cli
+      cli:
         protocol: telnet
         proxy: terminal_server
         command: open /e65a3c/n2/0
   edge-sw01:
-    alias: ios
     os: ios
     type: switch
     series: iosv
     connections:
       defaults:
-        via: telnet
-      telnet:
+        via: cli
+      cli:
         protocol: telnet
         ip: 10.10.20.172
       console:
@@ -82,14 +86,13 @@ devices:
         proxy: terminal_server
         command: open /e65a3c/n11/0
   core-rtr01:
-    alias: iosxr
     os: iosxr
     type: router
     series: iosxrv
     connections:
       defaults:
-        via: telnet
-      telnet:
+        via: cli
+      cli:
         protocol: telnet
         ip: 10.10.20.173
       console:
@@ -97,14 +100,13 @@ devices:
         proxy: terminal_server
         command: open /e65a3c/n3/0
   core-rtr02:
-    alias: iosxr2
     os: iosxr
     type: router
     series: iosxrv
     connections:
       defaults:
-        via: telnet
-      telnet:
+        via: cli
+      cli:
         protocol: telnet
         ip: 10.10.20.174
       console:
@@ -112,29 +114,30 @@ devices:
         proxy: terminal_server
         command: open /e65a3c/n4/0
   dist-rtr01:
-    alias: iosxe
+    alias: uut
     os: iosxe
     type: router
     series: csr1000v
     connections:
       defaults:
-        via: telnet
-      telnet:
+        via: cli
+      cli:
         protocol: telnet
         ip: 10.10.20.175
+        arguments:
+          prompt_recovery: true
       console:
         protocol: telnet
         proxy: terminal_server
         command: open /e65a3c/n5/0
   dist-rtr02:
-    alias: iosxe2
     os: iosxe
     type: router
     series: csr1000v
     connections:
       defaults:
-        via: telnet
-      telnet:
+        via: cli
+      cli:
         protocol: telnet
         ip: 10.10.20.176
       console:
@@ -142,14 +145,13 @@ devices:
         proxy: terminal_server
         command: open /e65a3c/n6/0
   dist-sw01:
-    alias: nxos
     os: nxos
     type: switch
     series: n9k
     connections:
       defaults:
-        via: ssh
-      ssh:
+        via: cli
+      cli:
         protocol: ssh
         ip: 10.10.20.177
         ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
@@ -161,14 +163,13 @@ devices:
         proxy: terminal_server
         command: open /e65a3c/n7/0
   dist-sw02:
-    alias: nxos2
     os: nxos
     type: switch
     series: n9k
     connections:
       defaults:
-        via: ssh
-      ssh:
+        via: cli
+      cli:
         protocol: ssh
         ip: 10.10.20.178
         ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
@@ -180,13 +181,12 @@ devices:
         proxy: terminal_server
         command: open /e65a3c/n8/0
   inside-host01:
-    alias: linux
     os: linux
     type: server
     connections:
       defaults:
-        via: ssh
-      ssh:
+        via: cli
+      cli:
         protocol: ssh
         ip: 10.10.20.179
         ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
@@ -195,15 +195,32 @@ devices:
         proxy: terminal_server
         command: open /e65a3c/n9/0
   inside-host02:
-    alias: linux2
     os: linux
     type: server
     connections:
       defaults:
-        via: ssh
-      ssh:
+        via: cli
+      cli:
         protocol: ssh
         ip: 10.10.20.180
+        ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+      console:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /e65a3c/n10/0
+  devbox:
+    os: linux
+    type: server
+    credentials:
+      default:
+        username: developer
+        password: C1sco12345
+    connections:
+      defaults:
+        via: cli
+      cli:
+        protocol: ssh
+        ip: 10.10.20.50
         ssh_options: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
       console:
         protocol: telnet

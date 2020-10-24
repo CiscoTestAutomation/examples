@@ -13,5 +13,5 @@ def main():
         trigger_datafile=test_path+'/blitz_config_interfaces.yaml',
         subsection_datafile=test_path+'/subsection_datafile.yaml',
         mapping_datafile=test_path+'/mapping_datafile.yaml',
-        trigger_groups=And('config'),
+        trigger_groups=And('all'),
     )

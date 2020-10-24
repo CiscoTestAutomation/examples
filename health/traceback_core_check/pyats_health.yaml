@@ -1,3 +1,7 @@
+vars:
+  device: uut
+  default_dir: "bootflash:"
+
 pyats_health_processors:
   source:
     pkg: genie.libs.health
@@ -5,7 +9,7 @@ pyats_health_processors:
   test_sections:
     - traceback:
         - api:
-            device: iosxe_latest
+            device: "%{vars.device}"
             function: get_platform_logging
             arguments:
               keywords:
@@ -15,10 +19,54 @@ pyats_health_processors:
               - "== 0"
     - core:
         - api:
-            device: iosxe_latest
+            alias: get_core
+            device: "%{vars.device}"
             function: get_platform_core
             arguments:
-              default_dir: 'bootflash:'
+              default_dir: "%{vars.default_dir}"
               num_of_cores: True
             include:
               - "== 0"
+        - run_condition:
+            if: '%VARIABLES{get_core} == passed'
+            function: passed
+            actions:
+              - parse:
+                  device: "%{vars.device}"
+                  command: "dir %{vars.default_dir}/core"
+                  save:
+                    - filter: contains('.*\.core\.gz', regex=True).get_values('files', 0)
+                      variable_name: core_filename
+              - api:
+                  device: "%{vars.device}"
+                  function: scp
+                  arguments:
+                    local_path: "%{vars.default_dir}core/%VARIABLES{core_filename}"
+                    remote_path: /tmp/
+                    remote_device: devbox
+                    vrf: Mgmt-intf
+
+              # - execute:
+              #     command: "copy %{vars.default_dir}core/%VARIABLES{core_filename} scp://developer:C1sco12345@10.10.20.50//tmp/%VARIABLES{core_filename} vrf Mgmt-intf"
+              #     device: "%{vars.device}"
+              #     reply:
+              #       - action: sendline()
+              #         pattern: .*remote host
+              #       - action: sendline()
+              #         pattern: .*Destination username
+              #       - action: sendline()
+              #         pattern: .*Destination filename
+              # - api:
+              #     device: "%{vars.device}"
+              #     function: copy_from_device
+              #     arguments:
+              #       remote_path: "/tmp/%VARIABLES{core_filename}"
+              #       local_path: "%{vars.default_dir}core/%VARIABLES{core_filename}"
+              #       server: 10.10.20.50
+              #       protocol: scp
+              #       vrf: Mgmt-intf
+              #       username: developer
+              #       password: C1sco12345
+              - execute:
+                  device: "%{vars.device}"
+                  command: "delete /force %{vars.default_dir}core/*core*.gz"

@@ -3,3 +3,7 @@ devices:
     context: cli
     mapping:
       cli: cli
+  devbox:
+    context: cli
+    mapping:
+      cli: cli

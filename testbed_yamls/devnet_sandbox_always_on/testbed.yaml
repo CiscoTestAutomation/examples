@@ -1,6 +1,6 @@
 devices:
   ios-xe-mgmt-latest:
-    alias: iosxe_latest
+    alias: uut
     connections:
       defaults:
         via: cli
@@ -28,7 +28,6 @@ devices:
     platform: iosxe
     type: CSR1000v
   ios-xe-mgmt:
-    alias: iosxe
     connections:
       defaults:
         via: cli
@@ -56,7 +55,6 @@ devices:
     platform: iosxe
     type: CSR1000v
   sbx-iosxr-mgmt:
-    alias: iosxr
     connections:
       defaults:
         via: cli
@@ -82,7 +80,6 @@ devices:
     platform: iosxr
     type: XRv9000
   sbx-n9kv-ao:
-    alias: nxos
     connections:
       defaults:
         via: cli

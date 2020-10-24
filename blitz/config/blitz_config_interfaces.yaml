@@ -1,12 +1,12 @@
 variables:
-  device: iosxe_latest
+  device: uut
   interfaces: 
     - GigabitEthernet2
     - GigabitEthernet3
   description: configured by pyATS
 
 config_interface:
-  groups: ["config", "interface"]
+  groups: ["all", "config", "interface"]
   source:
     pkg: genie.libs.sdk
     class: triggers.blitz.blitz.Blitz
