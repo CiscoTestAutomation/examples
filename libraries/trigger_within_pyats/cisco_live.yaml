@@ -5,7 +5,7 @@ devices:
     nx-osv-1:
         type: "NX-OSv 9000"
         os: "nxos"
-        alias: uut
+        alias: two
         tacacs:
             login_prompt: 'login:'
             password_prompt: 'Password:'

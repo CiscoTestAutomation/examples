@@ -95,6 +95,8 @@ class tc_genie_trigger(GenieStandalone):
     # This will create multiple sections 
     # TriggerShutNoShutBgp
     # TriggerSleep
+    uut = 'two'
+    devices = ['two']
     triggers = ['TriggerShutNoShutBgp', 'TriggerSleep']
     order = ['TriggerShutNoShutBgp', 'TriggerSleep']
 
@@ -109,7 +111,7 @@ class tc_pyats_genie(aetest.Testcase):
         # Run genie triggers and verifications
         run_genie_sdk(self, steps,
                       ['Verify_BgpVrfAllAll', 'TriggerSleep', 'TriggerShutNoShutBgp',
-                       'TriggerSleep', 'Verify_BgpVrfAllAll'])
+                          'TriggerSleep', 'Verify_BgpVrfAllAll'], parameters={'devices':['two']}, uut='two')
 
     # Second test section
     @ aetest.test
@@ -123,6 +125,8 @@ class tc_pyats_and_genie_trigger(GenieStandalone):
     """ This is user Testcases section """
     triggers = ['TriggerShutNoShutBgp', 'TriggerSleep']
     order = ['TriggerShutNoShutBgp', 'prepare_testcase', 'TriggerSleep']
+    uut = 'two'
+    devices = ['two']
 
     # This is how to create a setup section
     @aetest.setup
@@ -134,10 +138,10 @@ class tc_pyats_and_genie_trigger(GenieStandalone):
         log.info("Preparing the test")
         log.info(section)
         run_genie_sdk(self, steps,
-                      ['TriggerSleep', 'TriggerShutNoShutBgp', 'TriggerSleep'])
+                ['TriggerSleep', 'TriggerShutNoShutBgp', 'TriggerSleep'], uut='two', parameters={'devices':['two']})
         run_genie_sdk(self, steps,
                       ['Verify_BgpVrfAllAll', 'TriggerShutNoShutBgp',
-                       'TriggerSleep', 'TriggerShutNoShutBgpNeighbors'])
+                          'TriggerSleep', 'TriggerShutNoShutBgpNeighbors'], uut='two', parameters={'devices':['two']})
 
 #####################################################################
 ####                 Genie Harness information                    ###
@@ -149,14 +153,20 @@ class tc_pyats_and_genie_trigger(GenieStandalone):
 #
 class Verify_bgp(GenieStandalone):
     verifications = ['Verify_BgpVrfAllAll']
+    uut = 'two'
+    devices = ['two']
 
 class TriggerSleep(GenieStandalone):
     triggers = ['TriggerSleep']
+    uut = 'two'
+    devices = ['two']
 
 class TriggerSleep(GenieStandalone):
     '''Custom arguments can be provided to overwrite the datafile information'''
     triggers = ['TriggerSleep']
     custom_arguments = {'TriggerSleep': {'message_time':2}}
+    uut = 'two'
+    devices = ['two']
 
 class Trigger_verification_mix(GenieStandalone):
     verifications = ['Verify_BgpVrfAllAll']
@@ -167,6 +177,8 @@ class Trigger_verification_mix(GenieStandalone):
     timeout = {'interval':2, 'max_time':300}
 
     custom_arguments = {'TriggerShutNoShutBgp': {'tgn_max_outage': 2, 'timeout':{'interval':5, 'max_time':300}}}
+    uut = 'two'
+    devices = ['two']
 
     @aetest.test
     def bla(self):
