@@ -28,7 +28,7 @@ log = logging.getLogger(__name__)
 class common_setup(aetest.CommonSetup):
     """ Common Setup section """
 
-    # CommonSetup have subsection. 
+    # CommonSetup have subsection.
     # You can have 1 to as many subsection as wanted
     # here is an example of 2 subsections
 
@@ -38,7 +38,7 @@ class common_setup(aetest.CommonSetup):
         """ Common Setup subsection """
         log.info("Aetest Common Setup ")
 
-    # If you want to get the name of current section, 
+    # If you want to get the name of current section,
     # add section to the argument of the function.
 
     # Second subsection
@@ -76,7 +76,7 @@ class tc_one(aetest.Testcase):
 
     # This is how to create a test section
     # You can have 0 to as many test section as wanted
-    
+
     # First test section
     @ aetest.test
     def simple_test_1(self):
@@ -128,7 +128,7 @@ class common_cleanup(aetest.CommonCleanup):
     """ Common Cleanup for Sample Test """
 
     # CommonCleanup follow exactly the same rule as CommonSetup regarding
-    # subsection 
+    # subsection
     # You can have 1 to as many subsection as wanted
     # here is an example of 1 subsections
 
@@ -138,4 +138,5 @@ class common_cleanup(aetest.CommonCleanup):
         log.info("Aetest Common Cleanup ")
 
 if __name__ == '__main__': # pragma: no cover
-    aetest.main()
+    result = aetest.main()
+    aetest.exit_cli_code(result)
