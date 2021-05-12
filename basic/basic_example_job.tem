@@ -1,0 +1,12 @@
+version: 1
+
+type: easypy
+
+description: |
+    This example shows the basic functionality of pyats
+    with few passing tests
+
+arguments:
+    no-mail: True
+
+

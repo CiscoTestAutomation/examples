@@ -1,0 +1,31 @@
+
+version: 1
+
+type: easypy
+
+arguments:
+    no-mail: True
+    argument_a: ValueA
+    argument_b: ValueB
+
+runtimes:
+    system:
+        type: system
+        environment:
+            loglevel: DEBUG
+            execution_group: group_A
+            my_variable: 123
+
+profiles:
+    local:
+        runtime: system
+        arguments:
+            testbed-file: mytestbed.yaml
+
+    regression:
+        runtime: system
+        arguments:
+            testbed-file: mytestbed.yaml
+            devices:
+            - R1
+            - R2
