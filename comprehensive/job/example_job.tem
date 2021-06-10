@@ -8,6 +8,14 @@ arguments:
     argument_a: ValueA
     argument_b: ValueB
 
+description: "This is my Manifest"
+notes: "Just adding this for test"
+
+tags:
+- firstTag
+- secondTag
+- thirdTag
+
 runtimes:
     system:
         type: system
@@ -19,13 +27,22 @@ runtimes:
 profiles:
     local:
         runtime: system
+        description: "this is my local profile"
+        max_runtime: "05:30"
+        priority: 2
+        testbed:
+            name: PerditaGoodTB
         arguments:
-            testbed-file: mytestbed.yaml
+            testbed-file: PerditaGoodTB
 
     regression:
         runtime: system
+        description: "this is my regression profile"
+        max_runtime: "02:00"
+        topology:
+            name: JoshTest2
         arguments:
-            testbed-file: mytestbed.yaml
+            testbed-file: PerditaGoodTB
             devices:
-            - R1
-            - R2
+            - N9K_1
+            - N9K_2
