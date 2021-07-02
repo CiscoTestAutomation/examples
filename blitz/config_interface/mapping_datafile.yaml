@@ -1,0 +1,5 @@
+devices:
+  R1_xe:
+    context: cli
+    mapping:
+      cli: cli

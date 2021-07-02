@@ -1,0 +1,82 @@
+testbed:
+  name: general_xe_xr_nx
+
+devices:
+  R1_xe:
+    alias: R1_xe
+    connections:
+      defaults:
+        via: cli
+      cli:
+        ip: 172.25.192.90
+        port: 17004
+        protocol: telnet
+    credentials:
+      default:
+        username: admin
+        password: "<password>"
+        enable_password: "<password>"
+    custom:
+      abstraction:
+        order:
+        - os
+        - platform
+    os: iosxe
+    platform: csr1kv
+    type: CSR1000v
+  R2_xr:
+    alias: R2_xr
+    connections:
+      defaults:
+        via: cli
+      cli:
+        ip: 172.25.192.90
+        port: 17006
+        protocol: telnet
+    credentials:
+      default:
+        username: admin
+        password: "<password>"
+        enable_password: "<password>"
+    custom:
+      abstraction:
+        order:
+        - os
+        - platform
+    os: iosxr
+    platform: iosxrv9k
+    type: IOS XRv 9000
+  R3_nx:
+    alias: R3_nx
+    connections:
+      defaults:
+        via: cli
+      cli:
+        ip: 172.25.192.90
+        port: 17011
+        protocol: telnet
+    credentials:
+      default:
+        username: admin
+        password: "<password>"
+        enable_password: "<password>"
+    custom:
+      abstraction:
+        order:
+        - os
+        - platform
+    os: nxos
+    platform: n9kv
+    type: NX-OSv 9000
+  jump_host:
+    connections:
+      cli:
+        ip: 172.25.192.90
+        port: 22
+        protocol: ssh
+    credentials:
+      default:
+        password: "<password>"
+        username: virl
+    os: linux
+    type: linux
