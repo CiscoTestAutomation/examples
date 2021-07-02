@@ -1,7 +1,4 @@
 import os
-#import hunter
-import time
-#hunter.trace(hunter.Q(module_regex="(ats.*|genie(?!.*(abstract|dq|schemaengine|parser|ops)).*)$"))
 
 from pyats import aetest
 
