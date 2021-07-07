@@ -4,7 +4,7 @@ testbed:
     myserver:
       dynamic: true
       protocol: http
-      subnet: 192.168.255.0/24
+      # subnet: 192.168.255.0/24
       path: /tmp
       credentials:
         default:
