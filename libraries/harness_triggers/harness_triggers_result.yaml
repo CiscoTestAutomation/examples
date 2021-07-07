@@ -1,0 +1,37 @@
+Task-1:
+  commonCleanup:
+    name: common_cleanup
+    result: PASSED
+  commonSetup:
+    name: common_setup
+    result: PASSX
+  testcases:
+  - name: Verify_IpInterfaceBrief.uut.1
+    result: PASSED
+  - name: Verify_IpRoute_vrf_all.uut.1
+    result: PASSED
+  - name: TriggerUnconfigConfigBgp.uut
+    result: FAILED
+  - name: Verify_IpInterfaceBrief.uut.2
+    result: PASSED
+  - name: Verify_IpRoute_vrf_all.uut.2
+    result: PASSED
+  - name: TriggerShutNoShutBgpNeighbors.uut
+    result: BLOCKED
+  - name: Verify_IpInterfaceBrief.uut.3
+    result: PASSED
+  - name: Verify_IpRoute_vrf_all.uut.3
+    result: PASSED
+  - name: TriggerModifyLoopbackInterfaceIp.uut
+    result: FAILED
+  - name: Verify_IpInterfaceBrief.uut.4
+    result: PASSED
+  - name: Verify_IpRoute_vrf_all.uut.4
+    result: PASSED
+  - name: TriggerShutNoShutEthernetInterface.uut
+    result: FAILED
+  - name: Verify_IpInterfaceBrief.uut.5
+    result: PASSED
+  - name: Verify_IpRoute_vrf_all.uut.5
+    result: PASSED
+  testscript: /scratch/pyats_install_test/lib/python3.6/site-packages/genie/harness/genie_testscript.py
