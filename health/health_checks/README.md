@@ -25,4 +25,11 @@ Here are some information about what each check does:
 | logging      | keyword check in show logging output. default keywords are traceback, Traceback, TRACEBACK |
 | core         | check if core file is generated on device. just check by default. Please use `--health-remote-device` to copy the core file to remote server. |
 
+By default, `core` check only detects if core file is generated or not. in case you want to save/copy the generated core file to remote server. please use `--health-remote-device` argument. If copying core file is successful, the copied core file will be deleted from device.
+
+```
+pyats run job ../../blitz/config_interface/job.py --testbed-file ../../blitz/config_interface/testbed.yaml --health-checks cpu memory logging core --health-remote-device name:myserver path:/tmp/ protocol:http --health-mgmt-vrf iosxe:None
+```
+NOTE: default VRF will be used for `protocol:http`. so, specifying `--health-mgmt-vrf iosxe:None`
+
 
