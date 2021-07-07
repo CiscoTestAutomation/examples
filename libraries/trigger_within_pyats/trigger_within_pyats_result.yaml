@@ -1,0 +1,23 @@
+Task-1:
+  commonCleanup:
+    name: common_cleanup
+    result: PASSED
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: tc_one
+    result: PASSED
+  - name: tc_genie_trigger
+    result: ERRORED
+  - name: tc_pyats_genie
+    result: ERRORED
+  - name: tc_pyats_and_genie_trigger
+    result: ERRORED
+  - name: Verify_bgp
+    result: ERRORED
+  - name: TriggerSleep
+    result: ERRORED
+  - name: Trigger_verification_mix
+    result: ERRORED
+  testscript: /scratch/pyats_install_test/examples/libraries/trigger_within_pyats/demo7_trigger_within_pyats.py
