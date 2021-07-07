@@ -1,0 +1,81 @@
+Task-1:
+  commonCleanup:
+    name: common_cleanup
+    result: ERRORED
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: ExampleTestcase
+    result: ERRORED
+  - name: LoopedTestcase[a=2]
+    result: PASSED
+  - name: LoopedTestcase[a=3]
+    result: PASSED
+  - name: TestcaseWithSteps
+    result: ERRORED
+  testscript: /scratch/pyats_install_test/examples/comprehensive/base_example.py
+Task-2:
+  commonCleanup:
+    name: common_cleanup
+    result: ERRORED
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: ExampleTestcase
+    result: ERRORED
+  - name: LoopedTestcase[a=2]
+    result: PASSED
+  - name: LoopedTestcase[a=3]
+    result: PASSED
+  - name: TestcaseWithSteps
+    result: ERRORED
+  testscript: /scratch/pyats_install_test/examples/comprehensive/base_example.py
+Task-3:
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: step_testcase_loop_1
+    result: ERRORED
+  - name: step_testcase_loop_2
+    result: ERRORED
+  - name: DynamicLoops
+    result: PASSED
+  - name: VariantLoopedTestcase[a=5]
+    result: PASSED
+  - name: VariantLoopedTestcase[a=6]
+    result: PASSED
+  - name: VariantExampleTestcase
+    result: ERRORED
+  - name: VariantNewTestcase
+    result: PASSED
+  - name: InteractionTestcase
+    result: FAILED
+  testscript: /scratch/pyats_install_test/examples/comprehensive/variant_example.py
+Task-4:
+  testcases:
+  - name: LoopedTestcase[a=2]
+    result: PASSED
+  - name: LoopedTestcase[a=3]
+    result: PASSED
+  - name: TestcaseWithSteps
+    result: ERRORED
+  testscript: /scratch/pyats_install_test/examples/comprehensive/base_example.py
+Task-5:
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: step_testcase_loop_1
+    result: ERRORED
+  - name: step_testcase_loop_2
+    result: ERRORED
+  - name: VariantLoopedTestcase[a=5]
+    result: PASSED
+  - name: VariantLoopedTestcase[a=6]
+    result: PASSED
+  - name: VariantExampleTestcase
+    result: ERRORED
+  testscript: /scratch/pyats_install_test/examples/comprehensive/variant_example.py
