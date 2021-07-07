@@ -1,0 +1,24 @@
+pyats_health_processors:
+  groups: ["test"]
+  source:
+    pkg: genie.libs.health
+    class: health.Health
+  test_sections:
+    - cpu:
+        - api:
+            device: R1_xe
+            function: health_cpu
+            arguments:
+              command: show processes cpu
+              processes: ['BGP I/O']
+            include:
+              - sum_value_operator('value', '<', 90)
+    - memory:
+        - api:
+            device: R1_xe
+            function: health_memory
+            arguments:
+              command: show processes memory
+              processes: ['\*Init\*']
+            include:
+              - sum_value_operator('value', '<', 90)
