@@ -10,83 +10,44 @@ testbed:
         default:
           username: pyats
           password: "<password>"
-
 devices:
   R1_xe:
-    alias: R1_xe
-    connections:
-      defaults:
-        via: cli
-      cli:
-        ip: 172.25.192.90
-        port: 17004
-        protocol: telnet
-    credentials:
-      default:
-        username: admin
-        password: "<password>"
-        enable_password: "<password>"
-    custom:
-      abstraction:
-        order:
-        - os
-        - platform
     os: iosxe
     platform: csr1kv
-    type: CSR1000v
-  R2_xr:
-    alias: R2_xr
-    connections:
-      defaults:
-        via: cli
-      cli:
-        ip: 172.25.192.90
-        port: 17006
-        protocol: telnet
     credentials:
       default:
         username: admin
         password: "<password>"
-        enable_password: "<password>"
-    custom:
-      abstraction:
-        order:
-        - os
-        - platform
+    connections:
+      defaults:
+       via: cli
+      cli:
+        protocol: ssh
+        ip: 192.168.255.118
+  R2_xr:
     os: iosxr
     platform: iosxrv9k
-    type: IOS XRv 9000
-  R3_nx:
-    alias: R3_nx
-    connections:
-      defaults:
-        via: cli
-      cli:
-        ip: 172.25.192.90
-        port: 17011
-        protocol: telnet
     credentials:
       default:
         username: admin
         password: "<password>"
-        enable_password: "<password>"
-    custom:
-      abstraction:
-        order:
-        - os
-        - platform
-    os: nxos
-    platform: n9kv
-    type: NX-OSv 9000
-  jump_host:
     connections:
+      defaults:
+        via: cli
       cli:
-        ip: 172.25.192.90
-        port: 22
         protocol: ssh
+        ip: 192.168.255.199
+  R3_nx:
+    os: nxos
+    type: switch
+    series: n9kv
     credentials:
       default:
+        username: admin
         password: "<password>"
-        username: virl
-    os: linux
-    type: linux
+    connections:
+      defaults:
+        via: cli
+      cli:
+        protocol: ssh
+        ip: 192.168.255.200
