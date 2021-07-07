@@ -1,0 +1,22 @@
+Task-1:
+  commonCleanup:
+    name: common_cleanup
+    result: PASSED
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: tc_one
+    result: PASSED
+  testscript: /scratch/pyats_install_test/examples/tasks/task_example.py
+Task-2:
+  commonCleanup:
+    name: common_cleanup
+    result: PASSED
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: tc_one
+    result: PASSED
+  testscript: /scratch/pyats_install_test/examples/tasks/task_example.py
