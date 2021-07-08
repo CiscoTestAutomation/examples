@@ -19,4 +19,4 @@ Task-2:
   testcases:
   - name: tc_one
     result: PASSED
-  testscript: /scratch/pyats_install_test/examples/tasks/task_example.py
+  testscript: /scratch/pyats_install_test/examples/tasks/task_example
