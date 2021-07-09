@@ -3,23 +3,22 @@ pyats_health_processors:
   source:
     pkg: genie.libs.health
     class: health.Health
-  devices: ['uut']
   test_sections:
     - cpu:
         - api:
-            device: uut
-            function: get_platform_cpu_load
+            device: R1_xe
+            function: health_cpu
             arguments:
               command: show processes cpu
               processes: ['BGP I/O']
             include:
-              - ">= 10"
+              - sum_value_operator('value', '<', 90)
     - memory:
         - api:
-            device: uut
-            function: get_platform_memory_usage
+            device: R1_xe
+            function: health_memory
             arguments:
               command: show processes memory
               processes: ['\*Init\*']
             include:
-              - ">= 10"
+              - sum_value_operator('value', '<', 90)
