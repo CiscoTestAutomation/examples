@@ -1,0 +1,51 @@
+
+version: 1
+
+type: easypy
+
+arguments:
+    no-mail: True
+    argument_a: ValueA
+    argument_b: ValueB
+
+description: "This is my Manifest"
+notes: "Just adding this for test"
+
+tags:
+- firstTag
+- secondTag
+- thirdTag
+
+runtimes:
+    system:
+        type: system
+        environment:
+            loglevel: DEBUG
+            execution_group: group_A
+            my_variable: 123
+
+profiles:
+    basic_local:
+        runtime: system
+        description: "this is my local profile"
+        max_runtime: "05:30"
+        priority: 2
+        testbed:
+            name: PerditaGoodTB
+        arguments:
+            testbed-file: PerditaGoodTB
+
+    basic_regression:
+        runtime: system
+        description: "this is my regression profile"
+        max_runtime: "02:00"
+        topology:
+            name: JoshTest2
+        arguments:
+            testbed-file: PerditaGoodTB
+            devices:
+            - N9K_1
+            - N9K_2
+
+
+
