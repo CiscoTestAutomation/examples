@@ -8,7 +8,7 @@ devices:
     alias: 'uut'
     credentials:
       default:
-        password: admin
+	password: admin
         username: admin
     connections:
       a:
@@ -22,7 +22,7 @@ devices:
     alias: 'helper'
     credentials:
       default:
-        password: cisco
+	password: cisco
         username: cisco
     connections:
       a:
@@ -43,7 +43,7 @@ topology:
         type: ethernet
       Loopback0:
         alias: device1-intf3
-        link: rtr1-rtr1-3
+        link: rtr1-rtr2-3
         type: loopback
 
   nx-osv-1:
@@ -58,5 +58,5 @@ topology:
         type: ethernet
       Loopback0:
         alias: device2-intf3
-        link: rtr2-rtr2-3
+        link: rtr1-rtr2-3
         type: loopback
