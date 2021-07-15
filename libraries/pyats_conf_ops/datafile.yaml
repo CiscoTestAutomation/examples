@@ -17,4 +17,3 @@ testcases:
     Modify:
         ospf_2: '200'
         auto_cost_ref_bw: 10
-
