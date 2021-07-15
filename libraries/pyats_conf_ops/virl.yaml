@@ -8,7 +8,7 @@ devices:
     alias: 'uut'
     credentials:
       default:
-	password: admin
+        password: admin
         username: admin
     connections:
       a:
@@ -22,7 +22,7 @@ devices:
     alias: 'helper'
     credentials:
       default:
-	password: cisco
+        password: cisco
         username: cisco
     connections:
       a:
