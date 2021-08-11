@@ -1,0 +1,11 @@
+Task-1:
+  commonCleanup:
+    name: common_cleanup
+    result: PASSED
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: test_up_interface
+    result: PASSED
+  testscript: /scratch/pyats_ext_install_test/examples/connection/connection_example_script.py

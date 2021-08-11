@@ -1,0 +1,11 @@
+Task-1:
+  commonCleanup:
+    name: common_cleanup
+    result: PASSED
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: tc_one
+    result: FAILED
+  testscript: /scratch/pyats_ext_install_test/examples/steps/steps_example_script.py

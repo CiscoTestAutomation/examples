@@ -1,0 +1,21 @@
+Task-1:
+  commonCleanup:
+    name: common_cleanup
+    result: PASSED
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: my_passing_tc
+    result: PASSED
+  - name: my_failed_testcase
+    result: FAILED
+  - name: loop1
+    result: PASSED
+  - name: loop2
+    result: PASSED
+  - name: my_looped_testcase_variant[variants=1]
+    result: PASSED
+  - name: my_looped_testcase_variant[variants=2]
+    result: PASSED
+  testscript: /scratch/pyats_ext_install_test/examples/feature/features_example_script.py

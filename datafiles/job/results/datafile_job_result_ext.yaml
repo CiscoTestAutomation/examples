@@ -1,0 +1,24 @@
+Task-1:
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: MyTestcase
+    result: ERRORED
+  testscript: /scratch/pyats_ext_install_test/examples/datafiles/testscript.py
+Task-2:
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: customized_id_from_datafile
+    result: PASSED
+  testscript: /scratch/pyats_ext_install_test/examples/datafiles/testscript.py
+Task-3:
+  commonSetup:
+    name: common_setup
+    result: PASSED
+  testcases:
+  - name: customized_id_from_datafile
+    result: PASSED
+  testscript: /scratch/pyats_ext_install_test/examples/datafiles/testscript.py
