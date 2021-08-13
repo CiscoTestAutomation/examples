@@ -8,4 +8,4 @@ Task-1:
   testcases:
   - name: config_interface.R1_xe
     result: FAILED
-  testscript: /scratch/pyats_ext_install_test/lib/venv/python3.6/site-packages/genie/harness/genie_testscript.py
+  testscript: /scratch/pyats_ext_install_test/venv/lib/python3.6/site-packages/genie/harness/genie_testscript.py
