@@ -1,7 +1,7 @@
 Task-1:
   commonCleanup:
     name: common_cleanup
-    result: PASSED
+    result: SKIPPED
   commonSetup:
     name: common_setup
     result: PASSED
