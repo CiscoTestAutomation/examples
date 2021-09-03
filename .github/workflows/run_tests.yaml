@@ -43,7 +43,7 @@ jobs:
     - name: run examples
       run: |
         cd basic
-        pyats run job basic_example_job.py --no-mail
+        pyats run job basic_example_job.py --no-mail || True
         unzip -c $(find ~/.pyats/archive -type f -mmin -1) rerun.results > rerun.results
         grep -A100000 'Task.*' rerun.results > rerun_results
         diff -I 'testscript:' -B -C5 rerun_results results/basic_example_result_ext.yaml
