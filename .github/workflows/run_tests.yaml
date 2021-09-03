@@ -55,5 +55,5 @@ jobs:
         pyats run job example_job.py --no-mail || echo $?
         unzip -c $(find ~/.pyats/archive -type f -mmin -1) rerun.results > rerun.results
         grep -A100000 'Task.*' rerun.results > rerun_results
-        diff -I 'testscript:' -B -C5 rerun_results results/comprehensive_result_ext.yaml
+        diff -I 'testscript:' -B -C5 rerun_results results/comprehensive_results_ext.yaml
         cd ..
