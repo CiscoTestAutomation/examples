@@ -8,9 +8,109 @@ on:
   - pull_request
 
 jobs:
-  build:
+  ubuntu-latest:
 
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install pyATS
+      run: |
+        python -m pip install pip setuptools wheel --upgrade
+        pip install pyats[full] yang.connector rest.connector
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: pyats version check
+      run: |
+        pyats version check
+    # - name: ComparePlugin
+    #   run: |
+    #     cat <<EOF > easypy_config.yaml
+    #     plugins:
+    #       ComparePlugin:
+    #         order: 120
+    #         enabled: True
+    #         module: genie.utils.compare
+    #     EOF
+    #     export PYATS_CONFIGURATION_EASYPY=easypy_config.yaml 
+    - name: run examples
+      run: |
+        cd basic
+        pyats run job basic_example_job.py --no-mail || echo $?
+        unzip -c $(find ~/.pyats/archive -type f -mmin -1) rerun.results > rerun.results
+        grep -A100000 'Task.*' rerun.results > rerun_results
+        diff -I 'testscript:' -B -C5 rerun_results results/basic_example_result_ext.yaml
+        sleep 60
+        cd ..
+    - name: comprehensive
+      run: |
+        cd comprehensive/job
+        pyats run job example_job.py --no-mail || echo $?
+        unzip -c $(find ~/.pyats/archive -type f -mmin -1) rerun.results > rerun.results
+        grep -A100000 'Task.*' rerun.results > rerun_results
+        diff -I 'testscript:' -B -C5 rerun_results results/comprehensive_results_ext.yaml
+        cd ..
+
+  macos-11:
+
+    runs-on: macos-11
+
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install pyATS
+      run: |
+        python -m pip install pip setuptools wheel --upgrade
+        pip install pyats[full] yang.connector rest.connector
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: pyats version check
+      run: |
+        pyats version check
+    # - name: ComparePlugin
+    #   run: |
+    #     cat <<EOF > easypy_config.yaml
+    #     plugins:
+    #       ComparePlugin:
+    #         order: 120
+    #         enabled: True
+    #         module: genie.utils.compare
+    #     EOF
+    #     export PYATS_CONFIGURATION_EASYPY=easypy_config.yaml 
+    - name: run examples
+      run: |
+        cd basic
+        pyats run job basic_example_job.py --no-mail || echo $?
+        unzip -c $(find ~/.pyats/archive -type f -mmin -1) rerun.results > rerun.results
+        grep -A100000 'Task.*' rerun.results > rerun_results
+        diff -I 'testscript:' -B -C5 rerun_results results/basic_example_result_ext.yaml
+        sleep 60
+        cd ..
+    - name: comprehensive
+      run: |
+        cd comprehensive/job
+        pyats run job example_job.py --no-mail || echo $?
+        unzip -c $(find ~/.pyats/archive -type f -mmin -1) rerun.results > rerun.results
+        grep -A100000 'Task.*' rerun.results > rerun_results
+        diff -I 'testscript:' -B -C5 rerun_results results/comprehensive_results_ext.yaml
+        cd ..
+
+  macos-latest:
+
+    runs-on: macos-10.15
 
     strategy:
       matrix:
