@@ -47,6 +47,7 @@ jobs:
         unzip -c $(find ~/.pyats/archive -type f -mmin -1) rerun.results > rerun.results
         grep -A100000 'Task.*' rerun.results > rerun_results
         diff -I 'testscript:' -B -C5 rerun_results results/basic_example_result_ext.yaml
+        sleep 60
         cd ..
     - name: comprehensive
       run: |
