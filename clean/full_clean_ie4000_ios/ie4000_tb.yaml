@@ -1,0 +1,66 @@
+testbed:
+    name: SOL-IE4000-thai
+    servers:
+        ftp:
+            address: 10.195.189.100
+            credentials:
+                default:
+                    username: admin
+                    password: C1sco123
+            path: /thaing/
+        tftp:
+            address: 172.27.115.127
+            credentials:
+                default:
+                    username: rcpuser
+                    password: 123rcp!
+devices:
+    MEX-X-4000:
+        alias: uut
+        os: ios
+        type: ie4k
+        platform: ie4k
+        credentials:
+            default:
+                password: C1sco123
+                username: admin
+            enable:
+                password: "C1sco123"
+                username: admin
+        connections:
+            defaults:
+                class: unicon.Unicon
+            cli:
+                protocol: telnet
+                ip: 10.195.247.37
+                port: 6057
+            a:
+                protocol: telnet
+                ip: 10.195.247.37
+                port: 6057
+        custom:
+            abstraction:
+                order: [os, platform]
+        peripherals:
+            terminal_server:
+                "10.195.247.37": [57]
+            power_cycler:
+                type: raritan-px2
+                connection_type: snmp
+                host: 172.23.241.22
+                read_community: public
+                write_community: private
+                outlets: [9]
+    "10.195.247.37":
+        os: iosxe
+        type: iosxe
+        platform: isr4k
+        connections:
+            a:
+                ip: 10.195.247.37
+                protocol: telnet
+        credentials:
+            default:
+                password: Lablab123
+            enable:
+                password: C1sco123

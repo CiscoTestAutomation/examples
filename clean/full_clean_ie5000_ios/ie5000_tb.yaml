@@ -1,0 +1,66 @@
+testbed:
+    name: IE5000-tb
+    servers:
+        ftp:
+            address: 10.15.19.10
+            credentials:
+                default:
+                    username: admin
+                    password: C1sco123
+            path: /mypath/
+        tftp:
+            address: 172.2.11.12
+            credentials:
+                default:
+                    username: rcpuser
+                    password: 123rcp!
+devices:
+    ie5000:
+        alias: uut
+        os: ios
+        type: ie5k
+        platform: ie5k
+        credentials:
+            default:
+                password: C1sco123
+                username: admin
+            enable:
+                password: "C1sco123"
+                username: admin
+        connections:
+            defaults:
+                class: unicon.Unicon
+            cli:
+                protocol: telnet
+                ip: 10.15.27.18
+                port: 6029
+            a:
+                protocol: telnet
+                ip: 10.15.27.18
+                port: 6029
+        custom:
+            abstraction:
+                order: [os, platform]
+        peripherals:
+            terminal_server:
+                "10.15.27.18": [29]
+            power_cycler:
+                type: raritan-px2
+                connection_type: snmp
+                host: 172.2.21.11
+                read_community: public
+                write_community: private
+                outlets: [2]
+    "10.15.27.18":
+        os: iosxe
+        type: iosxe
+        platform: isr4k
+        connections:
+            a:
+                ip: 10.15.27.18
+                protocol: telnet
+        credentials:
+            default:
+                password: Lablab123
+            enable:
+                password: C1sc0123
