@@ -1,0 +1,125 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [3560cx]
+
+devices:
+  3560cx:
+    device_recovery:
+      break_count: 10
+      console_activity_pattern: "\\.\\.\\.\\."
+      timeout: 1200
+      recovery_password: lab
+      golden_image:
+        - flash:/c3560cx-universalk9-mz.152-7.E1/c3560cx-universalk9-mz.152-7.E1.bin
+      powercycler: True
+
+    connect:
+
+    copy_to_device:
+      origin:
+        files:
+          - mypath/test.cfg
+        hostname: 10.15.19.10
+      destination:
+        directory: 'flash:/'
+      protocol: ftp
+      check_file_stability: True
+      min_free_space_percent: 50
+      # if_exist_still_copy: True
+      vrf: ''
+      protected_files:
+        - flash:/c3560cx-universalk9-mz.152-7.E3.bin
+
+    change_boot_variable:
+        images:
+            - flash:/c3560cx-universalk9-mz.152-7.E1/c3560cx-universalk9-mz.152-7.E1.bin
+            #- flash:/c3560cx-universalk9-mz.152-7.E3.bin
+        set_register: True
+
+
+    write_erase:
+
+    reload:
+        check_modules:
+            check: False
+
+    apply_configuration:
+      configuration: |
+        hostname 3560cx
+        interface GigabitEthernet0/13
+            no switchport
+            ip address 12.23.21.70 255.255.255.0
+        !
+        ip default-gateway 12.23.21.1
+        !
+        ip http server
+        ip http secure-server
+        ip tftp source-interface GigabitEthernet0/13
+        ip tftp blocksize 8192
+        ip route 0.0.0.0 0.0.0.0 12.23.21.1
+
+    verify_running_image:
+      images:
+        - flash:/c3560cx-universalk9-mz.152-7.E1/c3560cx-universalk9-mz.152-7.E1.bin
+        #- flash:/c3560cx-universalk9-mz.152-7.E3.bin
+        
+    delete_backup_from_device__1:
+        delete_dir: 'flash:'
+        delete_file: 'test.cfg'
+    
+    ping_server:
+        server: 10.15.19.10
+        vrf: ''
+        timeout: 120
+        interval: 60
+    
+    backup_file_on_device:
+        copy_dir: 'flash:'
+        copy_file: 'test.cfg'
+
+    delete_backup_from_device__2:
+        delete_dir: 'flash:'
+        delete_file: 'backup_test.cfg'
+
+    copy_to_linux:
+        append_hostname: true
+        copy_attempts: 3
+        #copy_attempts_sleep: 40
+        destination:
+            directory: /auto/mypath/
+            hostname: 172.2.11.12
+        origin:
+            files:
+                - /auto/mypath/golden/sample_file
+            hostname: 172.2.11.12
+        overwrite: true
+        #protocol: ftp
+    
+    delete_files_from_server:
+        server: 172.2.11.12
+        files:
+            - /auto/mypath/sample_file_COL-X-3560-1
+        protocol: sftp
+
+    power_cycle:
+        sleep_after_power_off: 10
+        boot_timeout: 900
+
+    order:
+        - 'connect'
+        - 'apply_configuration'
+        - 'ping_server'
+        - 'copy_to_device'
+        - 'backup_file_on_device'
+        - 'change_boot_variable'
+        - 'copy_to_linux'
+        - 'write_erase'
+        - 'power_cycle'
+        - 'reload'
+        - 'apply_configuration'
+        - 'ping_server'
+        - 'verify_running_image'
+        - 'delete_backup_from_device__1'
+        - 'delete_backup_from_device__2'
+        - 'delete_files_from_server'

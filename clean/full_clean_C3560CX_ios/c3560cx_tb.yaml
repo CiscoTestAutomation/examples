@@ -1,0 +1,68 @@
+testbed:
+    name: c3560cx
+    servers:
+        ftp:
+            address: 10.10.19.10
+            credentials:
+                default:
+                    username: admin
+                    password: cisco123
+            path: /mypath/
+
+        tftp:
+            address: 172.2.11.12
+            credentials:
+                default:
+                    username: rcpuser
+                    password: 123rcp!
+
+devices:
+    3560cx:
+        alias: uut
+        os: ios
+        type: cat3k
+        platform: cat3k
+        credentials:
+            default:
+                password: C1sco123
+                username: admin
+            enable:
+                password: "C1sco123"
+                username: admin
+        connections:
+            defaults:
+                class: unicon.Unicon
+            cli:
+                protocol: telnet
+                ip: 10.15.27.37
+                port: 6020
+            a:
+                protocol: telnet
+                ip: 10.15.27.37
+                port: 6020
+        custom:
+            abstraction:
+                order: [os, platform]
+        peripherals:
+            terminal_server:
+                "10.15.27.37": [20]
+            power_cycler:
+                type: raritan-px2
+                connection_type: snmp
+                host: 172.2.21.2
+                read_community: public
+                write_community: private
+                outlets: [12]
+    "10.15.27.37":
+        os: iosxe
+        type: iosxe
+        platform: isr4k
+        connections:
+            a:
+                ip: 10.15.27.7
+                protocol: telnet
+        credentials:
+            default:
+                password: cisco123
+            enable:
+                password: cisco123
