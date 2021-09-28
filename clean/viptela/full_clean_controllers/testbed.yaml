@@ -1,0 +1,76 @@
+# Notes:
+# - Controllers such as vManage/vBond/vSmart need to have console access to its VMs
+
+testbed:
+  name: iosxe_sdwan
+  servers:
+    ftp:
+      address: 172.16.192.90
+      credentials:
+        default:
+          username: user
+          password: pass123
+
+devices:
+  vmanage:
+    alias: vmanage
+    os: viptela
+    platform: viptela
+    credentials:
+      default:
+        password: admin
+        username: admin
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+        debug: True
+      cli:
+        protocol: telnet
+        ip: 10.1.1.132
+        port: 5001
+    custom:
+      abstraction:
+        order: [os, platform]
+
+  vbond:
+    alias: vbond
+    os: viptela
+    platform: viptela
+    credentials:
+      default:
+        password: admin
+        username: admin
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+        debug: True
+      cli:
+        protocol: telnet
+        ip: 10.1.1.132
+        port: 5002
+    custom:
+      abstraction:
+        order: [os, platform]
+
+  vsmart:
+    alias: vsmart
+    os: viptela
+    platform: viptela
+    credentials:
+      default:
+        password: admin
+        username: admin
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+        debug: True
+      cli:
+        protocol: telnet
+        ip: 10.1.1.132
+        port: 5003
+    custom:
+      abstraction:
+        order: [os, platform]

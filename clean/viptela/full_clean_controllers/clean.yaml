@@ -1,0 +1,58 @@
+# Notes:
+#  - vManage/vBond/vSmart should be already running as VMs on ESXi
+#  - only upgrade is supported. Please don't do downgrade
+#  - only on-premise (VMs on ESXi) is supported.
+#  - only ftp is supported in software_install stage
+#  - vManage/vBond/vSmart need to have console access to VMs
+#  - configuration on controllers will remain
+
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [vmanage, vbond, vsmart]
+
+devices:
+  vmanage:
+    images:
+      - vmanage-20.3.4-x86_64.tar.gz
+
+    connect: &connect
+
+    software_install:
+      origin:
+        files:
+          - vmanage-20.3.4-x86_64.tar.gz
+        hostname: 172.16.192.90
+      protocol: ftp # only ftp is supported
+      vpn: 512
+      timeout: 180
+
+    order: &order
+      - 'connect'
+      - 'software_install'
+
+  vbond:
+    images: &image_viptela
+      - viptela-20.3.4-x86_64.tar.gz
+
+    connect: *connect
+
+    software_install: &install_viptela
+      origin:
+        files:
+          - viptela-20.3.4-x86_64.tar.gz
+        hostname: 172.16.192.90
+      protocol: ftp
+      vpn: 512
+      timeout: 180
+
+    order: *order
+
+  vsmart:
+    images: *image_viptela
+
+    connect: *connect
+
+    software_install: *install_viptela
+
+    order: *order

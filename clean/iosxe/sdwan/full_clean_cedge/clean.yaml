@@ -1,0 +1,107 @@
+# Notes:
+# - 17.2+ universal image only is supported
+# - config on device will be wiped out
+# - below example is for ASR1001X. but same idea can be applied to ASR1001HX,
+#   ISR4451X, ISR4461
+# - only tftp_boot is supported for device_recovery
+
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [asr1001x]
+
+devices:
+  asr1001x:
+    images:
+      - /path/to/asr1000-universalk9.17.06.01a.SPA.bin
+
+    # only tftp_boot is supported
+    device_recovery:
+      break_count: 120
+      console_activity_pattern: "System Bootstrap"
+      timeout: 3600
+      recovery_password: admin
+      tftp_boot: 
+        image: 
+          - "/asr1000-universalk9.17.06.01a.SPA.bin" 
+        ip_address:
+          - 172.16.1.35
+        subnet_mask: 255.255.255.0
+        gateway: 172.16.1.1
+        tftp_server: 172.16.192.90
+
+    connect:
+
+    apply_configuration: &asr1001x_config
+      configuration: |
+        hostname ASR1001-X
+        no service config
+        !
+        interface GigabitEthernet0
+         vrf forwarding Mgmt-intf
+         ip address 172.16.1.35 255.255.255.0
+         no shut
+        !
+        ip route vrf Mgmt-intf 0.0.0.0 0.0.0.0 172.16.1.1
+        ip tftp source-interface GigabitEthernet0
+        ip tftp blocksize 8192
+        enable password pass123
+        no ip domain lookup
+        line vty 0 4
+         transport input telnet ssh
+        !
+        config-register 0x2102
+      config_timeout: 30
+      config_stable_time: 10
+
+    tftp_boot:
+      image: 
+        - "/asr1000-universalk9.17.06.01a.SPA.bin" 
+      ip_address:
+        - 172.16.1.35
+      subnet_mask: 255.255.255.0
+      gateway: 172.16.1.1
+      tftp_server: 172.16.192.90
+      recovery_password: admin
+      timeout: 3600
+
+    # ping check from device to below server
+    ping_server:
+      server: 172.16.192.90
+      vrf: Mgmt-intf
+      timeout: 10
+      max_attempts: 5 # Please don't set to 1. usually 1st attempt fails
+      interval: 5
+
+    copy_to_device: &copy_to_device
+      origin:
+        hostname: 172.16.192.90
+      destination:
+        directory: 'bootflash:'
+      protocol: scp
+      vrf: Mgmt-intf
+      overwrite: False
+      verify_num_images: False
+      check_file_stability: True
+      min_free_space_percent: 50
+      timeout: 600
+
+    expand_image:
+        image:
+          - "bootflash:%CLI{image_asr1001x}"
+
+    controller_mode: &controller_mode
+        mode: enable
+        reload_timeout: 900
+
+    apply_configuration__2: *asr1001x_config
+
+    order: &order
+      - 'connect'
+      - 'tftp_boot'
+      - 'apply_configuration'
+      - 'ping_server'
+      - 'copy_to_device'
+      - 'expand_image'
+      - 'controller_mode'
+      - 'apply_configuration__2'
