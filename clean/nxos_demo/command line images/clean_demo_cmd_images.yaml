@@ -1,0 +1,56 @@
+# there are four flags that can be provided on the cli to pass images to clean
+# --clean-device-image, --clean-os-image, --clean-group-image and --clean-platform-image
+# the syntax is the same for all of them
+
+# pyats clean --clean-device-image N95_1:/path/to/different/file.bin
+# by including this cli argument I am passing a different image location to clean for my N95_1 device
+
+# I can pass url's as well
+# pyats clean --clean-device-image N95_1:http://myserver.com:21/path/to/image.bin
+
+# I can pass files using the other image handler formats
+# pyats clean --clean-device-image N95_1:system:file:/path/to/image.bin
+
+# I can pass multiple images as a list
+# pyats clean --clean-device-image N95_1:system:file:/path/to/image.bin N95_1:other:file:/path/to/extra_file_1 N95_1:other:file:/path/to/extra_file_2 N95_1:other:file:/path/to/extra_file_3
+
+# All of the flags work like this, but they allow passing group names, platforms, or os's isntead of device names
+
+# our docs on the topic are available here
+# https://pubhub.devnetcloud.com/media/genie-docs/docs/clean/user_guide/executing_a_clean.html
+
+
+
+cleaners:
+    PyatsDeviceClean:
+        module: genie.libs.clean
+        devices: [N95_1]
+devices:
+    N95_1:
+        images:
+            system:
+                - /auto/tftp-ssr/golden/fake_n7000-s2-dk9.8.4.4.bin
+            other:
+                - /auto/tftp-ssr/golden/fake_extrafake_n7000-s2-kickstart.8.4.4.bin
+                - /auto/tftp-ssr/golden/fake_extrafake2_n7000-s2-kickstart.8.4.4.bin
+
+        connect:
+
+        copy_to_device:
+            vrf: man
+            timeout: 5000
+            origin:
+                hostname: tftp
+                files:
+                    - /auto/tftp-ssr/golden/fake_n7000-s2-dk9.8.4.4.bin
+                    - /auto/tftp-ssr/golden/fake_extrafake_n7000-s2-kickstart.8.4.4.bin
+                    - /auto/tftp-ssr/golden/fake_extrafake2_n7000-s2-kickstart.8.4.4.bin
+            destination:
+                directory: 'bootflash:'
+            protocol: tftp
+            skip_deletion: True
+            verify_num_images: False
+
+        order:
+            - connect
+            - copy_to_device

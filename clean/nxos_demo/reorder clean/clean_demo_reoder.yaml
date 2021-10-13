@@ -1,0 +1,76 @@
+# The order of stage execution in a clean file can be changed based on whether the previous stage passes or fails
+# This is not a well documented feature, adn there are no pages I can point to at time of writing to assist this explanation
+# please use this feature carefully and as little as possible to minimize issues
+
+# every clean stage can have two optional properties defined
+# change_order_if_fail and change_order_if_pass
+# each one takes a list that represents the new order clean will use to apply a stage
+
+# if a stage fails and you want to make a change based on this, you can change the order to apply a new configuration or change a boot variable and reload the device
+
+#connect:
+#ping_server:
+#    server: 192.168.100.100
+#    change_order_if_fail:
+#        - apply_configuration
+#        - change_boot_variable
+#        - reload
+#apply_configuration:
+#change_boot_variable:
+#reload:
+#order:
+#    - 'connect'
+#    - 'ping_server'
+
+# ^ the order is changed to do the other stages and reload only if the ping fails
+
+# you can also make the order of the clean change based on if a test case passes, so you could make a device have a reload section in its normal clean, but if a stage passes you can change the order to not include the reload
+
+#connect:
+#ping_server:
+#    server: 192.168.100.100
+#    change_order_if_pass:
+#        - apply_configuration
+#apply_configuration:
+#change_boot_variable:
+#reload:
+#order:
+#    - 'connect'
+#    - 'ping_server'
+#    - apply_configuration
+#    - change_boot_variable
+#    - reload
+
+# the stages that were going to run will be removed if the ping succeeds
+
+# this can be used to make clean repeat a stage
+# if the same stage is repeated three times because of reordering clean will assume it has become caught in a loop and end the clean
+
+cleaners:
+    PyatsDeviceClean:
+        module: genie.libs.clean
+        devices: [N95_1]
+devices:
+    N95_1:
+        images:
+            system:
+                - /auto/tftp-ssr/golden/fake_n7000-s2-dk9.8.4.4.bin
+
+        connect:
+
+        ping_server:
+            server: 192.168.100.100
+            change_order_if_fail:
+                - apply_configuration
+                - change_boot_variable
+                - reload
+
+        apply_configuration:
+
+        change_boot_variable:
+
+        reload:
+
+        order:
+            - 'connect'
+            - 'ping_server'

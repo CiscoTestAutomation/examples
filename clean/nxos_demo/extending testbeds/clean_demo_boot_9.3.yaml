@@ -1,0 +1,12 @@
+extends: clean_demo_base.yaml
+
+devices:
+    N95_1:
+        images:
+            system:
+                - bootflash:/nxos.9.3.4.IIL9.0.812.bin
+
+groups:
+  demo_device_group:
+    change_boot_variable:
+      system: bootflash:/nxos.9.3.4.IIL9.0.812.bin

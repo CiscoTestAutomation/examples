@@ -1,0 +1,34 @@
+# the power cyclers just need to be defined in the testbed, all clean needs is the device_recovery stage defined
+
+# our device recovery docs can be found here
+# https://pubhub.devnetcloud.com/media/genie-docs/docs/clean/user_guide/writing_a_clean/device_recovery.html#clean-doc-device-recovery
+
+cleaners:
+    PyatsDeviceClean:
+        module: genie.libs.clean
+        devices: [P1]
+devices:
+    P1:
+        images:
+            kickstart:
+                - bootflash:/ISSUCleanGolden.kickstart.gbin
+            system:
+                - bootflash:/ISSUCleanGolden.system.gbin
+
+
+        device_recovery:
+            break_count: 120 # how many times to send the keycode
+            console_breakboot_char: '\x03' # equivalent to ctrl-c (^c), any valid keycode can be used
+            console_activity_pattern: ".*BIOS.*" # regex to detect output indicating the device is booting, this tells clean when to start breakign the boot sequence
+            timeout: 30000
+            recovery_password: 'CSCO12345^'
+            powercycler: True
+            clear_line: True
+            golden_image:
+                system: 'bootflash:/ISSUCleanGolden.system.gbin'
+                kickstart: 'bootflash:/ISSUCleanGolden.kickstart.gbin'
+
+        connect:
+
+        order:
+            - 'connect'

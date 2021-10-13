@@ -1,0 +1,6 @@
+extends: clean_demo_base.yaml
+
+groups:
+  demo_device_group:
+    apply_configuration:
+      configuration: boot mode docker_cluster

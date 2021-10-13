@@ -1,0 +1,27 @@
+cleaners:
+    PyatsDeviceClean:
+        module: genie.libs.clean
+        devices: [N95_1]
+devices:
+    N95_1:
+        images:
+            system:
+                - /auto/tftp-ssr/golden/fake_n7000-s2-dk9.8.4.4.bin
+        connect:
+        copy_to_device:
+            vrf: man
+            timeout: 5000
+            origin:
+                hostname: tftp
+                files:
+                    - /auto/tftp-ssr/golden/fake_n7000-s2-dk9.8.4.4.bin
+            destination:
+                directory: 'bootflash:/'
+            protocol: tftp
+            skip_deletion: True
+            overwrite: False
+            verify_num_images: False
+            unique_file_name: True
+        order:
+            - 'connect'
+            - 'copy_to_device'

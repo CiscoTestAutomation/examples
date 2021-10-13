@@ -1,0 +1,25 @@
+cleaners:
+    PyatsDeviceClean:
+        module: genie.libs.clean
+        groups: [demo_device_group]
+
+groups:
+    demo_device_group:
+        devices:
+            - N95_1
+
+devices:
+    N95_1:
+        images:
+            system:
+                - /auto/tftp-ssr/golden/fake_n7000-s2-dk9.8.4.4.bin
+        connect:
+
+        apply_configuration:
+
+        change_boot_variable:
+
+        order:
+            - 'connect'
+            - 'change_boot_variable'
+

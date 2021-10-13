@@ -1,0 +1,69 @@
+# callables are python functions that are evaluated before the clean is run, and their returned values are substituted into their place
+# callables can be used from both a config file, and the command line
+
+# let's say I have a function called get_last_green_image, it's located at pyats.cisco.abs. and it needs the arguments (<branch>, <target>, <regex(optional)>)
+# I want to call this function in my config file (or on the cli) and use its returned value for an image location
+
+# the syntax for using a callable is
+# %CALLABLE{pyats.cisco.abs.get_last_green_image(polaris_dev, 2kp_super)}
+# %CALLABLE to declare use of a callable, open brackets { path to function (args and kwargs)}
+
+# to use this in my config file, I would make the below my images section in the config file
+#devices:
+#    N95_1:
+#        images:
+#            system:
+#                - '%CALLABLE{pyats.cisco.abs.get_last_green_image(polaris_dev, 2kp_super)}'
+
+# when the clean actually runs, the callables will be converted into their returned values and used by clean
+
+# to pass the callable on the command line is the same syntax,
+# --clean-image 'N95_1:%CALLABLE{pyats.cisco.abs.get_last_green_image(polaris_dev, 2kp_super)}'
+
+# to provide the number that will be used for the unique file name in the copy_to_device stage, I would do this
+
+#devices:
+#    N95_1:
+#        copy_to_device:
+#            vrf: man
+#            origin:
+#                files:
+#                    - /auto/tftp-ssr/golden/fake_n7000-s2-dk9.8.4.4.bin
+#            destination:
+#                directory: 'bootflash:/'
+#            protocol: tftp
+#            verify_num_images: False
+#            unique_file_name: True
+#            unique_number: '%CALLABLE{pyats.modules.to.my_run_number_function(arguments)}'
+
+# the unique number field is being determined by a callable
+
+
+cleaners:
+    PyatsDeviceClean:
+        module: genie.libs.clean
+        devices: [N95_1]
+devices:
+    N95_1:
+        images:
+            system:
+                - /auto/tftp-ssr/golden/fake_n7000-s2-dk9.8.4.4.bin
+        connect:
+        copy_to_device:
+            vrf: man
+            timeout: 5000
+            origin:
+                hostname: tftp
+                files:
+                    - /auto/tftp-ssr/golden/fake_n7000-s2-dk9.8.4.4.bin
+            destination:
+                directory: 'bootflash:/'
+            protocol: tftp
+            skip_deletion: True
+            overwrite: False
+            verify_num_images: False
+            unique_file_name: True
+            unique_number: '%CALLABLE{pyats.modules.to.my_run_number_function(arguments)}'
+        order:
+            - 'connect'
+            - 'copy_to_device'
