@@ -34,4 +34,4 @@ Task-1:
     result: PASSED
   - name: Verify_IpRoute_vrf_all.uut.5
     result: PASSED
-  testscript: /scratch/pyats_install_test/lib/python3.6/site-packages/genie/harness/genie_testscript.py
+  testscript: /scratch/pyats_install_test/lib/python3.8/site-packages/genie/harness/genie_testscript.py
