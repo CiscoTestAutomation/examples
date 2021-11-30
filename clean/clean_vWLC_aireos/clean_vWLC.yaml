@@ -1,0 +1,28 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [vWLC]
+
+devices:
+  vWLC:
+    connect:
+
+    cli_boot:
+      filename: 'AIR-CTVM-K9-8-8-130-0.aes'
+      timeout: 1000
+      username: rcpuser
+      password: 123rcp!
+      protocol: ftp
+      tftp_server: 10.2.5.5
+      path: "/auto/tftp-ssr/golden/"
+
+    ping_server:
+      interval: 60
+      server: 10.2.5.5
+      timeout: 120
+      vrf: ''
+  
+    order:
+      - connect
+      - ping_server
+      - cli_boot
