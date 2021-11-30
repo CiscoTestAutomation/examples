@@ -1,0 +1,77 @@
+testbed:
+    name: vWLC
+    servers:
+        ftp:
+            address: 10.2.5.5
+            credentials:
+                default:
+                    username: rcpuser
+                    password: 123rcp!
+            path: /auto/your-tftp/path
+        tftp:
+            address: 10.2.5.5
+            credentials:
+                default:
+                    username: rcpuser
+                    password: 123rcp!
+devices:
+    vWLC:
+        alias: uut
+        os: aireos
+        type: ap
+        platform: single_rp
+        credentials:
+            default:
+                password: Cisco123$
+                username: admin
+            enable:
+                password: "Cisco123$"
+                username: admin
+        connections:
+            defaults:
+                class: unicon.Unicon
+            cli:
+                protocol: telnet
+                ip: 10.2.5.5
+                port: 6000
+            service_attributes:
+                execute:
+                    timeout: 600
+                configure:
+                    timeout: 600 
+            a:
+                protocol: telnet
+                ip: 10.2.5.5
+                port: 6000
+            service_attributes:
+                execute:
+                    timeout: 600
+                configure:
+                    timeout: 600 
+        custom:
+            abstraction:
+                order: [os, platform]
+        peripherals:
+            terminal_server:
+                "10.2.5.5": [6000]
+            power_cycler:
+                type: raritan-px2
+                connection_type: snmp
+                host: 10.2.5.5
+                read_community: public
+                write_community: private
+                outlets: [9]
+
+    "10.2.5.5":
+        os: ios
+        type: ios
+        platform: isr4k
+        connections:
+            a:
+                ip: 10.2.5.5
+                protocol: telnet
+        credentials:
+            default:
+                password: Lablab123
+            enable:
+                password: C1sco123
