@@ -25,7 +25,7 @@ jobs:
     - name: Install pyATS
       run: |
         python -m pip install pip setuptools wheel --upgrade
-        pip install pyats[full] yang.connector rest.connector
+        pip install pyats[full] yang.connector rest.connector --pre
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: pyats version check
       run: |
@@ -75,7 +75,7 @@ jobs:
     - name: Install pyATS
       run: |
         python -m pip install pip setuptools wheel --upgrade
-        pip install pyats[full] yang.connector rest.connector
+        pip install pyats[full] yang.connector rest.connector --pre
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: pyats version check
       run: |
@@ -125,7 +125,7 @@ jobs:
     - name: Install pyATS
       run: |
         python -m pip install pip setuptools wheel --upgrade
-        pip install pyats[full] yang.connector rest.connector
+        pip install pyats[full] yang.connector rest.connector --pre
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: pyats version check
       run: |
