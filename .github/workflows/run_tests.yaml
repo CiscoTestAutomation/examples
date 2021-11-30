@@ -39,7 +39,7 @@ jobs:
     #         enabled: True
     #         module: genie.utils.compare
     #     EOF
-    #     export PYATS_CONFIGURATION_EASYPY=easypy_config.yaml 
+    #     export PYATS_CONFIGURATION_EASYPY=easypy_config.yaml
     - name: run examples
       run: |
         cd basic
@@ -89,7 +89,7 @@ jobs:
     #         enabled: True
     #         module: genie.utils.compare
     #     EOF
-    #     export PYATS_CONFIGURATION_EASYPY=easypy_config.yaml 
+    #     export PYATS_CONFIGURATION_EASYPY=easypy_config.yaml
     - name: run examples
       run: |
         cd basic
@@ -139,7 +139,7 @@ jobs:
     #         enabled: True
     #         module: genie.utils.compare
     #     EOF
-    #     export PYATS_CONFIGURATION_EASYPY=easypy_config.yaml 
+    #     export PYATS_CONFIGURATION_EASYPY=easypy_config.yaml
     - name: run examples
       run: |
         cd basic
