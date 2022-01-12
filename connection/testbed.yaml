@@ -1,0 +1,26 @@
+testbed:
+  name: c9000
+
+devices:
+  cat9500:
+    os: iosxe
+    type: c9500
+    platform: c9500
+    credentials:
+      default:
+        password: password
+        username: admin
+      enable:
+        password: password
+        username: admin
+    connections:
+      defaults:
+        class: unicon.Unicon
+      cli:
+        protocol: telnet
+        ip: 172.27.101.31
+        port: 6052
+        service_attributes:
+          execute:
+            timeout: 600
+
