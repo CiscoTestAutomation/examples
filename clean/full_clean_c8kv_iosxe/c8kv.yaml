@@ -1,0 +1,80 @@
+testbed:
+    name: c8kv
+    servers:
+        ftp:
+            address: 10.7.14.186 
+            credentials:
+                default:
+                    username: rcpuser
+                    password: 123rcp!
+            path: /auto/imageto/dir
+        tftp:
+            address: 10.7.14.186
+            credentials:
+                default:
+                    username: rcpuser
+                    password: 123rcp!
+devices:
+    c8kv-iosxe:
+        alias: uut
+        os: iosxe
+        type: "c8kv"
+        platform: "cat8k"
+        credentials:
+            default:
+                password: Lablab123
+                username: admin
+            enable:
+                password: lab123
+        connections:
+            defaults:
+                class: unicon.Unicon
+            vty:
+                protocol: telnet
+                ip: 10.7.1.57
+            credentials:
+                default:
+                    password: lab123
+                    username: test1
+                enable:
+                    password: lab123
+            cli:
+                protocol: telnet
+                ip: 10.7.1.16
+                port: 9001
+            a:
+                protocol: telnet
+                ip: 10.7.1.16
+                port: 9001
+                
+                arguments:
+                   debug: True  
+        custom:
+            execute_timeout: 600
+            configure_timeout: 250
+            abstraction:
+                order: [os, platform]
+
+        peripherals:
+            power_cycler:
+                type: 'esxi'
+                connection_type: 'ssh'
+                host: 'genie-esxi'
+                # Log into your ESXi shell and issue command: vim-cmd vmsvc/getallvms
+                # to find out your VMID to put into outlets
+                outlets: [11] 
+ 
+    "genie-esxi":
+        os: linux
+        type: esxi
+        platform: linux
+        connections:
+            a:
+                ip: 10.7.1.16
+                protocol: ssh
+        credentials:
+            default:
+                username: root
+                password: Lablab123
+            enable:
+                password: C1sco123

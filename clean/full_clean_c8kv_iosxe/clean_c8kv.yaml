@@ -1,0 +1,132 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [c8kv-iosxe]
+
+devices:
+  c8kv-iosxe:
+    device_recovery:
+      break_count: 10
+      console_activity_pattern: "\\.\\.\\.\\."
+      timeout: 1200
+      recovery_password: lab
+      golden_image:
+        - bootflash:/golden_image.bin
+      powercycler: True
+
+    images:
+    - /auto/yourimage/dir/c8000v-universalk9.S2C.SSA.bin
+
+    connect:
+
+    copy_to_device:
+      origin:
+        # files:
+        #   - /auto/yourimage/dir/test.cfg
+        hostname: 10.7.14.186 
+      destination:
+        directory: 'bootflash:/'
+      protocol: ftp
+      min_free_space_percent: 50
+      # if_exist_still_copy: True
+      vrf: ''
+      check_file_stability: False
+      protected_files:
+        - golden_image.bin
+
+    change_boot_variable:
+        # images:
+        #     - bootflash:/golden_image.bin
+        #set_register: True
+
+    # write_erase:
+
+    reload:
+      check_modules:
+        check: false
+      reload_service_args:
+        timeout: 900
+        prompt_recovery: False
+
+    apply_configuration:
+      configuration: |
+        hostname c8kv-iosxe
+        ip route 0.0.0.0 0.0.0.0 10.7.1.1
+        ip ftp source-interface GigabitEthernet1
+        ip ftp username rcpuser
+        ip ftp password 123rcp!
+        interface GigabitEthernet1
+          ip address 10.7.1.57 255.255.255.0
+          negotiation auto
+          no shut
+      config_timeout: 900
+      config_stable_time: 30
+      max_time: 300
+      check_interval: 20
+
+    verify_running_image:
+      # images:
+      #   - bootflash:/golden_image.bin
+
+    ping_server:
+      interval: 60
+      server: 10.7.14.186 
+      timeout: 120
+      vrf: ''
+
+    backup_file_on_device:
+      copy_dir: 'bootflash:'
+      copy_file: test.cfg
+
+    delete_backup_from_device:
+      delete_dir: 'bootflash:'
+      delete_file: test.cfg
+
+    delete_backup_from_device__1:
+      delete_dir: 'bootflash:'
+      delete_file: test.cfg
+
+    delete_backup_from_device__2:
+      delete_dir: 'bootflash:'
+      delete_file: backup_test.cfg
+
+    copy_to_linux:
+      protocol: sftp
+      append_hostname: true
+      copy_attempts: 3
+      destination:
+        directory: /auto/tftp-ssr/
+        hostname: 10.7.14.186 
+      origin:
+        files:
+        - /auto/yourimage/dir/sample_file
+        #hostname: 10.7.14.186 
+      overwrite: true
+
+    delete_files_from_server:
+      files:
+      - /auto/yourimage/sample_file_c8kv-iosxe
+      protocol: sftp
+      server: 10.7.14.186
+
+    power_cycle:
+      boot_timeout: 900
+      sleep_after_power_off: 10
+
+    order:
+      - connect
+      - apply_configuration
+      - ping_server
+      - copy_to_device
+      - backup_file_on_device
+      - change_boot_variable
+      - copy_to_linux
+      - write_erase
+      - power_cycle
+      - reload
+      - apply_configuration
+      - ping_server
+      - verify_running_image
+      - delete_backup_from_device__1
+      - delete_backup_from_device__2
+      - delete_files_from_server
