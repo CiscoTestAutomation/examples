@@ -1,114 +1,54 @@
+testbed:
+  name: example_testbed
 devices:
   csr1000v-1:
     alias: uut
-    connections:
-      cli:
-        ip: 172.25.192.90
-        port: 17012
-        protocol: telnet
-      defaults:
-        via: cli
-      ssh:
-        ip: 172.16.1.206
-        protocol: ssh
-        proxy: jump_host
-      telnet:
-        ip: 172.16.1.206
-        protocol: telnet
-        proxy: jump_host
-      vty:
-        ip: 172.16.1.206
-        protocol: telnet
-        proxy: jump_host
-    credentials:
-      default:
-        password: cisco
-        username: cisco
-      enable:
-        password: cisco
-    custom:
-      abstraction:
-        order:
-        - os
-        - platform
     os: iosxe
-    platform: iosxe
-    type: CSR1000v
-  jump_host:
-    connections:
-      cli:
-        ip: 172.25.192.90
-        port: 22
-        protocol: ssh
+    type: router
     credentials:
       default:
-        password: VIRL
-        username: virl
-    os: linux
-    type: linux
-  nx-osv-1:
-    alias: nx-osv-1
-    connections:
-      cli:
-        ip: 172.25.192.90
-        port: 17014
-        protocol: telnet
-      defaults:
-        via: cli
-      ssh:
-        ip: 172.16.1.207
-        protocol: ssh
-        proxy: jump_host
-      telnet:
-        ip: 172.16.1.207
-        protocol: telnet
-        proxy: jump_host
-      vty:
-        ip: 172.16.1.207
-        protocol: telnet
-        proxy: jump_host
-    credentials:
-      default:
-        password: admin
         username: admin
-      enable:
-        password: admin
-    custom:
-      abstraction:
-        order:
-        - os
-        - platform
+        password: password
+    connections:
+      defaults:
+        class: unicon.Unicon
+      a:
+        protocol: telnet
+        ip: ::1
+        port: 9000
+  nx-osv-1:
+    alias: helper
     os: nxos
-    platform: n7k
-    type: NX-OSv
-testbed:
-  name: dangrazi_xe_nx_cisco_live-7_0tZx
-  servers:
-    ftp:
-      address: 172.16.1.254
-      credentials:
-        default:
-          password: VIRL
-          username: virl
-      server: 172.16.1.254
-    scp:
-      address: 172.16.1.254
-      credentials:
-        default:
-          password: VIRL
-          username: virl
-      server: 172.16.1.254
-    sftp:
-      address: 172.16.1.254
-      credentials:
-        default:
-          password: VIRL
-          username: virl
-      server: 172.16.1.254
-    tftp:
-      address: 172.16.1.254
-      credentials:
-        default:
-          password: VIRL
-          username: virl
-      server: 172.16.1.254
+    type: switch
+    credentials:
+      default:
+        username: admin
+        password: password
+    connections:
+      defaults:
+        class: unicon.Unicon
+      a:
+        protocol: telnet
+        ip: ::1
+        port: 9002
+topology:
+  csr1000v-1:
+    interfaces:
+      GigabitEthernet1:
+        type: ethernet
+      GigabitEthernet2:
+        link: l0
+        type: ethernet
+      GigabitEthernet3:
+        link: l1
+        type: ethernet
+  nx-osv-1:
+    interfaces:
+      mgmt0:
+        type: ethernet
+      Ethernet2/1:
+        link: l0
+        type: ethernet
+      Ethernet2/2:
+        link: l1
+        type: ethernet
