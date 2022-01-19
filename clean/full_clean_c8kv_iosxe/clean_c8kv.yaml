@@ -21,25 +21,20 @@ devices:
 
     copy_to_device:
       origin:
-        # files:
-        #   - /auto/yourimage/dir/test.cfg
+
         hostname: 10.7.14.186 
       destination:
         directory: 'bootflash:/'
       protocol: ftp
       min_free_space_percent: 50
-      # if_exist_still_copy: True
       vrf: ''
       check_file_stability: False
       protected_files:
         - golden_image.bin
 
     change_boot_variable:
-        # images:
-        #     - bootflash:/golden_image.bin
-        #set_register: True
 
-    # write_erase:
+    write_erase:
 
     reload:
       check_modules:
@@ -65,8 +60,6 @@ devices:
       check_interval: 20
 
     verify_running_image:
-      # images:
-      #   - bootflash:/golden_image.bin
 
     ping_server:
       interval: 60
@@ -100,7 +93,6 @@ devices:
       origin:
         files:
         - /auto/yourimage/dir/sample_file
-        #hostname: 10.7.14.186 
       overwrite: true
 
     delete_files_from_server:
