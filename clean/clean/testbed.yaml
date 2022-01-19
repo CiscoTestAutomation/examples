@@ -5,10 +5,11 @@ devices:
     alias: uut
     os: iosxe
     type: router
+    series: csr1000v
     credentials:
       default:
         username: admin
-        password: password
+        password: admin
     connections:
       defaults:
         class: unicon.Unicon
@@ -20,10 +21,11 @@ devices:
     alias: helper
     os: nxos
     type: switch
+    series: nxosv
     credentials:
       default:
         username: admin
-        password: password
+        password: admin
     connections:
       defaults:
         class: unicon.Unicon
