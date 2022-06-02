@@ -1,0 +1,262 @@
+configure:
+  commands:
+    end:
+      new_state: execute
+    line console 0:
+      new_state: configure_line
+    line console:
+      new_state: configure_line
+    no logging console: ''
+  prompt: "%N(config)#"
+configure_line:
+  commands:
+    end:
+      new_state: execute
+    exec-timeout 0: ''
+    line vty: ''
+    terminal width 511: ''
+  prompt: "%N(config-line)#"
+connect:
+  commands:
+    ? ''
+    : new_state: execute
+  preface: 'Trying mock_device ...
+
+    Connected to mock_device.
+
+    Escape character is ''^]''.'
+  prompt: ''
+execute:
+  commands:
+    config term:
+      new_state: configure
+    config-transaction:
+      new_state: configure
+    copy running-config startup-config: "\r[#                                    \
+      \   ]   1%\r[#                                       ]   2%\r[##           \
+      \                           ]   3%\r[##                                    \
+      \  ]   4%\r[###                                     ]   5%\r[###           \
+      \                          ]   7%\r[####                                   \
+      \ ]   8%\r[####                                    ]   9%\r[#####          \
+      \                         ]  10%\r[#####                                   ]\
+      \  11%\r[######                                  ]  13%\r[######           \
+      \                       ]  14%\r[#######                                 ] \
+      \ 15%\r[#######                                 ]  16%\r[#######           \
+      \                      ]  17%\r[########                                ]  19%\r\
+      [#########                               ]  20%\r[#########                \
+      \               ]  21%\r[#########                               ]  22%\r[##########\
+      \                              ]  23%\r[###########                        \
+      \     ]  25%\r[###########                             ]  26%\r[###########\
+      \                             ]  27%\r[############                        \
+      \    ]  28%\r[############                            ]  29%\r[#############\
+      \                           ]  30%\r[#############                         \
+      \  ]  32%\r[##############                          ]  33%\r[##############\
+      \                          ]  34%\r[###############                        \
+      \ ]  35%\r[###############                         ]  36%\r[################\
+      \                        ]  38%\r[################                        ]\
+      \  39%\r[#################                       ]  40%\r[#################\
+      \                       ]  41%\r[#################                       ] \
+      \ 42%\r[##################                      ]  44%\r[###################\
+      \                     ]  45%\r[###################                     ]  46%\r\
+      [###################                     ]  47%\r[####################     \
+      \               ]  48%\r[#####################                   ]  50%\r[#####################\
+      \                   ]  51%\r[#####################                   ]  52%\r\
+      [######################                  ]  53%\r[######################   \
+      \               ]  54%\r[#######################                 ]  55%\r[#######################\
+      \                 ]  57%\r[########################                ]  58%\r\
+      [########################                ]  59%\r[#########################\
+      \               ]  60%\r[#########################               ]  61%\r[##########################\
+      \              ]  63%\r[##########################              ]  64%\r[###########################\
+      \             ]  65%\r[###########################             ]  66%\r[###########################\
+      \             ]  67%\r[############################            ]  69%\r[#############################\
+      \           ]  70%\r[#############################           ]  71%\r[#############################\
+      \           ]  72%\r[##############################          ]  73%\r[###############################\
+      \         ]  75%\r[###############################         ]  76%\r[###############################\
+      \         ]  77%\r[################################        ]  78%\r[################################\
+      \        ]  79%\r[#################################       ]  80%\r[#################################\
+      \       ]  82%\r[##################################      ]  83%\r[##################################\
+      \      ]  84%\r[###################################     ]  85%\r[###################################\
+      \     ]  86%\r[####################################    ]  88%\r[####################################\
+      \    ]  89%\r[#####################################   ]  90%\r[#####################################\
+      \   ]  91%\r[#####################################   ]  92%\r[######################################\
+      \  ]  94%\r[####################################### ]  95%\r[#######################################\
+      \ ]  96%\r[####################################### ]  97%\r[########################################]\
+      \  98%\r[########################################] 100%\r\nCopy complete."
+    dir: "       4096    Feb 25 20:49:04 2016  .patch/\r\n      16384    Feb 25 20:44:49\
+      \ 2016  lost+found/\r\n       4096    Feb 26 10:11:16 2016  scripts/\r\n   33615360\
+      \    Feb 11 13:19:49 2016  titanium-d1-kickstart.7.3.0.D1.1.bin\r\n  139230420\
+      \    Feb 11 13:19:50 2016  titanium-d1.7.3.0.D1.1.bin\r\n       4096    Feb\
+      \ 25 20:49:07 2016  virtual-instance/\r\n\r\nUsage for bootflash://\r\n  369954816\
+      \ bytes used\r\n 2840006656 bytes free\r\n 3209961472 bytes total"
+    show ip interface brief vrf all | include 172.25.192.90: ''
+    show running-config: "\r\n!Command: show running-config\r\n!Time: Fri Jan 25 16:50:06\
+      \ 2019\r\n\r\nversion 7.3(0)D1(1)\r\npower redundancy-mode redundant\r\nlicense\
+      \ grace-period\r\n\r\nhostname nx-osv-1\r\nvdc nx-osv-1 id 1\r\n  limit-resource\
+      \ module-type m1 m1xl m2xl f2e \r\n  allocate interface Ethernet2/1-48\r\n \
+      \ allocate interface Ethernet3/1-48\r\n  allocate interface Ethernet4/1-48\r\
+      \n  limit-resource vlan minimum 16 maximum 4094\r\n  limit-resource vrf minimum\
+      \ 2 maximum 4096\r\n  limit-resource port-channel minimum 0 maximum 768\r\n\
+      \  limit-resource u4route-mem minimum 96 maximum 96\r\n  limit-resource u6route-mem\
+      \ minimum 24 maximum 24\r\n  limit-resource m4route-mem minimum 58 maximum 58\r\
+      \n  limit-resource m6route-mem minimum 8 maximum 8\r\n\r\nfeature ospf\r\nfeature\
+      \ bgp\r\n\r\nusername admin password 5 $5$Otc7T0NC$K.ulnSZnSyXLrTGNBdtLgZJXEa8EeNx.BrdZ98XyK2C\
+      \  role network-admin\r\nno password strength-check\r\nip domain-lookup\r\n\
+      vlan dot1Q tag native\r\nsystem default switchport\r\nsystem jumbomtu 0\r\n\
+      no logging event trunk-status enable\r\ncopp profile strict\r\nsnmp-server user\
+      \ admin auth md5 0x328945d53e05e8e7207f8c20b142f0b7 priv 0x328945d53e05e8e7207f8c20b142f0b7\
+      \ localizedkey engineID 128:0:0:9:3:0:0:0:0:0:0\r\nrmon event 1 log description\
+      \ FATAL(1) owner PMON@FATAL\r\nrmon event 2 log description CRITICAL(2) owner\
+      \ PMON@CRITICAL\r\nrmon event 3 log description ERROR(3) owner PMON@ERROR\r\n\
+      rmon event 4 log description WARNING(4) owner PMON@WARNING\r\nrmon event 5 log\
+      \ description INFORMATION(5) owner PMON@INFO\r\nsnmp-server enable traps link\r\
+      \nsnmp-server enable traps link cisco-xcvr-mon-status-chg\r\n\r\nvlan 1\r\n\r\
+      \nvrf context management\r\n\r\ninterface mgmt0\r\n  vrf member management\r\
+      \n\r\ninterface Ethernet2/1\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\
+      \n  ip address 10.0.1.2/24\r\n  ip router ospf 1 area 0.0.0.0\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet2/2\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\
+      \n  ip address 10.0.2.2/24\r\n  ip router ospf 1 area 0.0.0.0\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet2/3\r\n  shutdown\r\n  no switchport\r\n  mac-address\
+      \ 0000.0000.002f\r\n\r\ninterface Ethernet2/4\r\n  shutdown\r\n  no switchport\r\
+      \n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/5\r\n  shutdown\r\n\
+      \  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/6\r\
+      \n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface\
+      \ Ethernet2/7\r\n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\
+      \n\r\ninterface Ethernet2/8\r\n  shutdown\r\n  no switchport\r\n  mac-address\
+      \ 0000.0000.002f\r\n\r\ninterface Ethernet2/9\r\n  shutdown\r\n  no switchport\r\
+      \n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/10\r\n  shutdown\r\
+      \n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/11\r\
+      \n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface\
+      \ Ethernet2/12\r\n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\
+      \n\r\ninterface Ethernet2/13\r\n  shutdown\r\n  no switchport\r\n  mac-address\
+      \ 0000.0000.002f\r\n\r\ninterface Ethernet2/14\r\n  shutdown\r\n  no switchport\r\
+      \n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/15\r\n  shutdown\r\
+      \n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/16\r\
+      \n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface\
+      \ Ethernet2/17\r\n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\
+      \n\r\ninterface Ethernet2/18\r\n  shutdown\r\n  no switchport\r\n  mac-address\
+      \ 0000.0000.002f\r\n\r\ninterface Ethernet2/19\r\n  shutdown\r\n  no switchport\r\
+      \n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/20\r\n  shutdown\r\
+      \n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/21\r\
+      \n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface\
+      \ Ethernet2/22\r\n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\
+      \n\r\ninterface Ethernet2/23\r\n  shutdown\r\n  no switchport\r\n  mac-address\
+      \ 0000.0000.002f\r\n\r\ninterface Ethernet2/24\r\n  shutdown\r\n  no switchport\r\
+      \n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/25\r\n  shutdown\r\
+      \n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/26\r\
+      \n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface\
+      \ Ethernet2/27\r\n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\
+      \n\r\ninterface Ethernet2/28\r\n  shutdown\r\n  no switchport\r\n  mac-address\
+      \ 0000.0000.002f\r\n\r\ninterface Ethernet2/29\r\n  shutdown\r\n  no switchport\r\
+      \n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/30\r\n  shutdown\r\
+      \n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/31\r\
+      \n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface\
+      \ Ethernet2/32\r\n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\
+      \n\r\ninterface Ethernet2/33\r\n  shutdown\r\n  no switchport\r\n  mac-address\
+      \ 0000.0000.002f\r\n\r\ninterface Ethernet2/34\r\n  shutdown\r\n  no switchport\r\
+      \n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/35\r\n  shutdown\r\
+      \n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/36\r\
+      \n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface\
+      \ Ethernet2/37\r\n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\
+      \n\r\ninterface Ethernet2/38\r\n  shutdown\r\n  no switchport\r\n  mac-address\
+      \ 0000.0000.002f\r\n\r\ninterface Ethernet2/39\r\n  shutdown\r\n  no switchport\r\
+      \n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/40\r\n  shutdown\r\
+      \n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/41\r\
+      \n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface\
+      \ Ethernet2/42\r\n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\
+      \n\r\ninterface Ethernet2/43\r\n  shutdown\r\n  no switchport\r\n  mac-address\
+      \ 0000.0000.002f\r\n\r\ninterface Ethernet2/44\r\n  shutdown\r\n  no switchport\r\
+      \n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/45\r\n  shutdown\r\
+      \n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface Ethernet2/46\r\
+      \n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\n\r\ninterface\
+      \ Ethernet2/47\r\n  shutdown\r\n  no switchport\r\n  mac-address 0000.0000.002f\r\
+      \n\r\ninterface Ethernet2/48\r\n  shutdown\r\n  no switchport\r\n  mac-address\
+      \ 0000.0000.002f\r\n\r\ninterface Ethernet3/1\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet3/2\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet3/3\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/4\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/5\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet3/6\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet3/7\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet3/8\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/9\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/10\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet3/11\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet3/12\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet3/13\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/14\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/15\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet3/16\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet3/17\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet3/18\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/19\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/20\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet3/21\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet3/22\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet3/23\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/24\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/25\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet3/26\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet3/27\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet3/28\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/29\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/30\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet3/31\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet3/32\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet3/33\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/34\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/35\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet3/36\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet3/37\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet3/38\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/39\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/40\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet3/41\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet3/42\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet3/43\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/44\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet3/45\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet3/46\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet3/47\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet3/48\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/1\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/2\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet4/3\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet4/4\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet4/5\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/6\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/7\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet4/8\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet4/9\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet4/10\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/11\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/12\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet4/13\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet4/14\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet4/15\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/16\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/17\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet4/18\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet4/19\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet4/20\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/21\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/22\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet4/23\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet4/24\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet4/25\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/26\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/27\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet4/28\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet4/29\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet4/30\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/31\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/32\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet4/33\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet4/34\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet4/35\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/36\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/37\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet4/38\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet4/39\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet4/40\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/41\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/42\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet4/43\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface Ethernet4/44\r\n  switchport\r\n  no shutdown\r\n\r\ninterface\
+      \ Ethernet4/45\r\n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/46\r\
+      \n  switchport\r\n  no shutdown\r\n\r\ninterface Ethernet4/47\r\n  switchport\r\
+      \n  no shutdown\r\n\r\ninterface Ethernet4/48\r\n  switchport\r\n  no shutdown\r\
+      \n\r\ninterface loopback0\r\n  ip address 10.2.2.2/32\r\n  ip router ospf 1\
+      \ area 0.0.0.0\r\n\r\ninterface loopback1\r\n  ip address 10.22.22.22/32\r\n\
+      line console\r\n  exec-timeout 0\r\n  terminal width  511\r\nline vty\r\nboot\
+      \ kickstart bootflash:/titanium-d1-kickstart.7.3.0.D1.1.bin\r\nboot system bootflash:/titanium-d1.7.3.0.D1.1.bin\
+      \ \r\nrouter ospf 1\r\n  router-id 10.2.2.2\r\nrouter bgp 65000\r\n  router-id\
+      \ 10.2.2.2\r\n  address-family ipv4 unicast\r\n    network 10.22.22.22/32\r\n\
+      \  neighbor 10.1.1.1\r\n    remote-as 65000\r\n    update-source loopback0\r\
+      \n    address-family ipv4 unicast\r\nno logging console"
+    show version: ''
+    term length 0: ''
+    term width 511: ''
+    terminal session-timeout 0: ''
+  prompt: "%N#"

@@ -1,0 +1,121 @@
+configure:
+  commands:
+    config-register 0x2102: "config-register 0x2102\r\n"
+    end:
+      new_state: execute
+    line console 0:
+      new_state: configure_line
+    no logging console: ''
+  prompt: "%N(config)#"
+configure_line:
+  commands:
+    end:
+      new_state: execute
+    exec-timeout 0: ''
+  prompt: "%N(config-line)#"
+connect:
+  commands:
+    ? ''
+    : new_state: execute
+  preface: 'Trying mock_device ...
+
+    Connected to mock_device.
+
+    Escape character is ''^]''.'
+  prompt: ''
+execute:
+  commands:
+    config term:
+      new_state: configure
+    config-transaction:
+      new_state: configure
+    copy running-config nvram:startup-config: "Destination filename [startup-config]?\
+      \ \r\nBuilding configuration...\r\n[OK]"
+    dir: "Directory of bootflash:/\r\n\r\n   11  drwx            16384  Jul 18 2018\
+      \ 07:49:17 +00:00  lost+found\r\n325121  drwx             4096  Jan 24 2019\
+      \ 22:18:18 +00:00  .installer\r\n   12  -rw-        392479704  Jul 18 2018 07:50:04\
+      \ +00:00  csr1000v-mono-universalk9.16.09.01.SPA.pkg\r\n   13  -rw-        \
+      \ 40201438  Jul 18 2018 07:50:05 +00:00  csr1000v-rpboot.16.09.01.SPA.pkg\r\n\
+      \   14  -rw-             1941  Jul 18 2018 07:50:05 +00:00  packages.conf\r\n\
+      105665  drwx             4096  Jul 18 2018 07:51:06 +00:00  core\r\n146305 \
+      \ drwx             4096  Jul 18 2018 07:50:59 +00:00  .prst_sync\r\n154433 \
+      \ drwx             4096  Jul 18 2018 07:51:06 +00:00  .rollback_timer\r\n138177\
+      \  drwx            12288  Jan 25 2019 16:49:02 +00:00  tracelogs\r\n398273 \
+      \ drwx             4096  Jul 18 2018 07:52:07 +00:00  .dbpersist\r\n203201 \
+      \ drwx             4096  Jul 18 2018 07:51:17 +00:00  virtual-instance\r\n \
+      \  15  -rw-               30  Jan 24 2019 22:19:34 +00:00  throughput_monitor_params\r\
+      \n   16  -rw-            15762  Jan 24 2019 22:19:46 +00:00  cvac.log\r\n  \
+      \ 17  -rw-              157  Jan 24 2019 22:19:44 +00:00  csrlxc-cfg.log\r\n\
+      406401  drwx             4096  Jul 18 2018 07:52:00 +00:00  onep\r\n   18  -rw-\
+      \                1  Jan 24 2019 22:19:44 +00:00  .cvac_version\r\n   19  -rw-\
+      \               16  Jan 24 2019 22:19:44 +00:00  ovf-env.xml.md5\r\n\r\n7897796608\
+      \ bytes total (7045787648 bytes free)"
+    show ip interface brief | include 172.25.192.90: ''
+    show running-config: "Building configuration...\r\n\r\nCurrent configuration :\
+      \ 4224 bytes\r\n!\r\n! Last configuration change at 16:49:58 UTC Fri Jan 25\
+      \ 2019\r\n!\r\nversion 16.9\r\nservice config\r\nservice timestamps debug datetime\
+      \ msec\r\nservice timestamps log datetime msec\r\nplatform qfp utilization monitor\
+      \ load 80\r\nno platform punt-keepalive disable-kernel-core\r\nplatform console\
+      \ serial\r\n!\r\nhostname csr1000v-1\r\n!\r\nboot-start-marker\r\nboot-end-marker\r\
+      \n!\r\n!\r\nno logging console\r\nenable secret 5 $1$ScQQ$/VGddHfY92jH7HU8W0C8d/\r\
+      \n!\r\nno aaa new-model\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\nip admission watch-list\
+      \ expiry-time 0\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\nsubscriber\
+      \ templating\r\n! \r\n! \r\n! \r\n! \r\n!\r\nmultilink bundle-name authenticated\r\
+      \n!\r\n!\r\n!\r\n!\r\n!\r\ncrypto pki trustpoint TP-self-signed-3480034210\r\
+      \n enrollment selfsigned\r\n subject-name cn=IOS-Self-Signed-Certificate-3480034210\r\
+      \n revocation-check none\r\n rsakeypair TP-self-signed-3480034210\r\n!\r\n!\r\
+      \ncrypto pki certificate chain TP-self-signed-3480034210\r\n certificate self-signed\
+      \ 01\r\n  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030\
+      \ \r\n  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274\
+      \ \r\n  69666963 6174652D 33343830 30333432 3130301E 170D3139 30313234 32323230\
+      \ \r\n  30335A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649\
+      \ \r\n  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 34383030\
+      \ \r\n  33343231 30308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201\
+      \ \r\n  0A028201 0100E8BA C7CA086A 18D62B56 CCAD9261 2D9A5844 D30B4F83 3F5E3C13\
+      \ \r\n  EB626E4F EADEEF51 3C828494 49779A6D ACDF9EB9 F7BF5D3C 981E681D C91AF092\
+      \ \r\n  773CE85D 0A687FA6 B818B619 C51891B7 9DCA3138 9CD81981 D1B48319 72043A91\
+      \ \r\n  C4A8C4FE F58E03BB 22BC574C 812587A4 B793415D 4EF9B1D6 F0378183 F67F8B53\
+      \ \r\n  16CD1B70 9112D22D D0D9BF33 082F8726 3B902C15 1D2B9992 1B784BFB D41CFCC2\
+      \ \r\n  BF359755 E3048061 8816BAD3 FD476CEF 5B6C39EC E586369E DA3A4325 3358F8FB\
+      \ \r\n  7924C6BF F8C2932C 6B2D0F4B 5E3E3627 5192FA01 E1B03D61 A3E4E3D8 295DEA42\
+      \ \r\n  74D51AB9 13EC1973 A62DE728 0A4CDD85 10FAC536 BD6EFC11 A7AAF6DC 64D7EFE0\
+      \ \r\n  CA1D6AB2 51D50203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF\
+      \ \r\n  301F0603 551D2304 18301680 14B73151 70207454 BDECC04D B0915228 26E78B8D\
+      \ \r\n  19301D06 03551D0E 04160414 B7315170 207454BD ECC04DB0 91522826 E78B8D19\
+      \ \r\n  300D0609 2A864886 F70D0101 05050003 82010100 4472A229 A422DE64 B40DC877\
+      \ \r\n  0384CCAD 40D26D16 F37CFC2E 48D76EFD C4D27D91 21CBF210 125716AF D711E0F9\
+      \ \r\n  E60DD245 94054B7B E31533C1 CE29F3B9 1ED5E774 C9D8BDA6 10451DBC FD384F88\
+      \ \r\n  3DA81EBA FCDE033C 8618D430 3EAD8151 F4D873AB F02C3B0E 6E1FAAB8 1E73F425\
+      \ \r\n  5B05FF32 3E4E1BBD AC3A9D7E 419A7133 34ED3CC4 F2505671 E4B1D40B BDD98FA3\
+      \ \r\n  1C15DF0A CA70FC09 1CA9C161 DA3FE200 A01A7E63 D95727D4 81CC9E96 90D05DF5\
+      \ \r\n  88D9F07B D44DA942 1B24D27F 570DB2AE A094896F B46FF2D2 E8313A60 C74CF610\
+      \ \r\n  5AEA9A7C 10A1B4F0 65A764D7 97F902F6 069B1829 3F62C6FC C4C6326C 72132169\
+      \ \r\n  B6167A75 6BA8EFFB 0F60D1EB 9DBA5675 B95379B2\r\n  \tquit\r\n!\r\n!\r\
+      \n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\nlicense udi pid CSR1000V sn 98J7PAI091L\r\n\
+      no license smart enable\r\ndiagnostic bootup level minimal\r\n!\r\nspanning-tree\
+      \ extend system-id\r\n!\r\n!\r\n!\r\nusername cisco privilege 15 secret 5 $1$p2zp$VwCkRr.jei6x6RNcLTxk2/\r\
+      \n!\r\nredundancy\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n! \r\n!\r\n!\r\n!\r\n!\r\n\
+      !\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n! \r\n! \r\n!\r\n!\r\ninterface Loopback0\r\
+      \n ip address 10.1.1.1 255.255.255.255\r\n ip ospf 1 area 0\r\n!\r\ninterface\
+      \ Loopback1\r\n ip address 10.11.11.11 255.255.255.255\r\n!\r\ninterface GigabitEthernet1\r\
+      \n ip address dhcp\r\n negotiation auto\r\n no mop enabled\r\n no mop sysid\r\
+      \n!\r\ninterface GigabitEthernet2\r\n ip address 10.0.1.1 255.255.255.0\r\n\
+      \ ip ospf 1 area 0\r\n negotiation auto\r\n no mop enabled\r\n no mop sysid\r\
+      \n!\r\ninterface GigabitEthernet3\r\n ip address 10.0.2.1 255.255.255.0\r\n\
+      \ ip ospf 1 area 0\r\n negotiation auto\r\n no mop enabled\r\n no mop sysid\r\
+      \n!\r\nrouter ospf 1\r\n router-id 10.1.1.1\r\n!\r\nrouter bgp 65000\r\n bgp\
+      \ router-id 10.1.1.1\r\n bgp log-neighbor-changes\r\n no bgp default ipv4-unicast\r\
+      \n neighbor 10.2.2.2 remote-as 65000\r\n neighbor 10.2.2.2 update-source Loopback0\r\
+      \n !\r\n address-family ipv4\r\n  network 10.11.11.11 mask 255.255.255.255\r\
+      \n  neighbor 10.2.2.2 activate\r\n exit-address-family\r\n!\r\n!\r\nvirtual-service\
+      \ csr_mgmt\r\n!\r\nip forward-protocol nd\r\nno ip http server\r\nip http authentication\
+      \ local\r\nno ip http secure-server\r\nip http client source-interface GigabitEthernet1\r\
+      \n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\ncontrol-plane\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\
+      \nline con 0\r\n exec-timeout 0 0\r\n stopbits 1\r\nline vty 0\r\n login\r\n\
+      line vty 1\r\n login\r\n length 0\r\nline vty 2 4\r\n login\r\n!\r\n!\r\n!\r\
+      \n!\r\n!\r\n!\r\nend"
+    show version: ''
+    term length 0: ''
+    term width 0: ''
+    write memory: "Building configuration...\r\n[OK]"
+  prompt: "%N#"
