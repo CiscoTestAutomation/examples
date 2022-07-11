@@ -13,9 +13,7 @@ devices:
       defaults:
         class: unicon.Unicon
       a:
-        protocol: telnet
-        ip: ::1
-        port: 9000
+        command: mock_device_cli --os iosxe --mock_data_dir clean_recording --state connect
   nx-osv-1:
     alias: helper
     os: nxos
