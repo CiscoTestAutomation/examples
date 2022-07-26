@@ -6,7 +6,6 @@ configure:
     line console 0:
       new_state: configure_line
     no logging console: ''
-    line vty 0 4: ''
   prompt: "%N(config)#"
 configure_line:
   commands:
