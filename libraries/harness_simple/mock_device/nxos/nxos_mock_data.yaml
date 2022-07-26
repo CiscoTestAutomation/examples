@@ -14,6 +14,7 @@ configure_line:
       new_state: execute
     exec-timeout 0: ''
     line vty: ''
+    line vty 0 4: ''
     terminal width 511: ''
   prompt: "%N(config-line)#"
 connect:

@@ -12,6 +12,7 @@ configure_line:
     end:
       new_state: execute
     exec-timeout 0: ''
+    line vty 0 4: ''
   prompt: "%N(config-line)#"
 connect:
   commands:
