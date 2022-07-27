@@ -300,5 +300,6 @@ testing_configure_line:
     end:
       new_state: testing_execute
     exec-timeout 0: ''
+    line vty 0 4: ''
   prompt: testing(config-line)#
 
