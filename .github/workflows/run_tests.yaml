@@ -28,8 +28,7 @@ jobs:
         pip install pyats[full] yang.connector rest.connector --pre
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: pyats version check
-      run: |
-        pyats version check
+      run: pyats version check
     # - name: ComparePlugin
     #   run: |
     #     cat <<EOF > easypy_config.yaml
@@ -78,8 +77,7 @@ jobs:
         pip install pyats[full] yang.connector rest.connector --pre
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: pyats version check
-      run: |
-        pyats version check
+      run: pyats version check
     # - name: ComparePlugin
     #   run: |
     #     cat <<EOF > easypy_config.yaml
@@ -108,7 +106,7 @@ jobs:
         diff -I 'testscript:' -B -C5 rerun_results results/comprehensive_results_ext.yaml
         cd ..
 
-  macos-latest:
+  macos-10:
 
     runs-on: macos-10.15
 
@@ -128,8 +126,7 @@ jobs:
         pip install pyats[full] yang.connector rest.connector --pre
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: pyats version check
-      run: |
-        pyats version check
+      run: pyats version check
     # - name: ComparePlugin
     #   run: |
     #     cat <<EOF > easypy_config.yaml
