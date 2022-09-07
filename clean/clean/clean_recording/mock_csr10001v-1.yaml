@@ -1,0 +1,305 @@
+configure:
+  commands:
+    boot system bootflash:packages.conf: "boot system bootflash:packages.conf\r\n"
+    config-register 0x2102: "config-register 0x2102\r\n"
+    end:
+      new_state: execute
+    hostname csr1000v-1: "hostname csr1000v-1\r\n"
+    hostname testing: "hostname testing\r\n"
+    line console 0:
+      new_state: configure_line
+    no boot system: "no boot system\r\n"
+    no logging console: ''
+  prompt: switch(config)#
+configure_line:
+  commands:
+    end:
+      new_state: execute
+    exec-timeout 0: ''
+    line vty 0 4: ''
+  prompt: switch(config-line)#
+connect:
+  commands:
+    ? ''
+    : new_state: execute
+  preface: 'Trying mock_device ...
+
+    Connected to mock_device.
+
+    Escape character is ''^]''.'
+  prompt: ''
+disconnect:
+  commands:
+    null: null
+  prompt: switch#
+execute:
+  commands:
+    config term:
+      new_state: configure
+    config-transaction:
+      new_state: configure
+    copy running-config startup-config: "%Error opening tftp://255.255.255.255/network-confg\
+      \ (Timed out)\r\nDestination filename [startup-config]? \r\nBuilding configuration...\r\
+      \n[OK]"
+    show bootvar: "BOOT variable = bootflash:packages.conf,12;\r\nCONFIG_FILE variable\
+      \ does not exist\r\nBOOTLDR variable does not exist\r\nConfiguration register\
+      \ is 0x2102"
+    show platform: "Chassis type: CSR1000V\r\n\r\nSlot      Type                State\
+      \                 Insert time (ago) \r\n--------- ------------------- ---------------------\
+      \ ----------------- \r\nR0        CSR1000V            ok, active           \
+      \ 00:07:08      \r\nF0        CSR1000V            ok, active            00:07:08"
+    show version: |
+      Cisco IOS XE Software, Version 17.03.01a
+      Cisco IOS Software [Amsterdam], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 17.3.1a, RELEASE SOFTWARE (fc3)
+      Technical Support: http://www.cisco.com/techsupport
+      Copyright (c) 1986-2020 by Cisco Systems, Inc.
+      Compiled Wed 12-Aug-20 00:16 by mcpre
+      
+      
+      Cisco IOS-XE software, Copyright (c) 2005-2020 by cisco Systems, Inc.
+      All rights reserved.  Certain components of Cisco IOS-XE software are
+      licensed under the GNU General Public License ("GPL") Version 2.0.  The
+      software code licensed under GPL Version 2.0 is free software that comes
+      with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+      GPL code under the terms of GPL Version 2.0.  For more details, see the
+      documentation or "License Notice" file accompanying the IOS-XE software,
+      or the applicable URL provided on the flyer accompanying the IOS-XE
+      software.
+      
+      
+      ROM: IOS-XE ROMMON
+      
+      testing uptime is 2 minutes
+      Uptime for this control processor is 5 minutes
+      System returned to ROM by reload
+      System image file is "bootflash:packages.conf"
+      Last reload reason: Reload Command
+      
+      
+      
+      This product contains cryptographic features and is subject to United
+      States and local country laws governing import, export, transfer and
+      use. Delivery of Cisco cryptographic products does not imply
+      third-party authority to import, export, distribute or use encryption.
+      Importers, exporters, distributors and users are responsible for
+      compliance with U.S. and local country laws. By using this product you
+      agree to comply with applicable laws and regulations. If you are unable
+      to comply with U.S. and local laws, return this product immediately.
+      
+      A summary of U.S. laws governing Cisco cryptographic products may be found at:
+      http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+      
+      If you require further assistance please contact us by sending email to
+      export@cisco.com.
+      
+      License Level: ax
+      License Type: N/A(Smart License Enabled)
+      Next reload license Level: ax
+      
+      The current throughput level is 1000 kbps
+      
+      
+      Smart Licensing Status: UNREGISTERED/No Licenses in Use
+      
+      cisco CSR1000V (VXE) processor (revision VXE) with 715705K/3075K bytes of memory.
+      Processor board ID 91B4ZUW5RGZ
+      Router operating mode: Autonomous
+      3 Gigabit Ethernet interfaces
+      32768K bytes of non-volatile configuration memory.
+      8107160K bytes of physical memory.
+      6188032K bytes of virtual hard disk at bootflash:.
+      
+      Configuration register is 0x2102
+    term length 0: ''
+    term width 0: ''
+    write memory: "Building configuration...\r\n[OK]"
+    reload:
+      new_state: reload_confirm
+  prompt: switch#
+reload_confirm:
+  prompt: "Proceed with reload? [confirm]"
+  commands:
+    "":
+      new_state: non_enable
+      response: |
+        BOOT CMD: /packages.conf rw root=/dev/ram max_loop=64 HARDWARE=virtual quiet
+        console= SR_BOOT=bootflash:packages.conf
+        Calculating SHA-1 hash...done
+        SHA-1 hash:
+                calculated   132e6732:60ab736a:5d9193c0:baa68f02:93b18350
+                expected     132e6732:60ab736a:5d9193c0:baa68f02:93b18350
+        package header rev 3 structure detected
+        IOSXE version 17.3.01a detected
+        Calculating SHA-1 hash...done
+        SHA-1 hash:
+                calculated   502deaf1:091824c6:4e5220a5:4a98c0ad:6e7a0aa5
+                expected     502deaf1:091824c6:4e5220a5:4a98c0ad:6e7a0aa5
+        Package type:0x7531, flags:0x0
+        linux image, size=0x682e50
+        linux isord, size=0x278e449
+
+        %IOSXEBOOT-4-PART_VERIFY: (local/local): Verifying partition table for device /dev/bootflash...
+        %IOSXEBOOT-4-PART_VERIFY: (local/local): Selected MBR v2 partition layout.
+
+        *Jul 11 10:48:56.475: %IOSXEBOOT-4-BOOT_SRC: (rp/0): Checking for grub upgrade
+
+        *Jul 11 10:48:56.942: %IOSXEBOOT-4-BOOT_SRC: (rp/0): Checking grub versions 2.0 vs 2.0
+
+        *Jul 11 10:48:56.955: %IOSXEBOOT-4-BOOT_SRC: (rp/0): Bootloader upgrade not necessary.
+        Jul 11 10:49:24.011: %BOOT-5-OPMODE_LOG: R0/0: binos: System booted in AUTONOMOUS mode
+
+                      Restricted Rights Legend
+
+        Use, duplication, or disclosure by the Government is
+        subject to restrictions as set forth in subparagraph
+        (c) of the Commercial Computer Software - Restricted
+        Rights clause at FAR sec. 52.227-19 and subparagraph
+        (c) (1) (ii) of the Rights in Technical Data and Computer
+        Software clause at DFARS sec. 252.227-7013.
+
+                   Cisco Systems, Inc.
+                   170 West Tasman Drive
+                   San Jose, California 95134-1706
+
+
+
+        Cisco IOS Software [Amsterdam], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 17.3.1a, RELEASE SOFTWARE (fc3)
+        Technical Support: http://www.cisco.com/techsupport
+        Copyright (c) 1986-2020 by Cisco Systems, Inc.
+        Compiled Wed 12-Aug-20 00:16 by mcpre
+
+
+        This software version supports only Smart Licensing as the software licensing mechanism.
+
+
+        PLEASE READ THE FOLLOWING TERMS CAREFULLY. INSTALLING THE LICENSE OR
+        LICENSE KEY PROVIDED FOR ANY CISCO SOFTWARE PRODUCT, PRODUCT FEATURE,
+        AND/OR SUBSEQUENTLY PROVIDED SOFTWARE FEATURES (COLLECTIVELY, THE
+        "SOFTWARE"), AND/OR USING SUCH SOFTWARE CONSTITUTES YOUR FULL
+        ACCEPTANCE OF THE FOLLOWING TERMS. YOU MUST NOT PROCEED FURTHER IF YOU
+        ARE NOT WILLING TO BE BOUND BY ALL THE TERMS SET FORTH HEREIN.
+
+        Your use of the Software is subject to the Cisco End User License Agreement
+        (EULA) and any relevant supplemental terms (SEULA) found at
+        http://www.cisco.com/c/en/us/about/legal/cloud-and-software/software-terms.html.
+
+        You hereby acknowledge and agree that certain Software and/or features are
+        licensed for a particular term, that the license to such Software and/or
+        features is valid only for the applicable term and that such Software and/or
+        features may be shut down or otherwise terminated by Cisco after expiration
+        of the applicable license term (e.g., 90-day trial period). Cisco reserves
+        the right to terminate any such Software feature electronically or by any
+        other means available. While Cisco may provide alerts, it is your sole
+        responsibility to monitor your usage of any such term Software feature to
+        ensure that your systems and networks are prepared for a shutdown of the
+        Software feature.
+
+
+
+        All TCP AO KDF Tests Pass
+        cisco CSR1000V (VXE) processor (revision VXE) with 715705K/3075K bytes of memory.
+        Processor board ID 91B4ZUW5RGZ
+        Router operating mode: Autonomous
+        3 Gigabit Ethernet interfaces
+        32768K bytes of non-volatile configuration memory.
+        8107160K bytes of physical memory.
+        6188032K bytes of virtual hard disk at bootflash:.
+        .Done!
+
+
+
+        Press RETURN to get started!
+
+non_enable:
+  prompt: "testing>"
+  commands:
+    enable:
+      new_state: testing_execute
+
+testing_execute:
+  prompt: "testing#"
+  commands:
+    show version: |
+      Cisco IOS XE Software, Version 17.03.01a
+      Cisco IOS Software [Amsterdam], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 17.3.1a, RELEASE SOFTWARE (fc3)
+      Technical Support: http://www.cisco.com/techsupport
+      Copyright (c) 1986-2020 by Cisco Systems, Inc.
+      Compiled Wed 12-Aug-20 00:16 by mcpre
+
+
+      Cisco IOS-XE software, Copyright (c) 2005-2020 by cisco Systems, Inc.
+      All rights reserved.  Certain components of Cisco IOS-XE software are
+      licensed under the GNU General Public License ("GPL") Version 2.0.  The
+      software code licensed under GPL Version 2.0 is free software that comes
+      with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+      GPL code under the terms of GPL Version 2.0.  For more details, see the
+      documentation or "License Notice" file accompanying the IOS-XE software,
+      or the applicable URL provided on the flyer accompanying the IOS-XE
+      software.
+
+
+      ROM: IOS-XE ROMMON
+
+      testing uptime is 2 minutes
+      Uptime for this control processor is 5 minutes
+      System returned to ROM by reload
+      System image file is "bootflash:packages.conf"
+      Last reload reason: Reload Command
+
+
+
+      This product contains cryptographic features and is subject to United
+      States and local country laws governing import, export, transfer and
+      use. Delivery of Cisco cryptographic products does not imply
+      third-party authority to import, export, distribute or use encryption.
+      Importers, exporters, distributors and users are responsible for
+      compliance with U.S. and local country laws. By using this product you
+      agree to comply with applicable laws and regulations. If you are unable
+      to comply with U.S. and local laws, return this product immediately.
+
+      A summary of U.S. laws governing Cisco cryptographic products may be found at:
+      http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+      If you require further assistance please contact us by sending email to
+      export@cisco.com.
+
+      License Level: ax
+      License Type: N/A(Smart License Enabled)
+      Next reload license Level: ax
+
+      The current throughput level is 1000 kbps
+
+
+      Smart Licensing Status: UNREGISTERED/No Licenses in Use
+
+      cisco CSR1000V (VXE) processor (revision VXE) with 715705K/3075K bytes of memory.
+      Processor board ID 91B4ZUW5RGZ
+      Router operating mode: Autonomous
+      3 Gigabit Ethernet interfaces
+      32768K bytes of non-volatile configuration memory.
+      8107160K bytes of physical memory.
+      6188032K bytes of virtual hard disk at bootflash:.
+
+      Configuration register is 0x2102
+    term length 0: ''
+    term width 0: ''
+    config term:
+      new_state: testing_configure
+
+testing_configure:
+  commands:
+    end:
+      new_state: testing_execute
+    line console 0:
+      new_state: testing_configure_line
+    no logging console: ''
+  prompt: testing(config)#
+
+testing_configure_line:
+  commands:
+    end:
+      new_state: testing_execute
+    exec-timeout 0: ''
+    line vty 0 4: ''
+  prompt: testing(config-line)#
+

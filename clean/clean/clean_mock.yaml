@@ -1,0 +1,29 @@
+cleaners:
+  PyatsDeviceClean:
+    module: genie.libs.clean
+    devices: [uut]
+
+devices:
+  uut:
+
+    images:
+     - bootflash:packages.conf
+
+    connect:
+
+    apply_configuration:
+      configuration: 'hostname testing'
+
+    change_boot_variable:
+
+    reload:
+
+    apply_configuration__1:
+      configuration: 'hostname csr1000v-1'
+
+    order:
+     - connect
+     - apply_configuration
+     - change_boot_variable
+     - reload
+     - apply_configuration__1

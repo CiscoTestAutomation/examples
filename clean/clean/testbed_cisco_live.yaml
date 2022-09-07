@@ -1,0 +1,52 @@
+testbed:
+  name: example_testbed
+devices:
+  csr1000v-1:
+    alias: uut
+    os: iosxe
+    type: router
+    credentials:
+      default:
+        username: admin
+        password: password
+    connections:
+      defaults:
+        class: unicon.Unicon
+      a:
+        command: mock_device_cli --os iosxe --mock_data_dir clean_recording --state connect
+  nx-osv-1:
+    alias: helper
+    os: nxos
+    type: switch
+    credentials:
+      default:
+        username: admin
+        password: password
+    connections:
+      defaults:
+        class: unicon.Unicon
+      a:
+        protocol: telnet
+        ip: ::1
+        port: 9002
+topology:
+  csr1000v-1:
+    interfaces:
+      GigabitEthernet1:
+        type: ethernet
+      GigabitEthernet2:
+        link: l0
+        type: ethernet
+      GigabitEthernet3:
+        link: l1
+        type: ethernet
+  nx-osv-1:
+    interfaces:
+      mgmt0:
+        type: ethernet
+      Ethernet2/1:
+        link: l0
+        type: ethernet
+      Ethernet2/2:
+        link: l1
+        type: ethernet

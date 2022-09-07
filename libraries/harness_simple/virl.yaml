@@ -12,6 +12,7 @@ devices:
                 password: admin
         connections:
             a:
+                command: mock_device_cli --os nxos --state connect --mock_data_dir mock_device/nxos --hostname nx-osv-1
                 protocol: telnet
                 ip: 172.25.192.90
                 port: 17023
@@ -25,6 +26,7 @@ devices:
                 password: cisco
         connections:
             a:
+                command: mock_device_cli --os iosxe --state connect --mock_data_dir mock_device/iosxe --hostname csr1000v-1
                 protocol: telnet
                 ip: 172.25.192.90
                 port: 17021

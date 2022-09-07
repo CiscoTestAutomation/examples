@@ -1,0 +1,56 @@
+testbed:
+  name: iosxe_sdwan
+  servers:
+    tftp:
+      address: 172.25.192.90
+      credentials:
+        default:
+          username: cisco
+          password: pass123
+    scp:
+      address: 172.25.192.90
+      credentials:
+        default:
+          username: cisco
+          password: pass123
+
+devices:
+  ASR1001-X:
+    alias: asr1001x
+    os: iosxe
+    platform: sdwan
+    credentials:
+      default:
+        password: pass123
+        username: admin
+        enable_password: pass123
+    connections:
+      defaults:
+        class: unicon.Unicon
+        via: cli
+      cli:
+        protocol: telnet
+        ip: 192.168.1.1
+        port: 2003
+        settings:
+          PROMPT_RECOVERY_COMMANDS: ['\r','\r','\r','\r','\r']
+          PROMPT_RECOVERY_INTERVAL: 5
+          PROMPT_RECOVERY_RETRIES: 3
+        service_attributes:
+          execute:
+            timeout: 600
+          configure:
+            timeout: 250
+    custom:
+      abstraction:
+        order: [os, platform]
+    peripherals:
+      terminal_server:
+          "192.168.1.1": [3]
+      power_cycler:
+          type: raritan-px2
+          connection_type: snmp
+          host: 192.168.1.23
+          read_community: public
+          write_community: private
+          outlets: [18]

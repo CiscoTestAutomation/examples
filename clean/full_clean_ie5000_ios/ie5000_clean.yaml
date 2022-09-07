@@ -1,0 +1,122 @@
+cleaners:
+  DeviceClean:
+    module: genie.libs.clean
+    devices: [ie5000]
+
+devices:
+  ie5000:
+    device_recovery:
+      break_count: 10
+      console_activity_pattern: "\\.\\.\\.\\."
+      timeout: 1200
+      recovery_password: lab
+      golden_image:
+        - sdflash:/ie4000-universalk9-mz.152-4.EA5/ie4000-universalk9-mz.152-4.EA5.bin
+      powercycler: True
+
+    connect:
+
+    copy_to_device:
+        origin:
+            files:
+                - mypath/test.cfg
+            hostname: 10.15.19.10
+        destination:
+            directory: 'flash:/'
+        protocol: ftp
+        min_free_space_percent: 10
+        # if_exist_still_copy: True
+        vrf: ''
+        check_file_stability: False
+        protected_files:
+            - ie4000-universalk9-mz.152-4.EA5.bin
+            - ie5000-universalk9-mz.152-7.E4.bin
+
+    change_boot_variable:
+        images:
+            #- flash:/ie5000-universalk9-mz.152-7.E4.bin
+            - sdflash:/ie5000-universalk9-mz.152-6.E1/ie5000-universalk9-mz.152-6.E1.bin
+        set_register: True
+
+    write_erase:
+
+    reload:
+      check_modules:
+        check: false
+
+    apply_configuration:
+      configuration: |
+        hostname ie5000
+        interface GigabitEthernet1/3
+          no switchport
+          ip address 172.2.24.11 255.255.255.0
+          no shut
+        ip route 0.0.0.0 0.0.0.0 172.2.24.1
+
+
+    verify_running_image:
+      images:
+        #- flash:/ie5000-universalk9-mz.152-7.E4.bin
+        - sdflash:/ie5000-universalk9-mz.152-6.E1/ie5000-universalk9-mz.152-6.E1.bin
+
+    ping_server:
+      interval: 60
+      server: 10.15.19.10
+      timeout: 120
+      vrf: ''
+
+    backup_file_on_device:
+      copy_dir: 'flash:'
+      copy_file: test.cfg
+
+    delete_backup_from_device:
+      delete_dir: 'flash:'
+      delete_file: test.cfg
+
+    delete_backup_from_device__1:
+      delete_dir: 'flash:'
+      delete_file: test.cfg
+
+    delete_backup_from_device__2:
+      delete_dir: 'flash:'
+      delete_file: backup_test.cfg
+  
+    copy_to_linux:
+      append_hostname: true
+      copy_attempts: 3
+      destination:
+        directory: /auto/mypath/
+        hostname: 172.2.15.12
+      origin:
+        files:
+        - /auto/mypath/golden/sample_file
+        hostname: 172.2.15.12
+      overwrite: true
+
+    delete_files_from_server:
+      files:
+      - /auto/mypath/sample_file_SJC-X-5000-1
+      protocol: sftp
+      server: 172.2.15.12
+
+    power_cycle:
+      boot_timeout: 900
+      sleep_after_power_off: 10
+      
+    order:
+      - connect
+      - apply_configuration
+      - ping_server
+      - copy_to_device
+      - backup_file_on_device
+      - change_boot_variable
+      - copy_to_linux
+      - write_erase
+      - power_cycle
+      - reload
+      - apply_configuration
+      - ping_server
+      - verify_running_image
+      - delete_backup_from_device__1
+      - delete_backup_from_device__2
+      - delete_files_from_server

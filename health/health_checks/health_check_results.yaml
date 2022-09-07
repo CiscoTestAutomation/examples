@@ -1,11 +1,11 @@
 Task-1:
   commonCleanup:
     name: common_cleanup
-    result: SKIPPED
+    result: PASSED
   commonSetup:
     name: common_setup
     result: PASSED
   testcases:
   - name: config_interface.R1_xe
     result: FAILED
-  testscript: /scratch/pyats_install_test/lib/python3.6/site-packages/genie/harness/genie_testscript.py
+  testscript: /scratch/pyats_install_test/lib/python3.8/site-packages/genie/harness/genie_testscript.py
