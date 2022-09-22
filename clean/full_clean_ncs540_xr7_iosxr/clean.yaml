@@ -1,0 +1,50 @@
+cleaners:
+    # This means to use the cleaner class `PyatsDeviceClean`
+    PyatsDeviceClean:
+        # The module is where the cleaner class above can be found
+        module: genie.libs.clean
+        # You can define many devices within the Clean YAML.
+        # Any that are not in this list are not cleaned even if they are defined below.
+        devices: [ncs540]
+
+devices:
+ ncs540:
+        connect:
+            timeout: 100
+
+        copy_to_device:
+            origin:
+                files:
+                - /path/test_config.cfg
+                hostname: 10.x.x.x
+            destination:
+                directory: 'harddisk:/'
+            protocol: tftp
+            vrf: 'default'
+            check_file_stability: False
+
+        reload:
+            check_modules:
+                check: false
+            reload_service_args:
+                timeout: 900
+                prompt_recovery: False
+
+        install_image:
+            image:
+                - /harddisk:/path/ncs540l-golden-x86_64-7.8.1.20I-PROD_BUILD_7_8_1_20I_DT_IMAGE.iso
+            install_timeout: 1500
+            commit_sleep: 200
+            #server: 10.10.10.10
+
+        verify_running_image:
+            images:
+                - 7.8.1.20I
+
+        order:
+        - connect
+        - copy_to_device
+        - reload
+        - install_image
+        - verify_running_image
+
