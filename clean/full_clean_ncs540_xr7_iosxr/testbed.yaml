@@ -1,0 +1,48 @@
+testbed:
+  name: ncs540
+  passwords:
+    tacacs: xxx
+    enable: xxx
+  servers:
+    ftp:
+      address: 10.x.x.x
+      credentials:
+        default:
+          username: xxxx
+          password: xxxx
+
+    tftp:
+        address: 10.x.x.x
+        credentials:
+            default:
+                username: xxxx
+                password: xxxx
+
+devices:
+  ncs540:
+      alias: uut1
+      os: iosxr
+      type: iosxr
+      platform: ncs540
+      connections:
+          defaults:
+              class: unicon.Unicon
+              via: peer_1
+          peer_1:
+              protocol: telnet
+              ip: 10.x.x.x
+              port: 2020
+              member: 1
+          service_attributes:
+              execute:
+                  timeout: 600
+              configure:
+                  timeout: 600
+          peer_2:
+              protocol: telnet
+              ip: 10.x.x.x
+              port: 2011
+              member: 2
+      custom:
+          abstraction:
+              order: [os, platform]
