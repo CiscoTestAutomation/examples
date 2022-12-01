@@ -4,4 +4,4 @@ devices:
     os: iosxe
     connections:
       cli:
-        command: mock_device_cli --os iosxe --mock_data_dir mock_data --state connect --hostname R1_xe
+        command: mock_device_cli --os iosxe --mock_data_dir ../../mock_data --state connect --hostname R1_xe
