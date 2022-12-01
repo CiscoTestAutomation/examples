@@ -4,7 +4,7 @@ configure:
       \ GigabitEthernet2 set to default configuration\r\n"
     default interface GigabitEthernet3: "default interface GigabitEthernet3\r\nInterface\
       \ GigabitEthernet3 set to default configuration\r\n"
-    description configured by pyATS: " description configured by pyATS\r\n"
+    " description configured by pyATS": " description configured by pyATS\r\n"
     end:
       new_state: execute
     interface GigabitEthernet2: "interface GigabitEthernet2\r\n"
