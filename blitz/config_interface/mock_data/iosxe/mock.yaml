@@ -1,0 +1,172 @@
+configure:
+  commands:
+    default interface GigabitEthernet2: "default interface GigabitEthernet2\r\nInterface\
+      \ GigabitEthernet2 set to default configuration\r\n"
+    default interface GigabitEthernet3: "default interface GigabitEthernet3\r\nInterface\
+      \ GigabitEthernet3 set to default configuration\r\n"
+    " description configured by pyATS": " description configured by pyATS\r\n"
+    end:
+      new_state: execute
+    interface GigabitEthernet2: "interface GigabitEthernet2\r\n"
+    interface GigabitEthernet3: "interface GigabitEthernet3\r\n"
+    line console 0:
+      new_state: configure_line
+    no logging console: ''
+  prompt: R1_xe(config)#
+configure_line:
+  commands:
+    end:
+      new_state: execute
+    exec-timeout 0: ''
+    line vty 0 4: ''
+  prompt: R1_xe(config-line)#
+connect:
+  commands:
+    ? ''
+    : new_state: execute
+  preface: 'Trying mock_device ...
+
+    Connected to mock_device.
+
+    Escape character is ''^]''.'
+  prompt: ''
+execute:
+  commands:
+    config term:
+      new_state: configure
+    config-transaction:
+      new_state: configure
+    dir bootflash:/core/:
+      response:
+      - "Directory of bootflash:/core/\r\n\r\n177409  drwx             4096   Sep\
+        \ 9 2022 13:48:34 +00:00  modules\r\n\r\n6286540800 bytes total (5430292480\
+        \ bytes free)"
+      - "Directory of bootflash:/core/\r\n\r\n177409  drwx             4096   Sep\
+        \ 9 2022 13:48:34 +00:00  modules\r\n\r\n6286540800 bytes total (5430292480\
+        \ bytes free)"
+      response_type: circular
+    dir harddisk:/core/:
+      response:
+      - '% Invalid command at ''^'' marker.'
+      - '% Invalid command at ''^'' marker.'
+      response_type: circular
+    show interfaces description:
+      response:
+      - "Interface                      Status         Protocol Description\r\nGi1\
+        \                            admin down     down     \r\nGi2             \
+        \               admin down     down     configured by pyATS\r\nGi2.90    \
+        \                     admin down     down     \r\nGi2.110                \
+        \        admin down     down     \r\nGi2.115                        admin\
+        \ down     down     \r\nGi2.120                        admin down     down\
+        \     \r\nGi2.390                        admin down     down     \r\nGi2.410\
+        \                        admin down     down     \r\nGi2.415             \
+        \           admin down     down     \r\nGi2.420                        admin\
+        \ down     down     \r\nGi3                            admin down     down\
+        \     configured by pyATS\r\nGi3.90                         admin down   \
+        \  down     \r\nGi3.110                        admin down     down     \r\n\
+        Gi3.115                        admin down     down     \r\nGi3.120       \
+        \                 admin down     down     \r\nGi3.390                    \
+        \    admin down     down     \r\nGi3.410                        admin down\
+        \     down     \r\nGi3.415                        admin down     down    \
+        \ \r\nGi3.420                        admin down     down     \r\nGi4     \
+        \                       admin down     down     \r\nGi5                  \
+        \          admin down     down     \r\nGi6                            admin\
+        \ down     down     \r\nGi7                            admin down     down\
+        \     \r\nLo0                            up             up       \r\nLo300\
+        \                          up             up       \r\nPo12              \
+        \             down           down     \r\nPo13                           down\
+        \           down     \r\nTu0                            up             up\
+        \       Pim Register Tunnel (Encap) for Embedded RP\r\nTu1               \
+        \             up             up       Pim Register Tunnel (Encap) for Embedded\
+        \ RP on VRF VRF1\r\nTu2                            up             down   \
+        \  Pim Register Tunnel (Encap) for RP 2.2.2.2\r\nTu3                     \
+        \       up             up       Pim Register Tunnel (Encap) for RP 1.1.1.1\r\
+        \nTu4                            up             up       Pim Register Tunnel\
+        \ (Decap) for RP 1.1.1.1\r\nTu5                            up            \
+        \ down     Pim Register Tunnel (Encap) for RP 2.2.2.2 on VRF VRF1\r\nTu6 \
+        \                           up             up       Pim Register Tunnel (Encap)\
+        \ for RP 1.1.1.1 on VRF VRF1\r\nTu7                            up        \
+        \     up       Pim Register Tunnel (Decap) for RP 1.1.1.1 on VRF VRF1\r\n\
+        Tu8                            up             down     Pim Register Tunnel\
+        \ (Encap) for RP 2001:2:2:2::2 on VRF VRF1\r\nTu9                        \
+        \    up             down     Pim Register Tunnel (Encap) for RP 2001:2:2:2::2"
+      - "Interface                      Status         Protocol Description\r\nGi1\
+        \                            admin down     down     \r\nGi2             \
+        \               admin down     down     configured by pyATS\r\nGi2.90    \
+        \                     admin down     down     \r\nGi2.110                \
+        \        admin down     down     \r\nGi2.115                        admin\
+        \ down     down     \r\nGi2.120                        admin down     down\
+        \     \r\nGi2.390                        admin down     down     \r\nGi2.410\
+        \                        admin down     down     \r\nGi2.415             \
+        \           admin down     down     \r\nGi2.420                        admin\
+        \ down     down     \r\nGi3                            admin down     down\
+        \     configured by pyATS\r\nGi3.90                         admin down   \
+        \  down     \r\nGi3.110                        admin down     down     \r\n\
+        Gi3.115                        admin down     down     \r\nGi3.120       \
+        \                 admin down     down     \r\nGi3.390                    \
+        \    admin down     down     \r\nGi3.410                        admin down\
+        \     down     \r\nGi3.415                        admin down     down    \
+        \ \r\nGi3.420                        admin down     down     \r\nGi4     \
+        \                       admin down     down     \r\nGi5                  \
+        \          admin down     down     \r\nGi6                            admin\
+        \ down     down     \r\nGi7                            admin down     down\
+        \     \r\nLo0                            up             up       \r\nLo300\
+        \                          up             up       \r\nPo12              \
+        \             down           down     \r\nPo13                           down\
+        \           down     \r\nTu0                            up             up\
+        \       Pim Register Tunnel (Encap) for Embedded RP\r\nTu1               \
+        \             up             up       Pim Register Tunnel (Encap) for Embedded\
+        \ RP on VRF VRF1\r\nTu2                            up             down   \
+        \  Pim Register Tunnel (Encap) for RP 2.2.2.2\r\nTu3                     \
+        \       up             up       Pim Register Tunnel (Encap) for RP 1.1.1.1\r\
+        \nTu4                            up             up       Pim Register Tunnel\
+        \ (Decap) for RP 1.1.1.1\r\nTu5                            up            \
+        \ down     Pim Register Tunnel (Encap) for RP 2.2.2.2 on VRF VRF1\r\nTu6 \
+        \                           up             up       Pim Register Tunnel (Encap)\
+        \ for RP 1.1.1.1 on VRF VRF1\r\nTu7                            up        \
+        \     up       Pim Register Tunnel (Decap) for RP 1.1.1.1 on VRF VRF1\r\n\
+        Tu8                            up             down     Pim Register Tunnel\
+        \ (Encap) for RP 2001:2:2:2::2 on VRF VRF1\r\nTu9                        \
+        \    up             down     Pim Register Tunnel (Encap) for RP 2001:2:2:2::2"
+      response_type: circular
+    show logging | include traceback|Traceback|TRACEBACK:
+      response:
+      - ''
+      response_type: circular
+    show processes cpu sorted | exclude 0.00%:
+      response:
+      - "CPU utilization for five seconds: 13%/0%; one minute: 9%; five minutes: 9%\r\
+        \n PID Runtime(ms)     Invoked      uSecs   5Sec   1Min   5Min TTY Process\
+        \ \r\n  19       15387        5097       3018  4.55%  0.91%  0.61%   0 Exec\
+        \             \r\n 739   285677979  1689331280        169  3.67%  3.21%  3.30%\
+        \   0 IP SLAs XOS Even \r\n 669    47925795   347669239        137  0.79%\
+        \  0.55%  0.54%   0 MFIB_mrib_write  \r\n 133    49483031   427804655    \
+        \    115  0.55%  0.53%  0.58%   0 L2 LISP Punt Pro \r\n 221    26422307  \
+        \ 217168087        121  0.39%  0.28%  0.30%   0 IPAM Manager     \r\n 203\
+        \    29583216   156461991        189  0.31%  0.35%  0.36%   0 PIM Process\
+        \      \r\n 224    24823910   217168353        114  0.23%  0.28%  0.29%  \
+        \ 0 IP ARP Retry Age \r\n 212    17625148   110599239        159  0.23%  0.21%\
+        \  0.20%   0 VRRS Main thread \r\n 452    17352051   110599817        156\
+        \  0.23%  0.20%  0.20%   0 MMA DB TIMER     \r\n 664     9807037    70979813\
+        \        138  0.15%  0.13%  0.12%   0 Mwheel Process   \r\n   3    11913217\
+        \    72171723        165  0.15%  0.12%  0.13%   0 IGMP Input       \r\n  84\
+        \     8067284     6488141       1243  0.15%  0.10%  0.09%   0 IOSD ipc task\
+        \    \r\n 107     8796786    70965130        123  0.15%  0.10%  0.08%   0\
+        \ 100ms check      \r\n 686     9750295    35363388        275  0.07%  0.10%\
+        \  0.10%   0 ONEP Network Ele \r\n 681     2831297     2834640        998\
+        \  0.07%  0.03%  0.02%   0 DiagCard1/-1     \r\n  94     4354738     3547261\
+        \       1227  0.07%  0.06%  0.07%   0 PuntInject Keepa \r\n 254     6770111\
+        \    55158797        122  0.07%  0.07%  0.07%   0 Tunnel BGP       \r\n 225\
+        \     4299589     6695416        642  0.07%  0.06%  0.07%   0 IP Input   \
+        \      \r\n 238     4907399    28597569        171  0.07%  0.06%  0.06%  \
+        \ 0 MLD              \r\n 443     6768870    36316369        186  0.07%  0.06%\
+        \  0.07%   0 PIM IPv6"
+      response_type: circular
+    show processes memory | section ^Processor:
+      response:
+      - 'Processor Pool Total:  732743660 Used:  271365296 Free:  461378364'
+      response_type: circular
+    show version: ''
+    term length 0: ''
+    term width 0: ''
+  prompt: R1_xe#

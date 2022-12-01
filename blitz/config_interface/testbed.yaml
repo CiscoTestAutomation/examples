@@ -1,53 +1,7 @@
-testbed:
-  name: general_xe_xr_nx
-  servers:
-    myserver:
-      dynamic: true
-      protocol: http
-      # subnet: 192.168.255.0/24
-      path: /tmp
-      credentials:
-        default:
-          username: pyats
-          password: "<password>"
+
 devices:
   R1_xe:
     os: iosxe
-    platform: csr1kv
-    credentials:
-      default:
-        username: admin
-        password: "<password>"
     connections:
-      defaults:
-       via: cli
       cli:
-        protocol: ssh
-        ip: 192.168.255.118
-  R2_xr:
-    os: iosxr
-    platform: iosxrv9k
-    credentials:
-      default:
-        username: admin
-        password: "<password>"
-    connections:
-      defaults:
-        via: cli
-      cli:
-        protocol: ssh
-        ip: 192.168.255.199
-  R3_nx:
-    os: nxos
-    type: switch
-    series: n9kv
-    credentials:
-      default:
-        username: admin
-        password: "<password>"
-    connections:
-      defaults:
-        via: cli
-      cli:
-        protocol: ssh
-        ip: 192.168.255.200
+        command: mock_device_cli --os iosxe --mock_data_dir mock_data --state connect --hostname R1_xe

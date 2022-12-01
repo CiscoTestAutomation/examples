@@ -13,6 +13,5 @@ What this Blitz yaml does is:
 
 ### How to use:
 ```
-pyats run job job.py --testbed-file testbed.yaml --replay mock_device
+pyats run job job.py --testbed-file testbed.yaml 
 ```
-NOTE: above use `--replay` (mock device). so you don't need to have device to run.
