@@ -1,0 +1,10 @@
+type: easypy
+version: 1
+
+arguments:
+    testbed-file: testbed.yaml
+    no-mail: True
+    no-upload: True
+    #replay: mock_device
+    #speed: 100
+    disable-image-md5: True
