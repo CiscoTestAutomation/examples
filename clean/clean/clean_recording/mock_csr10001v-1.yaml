@@ -112,6 +112,7 @@ execute:
       Configuration register is 0x2102
     term length 0: ''
     term width 0: ''
+    show version | include operating mode: ''
     write memory: "Building configuration...\r\n[OK]"
     reload:
       new_state: reload_confirm
