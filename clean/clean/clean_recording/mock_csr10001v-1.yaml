@@ -284,7 +284,6 @@ testing_execute:
       Configuration register is 0x2102
     term length 0: ''
     term width 0: ''
-    show version | include operating mode: ''
     config term:
       new_state: testing_configure
 
