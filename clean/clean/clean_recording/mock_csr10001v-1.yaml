@@ -214,6 +214,7 @@ reload_confirm:
 non_enable:
   prompt: "testing>"
   commands:
+    show version | include operating mode: ''
     enable:
       new_state: testing_execute
 
