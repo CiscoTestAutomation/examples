@@ -116,6 +116,7 @@ execute:
       line vty 1\r\n login\r\n length 0\r\nline vty 2 4\r\n login\r\n!\r\n!\r\n!\r\
       \n!\r\n!\r\n!\r\nend"
     show version: ''
+    show version | include operating mode: ''
     term length 0: ''
     term width 0: ''
     write memory: "Building configuration...\r\n[OK]"

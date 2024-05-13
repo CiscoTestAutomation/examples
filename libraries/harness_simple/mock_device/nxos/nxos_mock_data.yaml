@@ -257,6 +257,7 @@ execute:
       \  neighbor 10.1.1.1\r\n    remote-as 65000\r\n    update-source loopback0\r\
       \n    address-family ipv4 unicast\r\nno logging console"
     show version: ''
+    show version | include operating mode: ''
     term length 0: ''
     term width 511: ''
     terminal session-timeout 0: ''
