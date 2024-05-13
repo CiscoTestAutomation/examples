@@ -167,6 +167,7 @@ execute:
       - 'Processor Pool Total:  732743660 Used:  271365296 Free:  461378364'
       response_type: circular
     show version: ''
+    show version | include operating mode: ''
     term length 0: ''
     term width 0: ''
   prompt: R1_xe#
