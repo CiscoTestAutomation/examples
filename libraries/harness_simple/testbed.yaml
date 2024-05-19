@@ -1,0 +1,66 @@
+devices:
+  iolce1:
+    alias: ce1
+    auto_bringup:
+      images:
+      - /auto/mcp-abs-cluster-101/POLARIS/BLD-BLD_POLARIS_DEV_LATEST_20230404_143556/binos/tftpboot-dir/iol-custom/x86_64_crb_linux-adventerprisek9-ms
+      uniclean:
+        class: uniclean.plugins.ios.iol.IolClean
+        config:
+          post:
+          - hostname iolce1
+          - no service config
+        just_spawned: true
+    connections:
+      a:
+        ip: 171.70.62.37
+        port: 49026
+        protocol: telnet
+      defaults:
+        class: unicon.Unicon
+    credentials:
+      default:
+        password: lab
+        username: lab
+      enable:
+        password: lab
+    os: iosxe
+    platform: iosxe
+    series: iol
+    type: iol
+  iolpe1:
+    alias: uut
+    auto_bringup:
+      images:
+        ci:
+        - /auto/mcp-abs-cluster-101/POLARIS/BLD-BLD_POLARIS_DEV_LATEST_20230404_143556/binos/tftpboot-dir/iol_rp-custom/x86_64_crb_linuxrp-unixci
+        rp:
+        - /auto/mcp-abs-cluster-101/POLARIS/BLD-BLD_POLARIS_DEV_LATEST_20230404_143556/binos/tftpboot-dir/iol_rp-custom/x86_64_crb_linuxrp-adventerprisek9-ms
+      uniclean:
+        class: uniclean.plugins.ios.iol.IolClean
+        config:
+          post:
+          - hostname iolpe1
+          - no service config
+        just_spawned: true
+    connections:
+      a:
+        ip: 171.70.62.37
+        port: 49349
+        protocol: telnet
+      b:
+        ip: 171.70.62.37
+        port: 50374
+        protocol: telnet
+      defaults:
+        class: unicon.Unicon
+    credentials:
+      default:
+        password: lab
+        username: lab
+      enable:
+        password: lab
+    os: iosxe
+    platform: iosxe
+    series: iol
+    type: iol

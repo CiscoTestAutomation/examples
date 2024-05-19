@@ -1,0 +1,36 @@
+setup:
+
+    sections:
+
+      connect:
+        method: genie.harness.commons.connect
+
+      configure:
+        method: genie.harness.commons.configure
+
+      configuration_snapshot:
+        method: genie.harness.commons.check_config
+
+      save_bootvar:
+        method: genie.libs.sdk.libs.abstracted_libs.subsection.save_bootvar
+
+      learn_system_defaults:
+        method: genie.libs.sdk.libs.abstracted_libs.subsection.learn_system_defaults
+
+      initialize_traffic:
+        method: genie.harness.commons.initialize_traffic
+
+    order: ['connect', 'configure', 'configuration_snapshot', 'save_bootvar', 'learn_system_defaults', 'initialize_traffic']
+
+cleanup:
+
+    sections:
+
+      verify_configuration_snapshot:
+        method: genie.harness.commons.check_post_config
+
+      stop_traffic:
+        method: genie.harness.commons.stop_traffic
+
+    order: ['verify_configuration_snapshot', 'stop_traffic']
+

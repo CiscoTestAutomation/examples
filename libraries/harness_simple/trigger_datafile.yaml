@@ -1,0 +1,77 @@
+#extends: "%CALLABLE{genie.libs.sdk.genie_yamls.datafile(trigger,iosxe)}"
+
+TriggerSleep:
+    source:
+        pkg: genie.libs.sdk
+        class: triggers.sleep.sleep.TriggerSleep
+    sleep_time: 5
+    message_time: 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+global_processors:
+  pre:
+    save_running_configuration:
+      method: genie.libs.sdk.libs.abstracted_libs.processors.save_running_configuration
+      parameters:
+        devices:
+          - iolpe1
+    order: ['save_running_configuration']
+  post:
+    restore_running_configuration:
+      method: genie.libs.sdk.libs.abstracted_libs.processors.restore_running_configuration
+      parameters:
+        devices:
+          - iolpe1
+    order: ['restore_running_configuration']
+

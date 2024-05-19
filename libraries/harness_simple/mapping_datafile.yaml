@@ -1,0 +1,13 @@
+devices:
+#  iolce1:
+#    mapping:
+#      context:
+#          cli:
+#            - via: a
+#              alias: cli
+  iolpe1:
+    mapping:
+      context:
+          cli:
+            - via: ['a', 'b']
+              alias: cli

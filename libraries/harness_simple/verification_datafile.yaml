@@ -1,0 +1,9 @@
+Verify_IpInterfaceBrief:
+  cmd:
+    class: show_interface.ShowIpInterfaceBrief
+    pkg: genie.libs.parser
+  context: cli
+  source:
+    class: genie.harness.base.Template
+  devices:
+   - uut
