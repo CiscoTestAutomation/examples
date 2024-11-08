@@ -133,6 +133,21 @@ execute:
       response:
       - ''
       response_type: circular
+    show processes cpu platform sorted | exclude 0%:
+      response:
+      - "CPU utilization for five seconds:  1%, one minute:  1%, five minutes:  1%\r\
+        \n Core 0: CPU utilization for five seconds:  1%, one minute:  1%, five minutes:  1%\
+        \n Core 1: CPU utilization for five seconds:  1%, one minute:  1%, five minutes:  1%\
+        \n Core 2: CPU utilization for five seconds:  1%, one minute:  1%, five minutes:  1%\
+        \n Core 3: CPU utilization for five seconds:  1%, one minute:  1%, five minutes:  1%\
+        \n Core 4: CPU utilization for five seconds:  2%, one minute:  1%, five minutes:  1%\
+        \n Core 5: CPU utilization for five seconds:  1%, one minute:  1%, five minutes:  1%\
+        \n Pid    PPid    5Sec    1Min    5Min  Status        Size  Name                  \
+        \n --------------------------------------------------------------------------------\
+        \n 16401   15826      2%      1%      1%  S           794172  linux_iosd-imag   \    
+        \n 18460   17811      1%      1%      1%  S           299824  fed main event      \  
+        \n 10876   10404      1%      1%      1%  S            55952  sif_mgr           \    
+        \n 9153       1      1%      1%      1%  S             8612  chasync.sh "
     show processes cpu sorted | exclude 0.00%:
       response:
       - "CPU utilization for five seconds: 13%/0%; one minute: 9%; five minutes: 9%\r\
