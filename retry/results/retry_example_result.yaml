@@ -1,0 +1,5 @@
+Task-1:
+  testcases:
+  - name: MyTestcase_1
+    result: PASSX
+  testscript: /scratch/pyats_install_test/examples/retry/retry_example_script.py
