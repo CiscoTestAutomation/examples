@@ -102,7 +102,7 @@ class common_setup(aetest.CommonSetup):
 
                 # Abstraction
                 # Right now abstraction is done via OS and Context.
-                dev.lib = Lookup(dev.os, dev.context, packages={'conf':conf, 'ops':ops})
+                dev.lib = Lookup(None, dev.os, dev.context, packages={'conf':conf, 'ops':ops})
 
 
     @aetest.subsection
