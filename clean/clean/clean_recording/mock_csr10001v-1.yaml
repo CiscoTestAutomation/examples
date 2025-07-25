@@ -32,8 +32,23 @@ disconnect:
   commands:
     null: null
   prompt: switch#
+press_return:
+  preface: |
+
+
+    Press RETURN to get started!
+
+  prompt: ""
+  commands:
+    "":
+       new_state: execute
 execute:
   commands:
+    exit:
+      new_state: press_return
+    show install summary: ''
+    show running-config: ''
+    show startup-config: ''
     config term:
       new_state: configure
     config-transaction:
