@@ -44,6 +44,8 @@ press_return:
        new_state: execute
 execute:
   commands:
+    enable: ''
+    'show version | include operating mode': ''
     exit:
       new_state: press_return
     show install summary: ''
@@ -236,6 +238,8 @@ non_enable:
 testing_execute:
   prompt: "testing#"
   commands:
+    enable: ''
+    'show version | include operating mode': ''
     show version: |
       Cisco IOS XE Software, Version 17.03.01a
       Cisco IOS Software [Amsterdam], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 17.3.1a, RELEASE SOFTWARE (fc3)
