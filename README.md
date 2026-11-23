@@ -23,6 +23,9 @@ bash$ git clone https://github.com/CiscoTestAutomation/examples
 
 ## General Information
 
+For nested AEtest loops and retry scope, see the runnable
+[hierarchical loop and retry examples](loop_retry/).
+
 - Website: https://developer.cisco.com/pyats/
 - Documentation: https://developer.cisco.com/docs/pyats/
 - Support: pyats-support-ext@cisco.com
